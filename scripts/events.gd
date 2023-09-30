@@ -7,4 +7,8 @@ signal food_collected(amount: int)
 signal water_collected(amount: int)
 signal wood_collected(amount: int)
 
-signal show_text(text: String)
+signal food_changed(value: int)
+signal water_changed(value: int)
+signal wood_changed(value: int)
+
+signal show_text(text: String, color: Color)

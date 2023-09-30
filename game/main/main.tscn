@@ -1,10 +1,13 @@
-[gd_scene load_steps=29 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=36 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
-[ext_resource type="Script" path="res://game/main/phase_manager.gd" id="2_ekfcy"]
+[ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="2_414vw"]
+[ext_resource type="Script" path="res://game/main/managers/phase_manager.gd" id="2_ekfcy"]
 [ext_resource type="PackedScene" uid="uid://gbi8vlb130hx" path="res://game/main/bed.tscn" id="2_yayvv"]
+[ext_resource type="Script" path="res://game/actions/gather_food.gd" id="3_66gar"]
 [ext_resource type="Texture2D" uid="uid://csibaadocmi2r" path="res://assets/shelter_morning.png" id="3_155ra"]
 [ext_resource type="Texture2D" uid="uid://b4snu1yui8pyi" path="res://assets/characters/olaf.png" id="3_n4fpq"]
+[ext_resource type="Script" path="res://game/actions/rest.gd" id="3_veadd"]
 [ext_resource type="Script" path="res://scripts/character.gd" id="3_y8oa7"]
 [ext_resource type="Texture2D" uid="uid://w412ft5j5jau" path="res://assets/characters/olaf_portrait.png" id="4_8rwdf"]
 [ext_resource type="Texture2D" uid="uid://dqr38n5dgx3vh" path="res://assets/shelter_noon.png" id="4_u1bb2"]
@@ -12,13 +15,39 @@
 [ext_resource type="Texture2D" uid="uid://dcfnobqhjuxwc" path="res://assets/shelter_evening.png" id="6_5d6ox"]
 [ext_resource type="Texture2D" uid="uid://c8aqn0afsg7y6" path="res://assets/characters/olga.png" id="6_8xp8g"]
 [ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="7_dw64p"]
+[ext_resource type="Texture2D" uid="uid://ch8gn1t4ntb5q" path="res://assets/CharacterImages/Emily_Screenshot.png" id="7_f6bnv"]
 [ext_resource type="Texture2D" uid="uid://dmtrnpnk1ahsj" path="res://assets/characters/olga_portrait.png" id="7_pmpj5"]
-[ext_resource type="Script" path="res://game/main/action_manager.gd" id="8_bedgx"]
-[ext_resource type="Script" path="res://scripts/actions/gather_food.gd" id="10_auikk"]
-[ext_resource type="Script" path="res://scripts/actions/gather_water.gd" id="14_lwmjw"]
-[ext_resource type="Script" path="res://scripts/actions/gather_wood.gd" id="15_wnlhx"]
-[ext_resource type="Texture2D" uid="uid://ch8gn1t4ntb5q" path="res://assets/CharacterImages/Emily_Screenshot.png" id="18_drp8k"]
-[ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/CharacterImages/Emily_Screenshot_Portrait.png" id="19_gr1s1"]
+[ext_resource type="Script" path="res://game/main/managers/action_manager.gd" id="8_bedgx"]
+[ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/CharacterImages/Emily_Screenshot_Portrait.png" id="8_uujek"]
+[ext_resource type="AudioStream" uid="uid://bgyogqxddrekg" path="res://assets/sounds/shs_cyber_button_ui_shooter_military_2.wav" id="14_443j1"]
+[ext_resource type="Script" path="res://game/main/ui.gd" id="15_vc2hc"]
+[ext_resource type="Script" path="res://game/actions/gather_water.gd" id="17_3u541"]
+[ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="18_5ewfh"]
+[ext_resource type="AudioStream" uid="uid://bs53xiyv00fdf" path="res://assets/sounds/BRS_Rooster_TJ_CockaDoodleDoo_Close_1.wav" id="18_unbea"]
+
+[sub_resource type="Resource" id="Resource_e5twr"]
+script = ExtResource("3_veadd")
+
+[sub_resource type="Resource" id="Resource_htoye"]
+script = ExtResource("3_66gar")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_mjvpr"]
+script = ExtResource("17_3u541")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_06p4a"]
+script = ExtResource("18_5ewfh")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_bncd3"]
+script = ExtResource("3_y8oa7")
+name = "Emily"
+portrait = ExtResource("8_uujek")
+image = ExtResource("7_f6bnv")
+hunger = 2
+thirst = 3
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_e5twr"), SubResource("Resource_htoye"), SubResource("Resource_mjvpr"), SubResource("Resource_06p4a")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
 bg_color = Color(0.247059, 0.247059, 0.247059, 1)
@@ -32,8 +61,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="Resource" id="Resource_bumkp"]
-script = ExtResource("10_auikk")
-amount = 1
+script = ExtResource("3_66gar")
+amount = null
 
 [sub_resource type="Resource" id="Resource_4xx7x"]
 script = ExtResource("3_y8oa7")
@@ -42,14 +71,14 @@ portrait = ExtResource("4_8rwdf")
 image = ExtResource("3_n4fpq")
 hunger = 10
 thirst = 20
-actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_bumkp")])
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_bumkp")])
 
 [sub_resource type="Resource" id="Resource_wt2mr"]
-script = ExtResource("14_lwmjw")
-amount = 1
+script = ExtResource("17_3u541")
+amount = null
 
 [sub_resource type="Resource" id="Resource_8tjcw"]
-script = ExtResource("15_wnlhx")
+script = ExtResource("18_5ewfh")
 amount = 10
 
 [sub_resource type="Resource" id="Resource_th6dn"]
@@ -59,24 +88,7 @@ portrait = ExtResource("7_pmpj5")
 image = ExtResource("6_8xp8g")
 hunger = 50
 thirst = 60
-actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
-
-[sub_resource type="Resource" id="Resource_vu3l2"]
-script = ExtResource("10_auikk")
-amount = 1
-
-[sub_resource type="Resource" id="Resource_kit4w"]
-script = ExtResource("14_lwmjw")
-amount = 1
-
-[sub_resource type="Resource" id="Resource_f6n6o"]
-script = ExtResource("3_y8oa7")
-name = "Emily"
-portrait = ExtResource("19_gr1s1")
-image = ExtResource("18_drp8k")
-hunger = 30
-thirst = 30
-actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_vu3l2"), SubResource("Resource_kit4w")])
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -88,6 +100,11 @@ grow_vertical = 2
 script = ExtResource("1_lequ7")
 
 [node name="Logic" type="Node" parent="."]
+
+[node name="CharacterManager" type="Node" parent="Logic"]
+unique_name_in_owner = true
+script = ExtResource("2_414vw")
+characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3")])
 
 [node name="PhaseManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
@@ -102,6 +119,18 @@ night_background = ExtResource("7_dw64p")
 unique_name_in_owner = true
 script = ExtResource("8_bedgx")
 
+[node name="AutoAdvanceTimer" type="Timer" parent="Logic"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="snd_message" type="AudioStreamPlayer2D" parent="Logic"]
+unique_name_in_owner = true
+stream = ExtResource("14_443j1")
+
+[node name="snd_rooster" type="AudioStreamPlayer" parent="Logic"]
+unique_name_in_owner = true
+stream = ExtResource("18_unbea")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -109,6 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("15_vc2hc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 layout_mode = 1
@@ -148,11 +178,11 @@ theme_override_constants/margin_bottom = 4
 [node name="Textbox" type="RichTextLabel" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxContainer/TextboxMargin"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Textbox"
+text = "It is cloudy.."
 scroll_following = true
 
 [node name="DepotContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
@@ -205,15 +235,6 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Wood: 0
 "
-
-[node name="PhaseLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Phase"
-
-[node name="ProgressButton" type="Button" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer"]
-layout_mode = 2
-text = "Next Phase"
 
 [node name="ShelterContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer"]
 layout_mode = 2
@@ -332,7 +353,6 @@ character = SubResource("Resource_th6dn")
 [node name="Bed3" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
 unique_name_in_owner = true
 layout_mode = 2
-character = SubResource("Resource_f6n6o")
 
 [node name="Bed4" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
 unique_name_in_owner = true
@@ -344,4 +364,4 @@ unique_name_in_owner = true
 layout_mode = 2
 built = false
 
-[connection signal="pressed" from="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ProgressButton" to="." method="_on_progress_button_pressed"]
+[connection signal="timeout" from="Logic/AutoAdvanceTimer" to="Logic/PhaseManager" method="_on_auto_advance_timer_timeout"]

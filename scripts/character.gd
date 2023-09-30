@@ -9,5 +9,6 @@ extends Resource
 
 @export var hunger: int
 @export var thirst: int
+# etc..
 
-@export var actions: Array[Action]
+@export var actions: Array[RestAction]

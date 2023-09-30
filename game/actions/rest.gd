@@ -1,11 +1,11 @@
-class_name Action
+class_name RestAction
 extends Resource
 
 
-var name: String
+var name: String = "Rest"
 
 ## Required turns
-var duration: int
+var duration: int = 1
 
 
 func process_finished() -> void:

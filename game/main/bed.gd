@@ -1,15 +1,24 @@
 class_name Bed
 extends Control
+# Character slot
 
 
+## Character inside this bed at start
 @export var character: Character
+## If built already at start
 @export var built: bool = true
 
+## If built and empty
 var available: bool:
 	get:
 		return built and character == null
 
-var current_action: Action
+## If built and empty
+var character_unoccupied: bool:
+	get:
+		return built and character != null and current_action == null
+
+var current_action: RestAction
 
 
 func _ready() -> void:
@@ -31,7 +40,7 @@ func update_character() -> void:
 	%ThirstLabel.text = str(character.thirst)
 
 
-func set_action(action: Action) -> void:
+func set_action(action: RestAction) -> void:
 	%ActionPanel.show()
 	%ActionLabel.text = action.name
 	%ActionProgress.max_value = action.duration

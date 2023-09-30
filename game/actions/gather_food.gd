@@ -1,5 +1,5 @@
-class_name GatherWood
-extends Action
+class_name GatherFood
+extends RestAction
 
 
 ## Amount this character can collect
@@ -7,9 +7,9 @@ extends Action
 
 
 func _init() -> void:
-	name = "Gather Wood"
-	duration = 3
+	name = "Gather Food"
+	duration = 2
 
 
 func process_finished() -> void:
-	Events.wood_collected.emit(amount)
+	Events.food_collected.emit(amount)

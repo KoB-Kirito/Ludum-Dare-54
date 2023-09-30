@@ -1,3 +1,4 @@
+class_name ActionManager
 extends Node
 
 
@@ -9,17 +10,12 @@ func _ready() -> void:
 
 func on_food_collected(amount: int) -> void:
 	Globals.food += amount
-	%FoodLabel.text = "Food: " + str(Globals.food)
-	%Textbox.add_text("\n" + str(amount) + " food collected")
-
+	Events.show_text.emit(str(amount) + " food collected")
 
 func on_water_collected(amount: int) -> void:
 	Globals.water += amount
-	%WaterLabel.text = "Water: " + str(Globals.water)
-	%Textbox.add_text("\n" + str(amount) + " water collected")
-
+	Events.show_text.emit(str(amount) + " water collected")
 
 func on_wood_collected(amount: int) -> void:
 	Globals.wood += amount
-	%WoodLabel.text = "Wood: " + str(Globals.wood)
-	%Textbox.add_text("\n" + str(amount) + " wood collected")
+	Events.show_text.emit(str(amount) + " wood collected")
