@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://t83vddn4vvyu"]
+
+[ext_resource type="Script" path="res://game/menu/title_screen.gd" id="1_mwhjw"]
+[ext_resource type="Texture2D" uid="uid://3c15shsugef4" path="res://assets/menu/background.png" id="2_a1im3"]
+[ext_resource type="Texture2D" uid="uid://bx7ulk5ca1st8" path="res://assets/menu/press_start.png" id="3_o2xjw"]
+[ext_resource type="Texture2D" uid="uid://b3ojp5aqhstpm" path="res://assets/menu/title.png" id="4_w3qhg"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwhjw")
+main_menu = "res://game/menu/main_menu.tscn"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+scale = Vector2(10, 6.25)
+texture = ExtResource("2_a1im3")
+
+[node name="PressStart" type="Sprite2D" parent="."]
+position = Vector2(797, 717)
+scale = Vector2(4, 4)
+texture = ExtResource("3_o2xjw")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(787, 335)
+scale = Vector2(4, 4)
+texture = ExtResource("4_w3qhg")

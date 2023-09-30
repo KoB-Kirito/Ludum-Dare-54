@@ -11,8 +11,20 @@ config_version=5
 [application]
 
 config/name="Ludum-dare-54"
+run/main_scene="res://game/menu/title_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://scripts/globals.gd"
+Events="*res://scripts/events.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
 
 [rendering]
 

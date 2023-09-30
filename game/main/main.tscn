@@ -1,0 +1,327 @@
+[gd_scene load_steps=24 format=3 uid="uid://bxc0o27g1hsi1"]
+
+[ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
+[ext_resource type="Script" path="res://game/main/phase_manager.gd" id="2_ekfcy"]
+[ext_resource type="PackedScene" uid="uid://gbi8vlb130hx" path="res://game/main/bed.tscn" id="2_yayvv"]
+[ext_resource type="Texture2D" uid="uid://csibaadocmi2r" path="res://assets/shelter_morning.png" id="3_155ra"]
+[ext_resource type="Texture2D" uid="uid://b4snu1yui8pyi" path="res://assets/characters/olaf.png" id="3_n4fpq"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="3_y8oa7"]
+[ext_resource type="Texture2D" uid="uid://w412ft5j5jau" path="res://assets/characters/olaf_portrait.png" id="4_8rwdf"]
+[ext_resource type="Texture2D" uid="uid://dqr38n5dgx3vh" path="res://assets/shelter_noon.png" id="4_u1bb2"]
+[ext_resource type="Texture2D" uid="uid://cpqna4n44yo76" path="res://assets/shelter_afternoon.png" id="5_a1pxu"]
+[ext_resource type="Texture2D" uid="uid://dcfnobqhjuxwc" path="res://assets/shelter_evening.png" id="6_5d6ox"]
+[ext_resource type="Texture2D" uid="uid://c8aqn0afsg7y6" path="res://assets/characters/olga.png" id="6_8xp8g"]
+[ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="7_dw64p"]
+[ext_resource type="Texture2D" uid="uid://dmtrnpnk1ahsj" path="res://assets/characters/olga_portrait.png" id="7_pmpj5"]
+[ext_resource type="Script" path="res://game/main/action_manager.gd" id="8_bedgx"]
+[ext_resource type="Script" path="res://scripts/actions/gather_food.gd" id="10_auikk"]
+[ext_resource type="Script" path="res://scripts/actions/gather_water.gd" id="14_lwmjw"]
+[ext_resource type="Script" path="res://scripts/actions/gather_wood.gd" id="15_wnlhx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
+bg_color = Color(0.247059, 0.247059, 0.247059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Resource" id="Resource_bumkp"]
+script = ExtResource("10_auikk")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_4xx7x"]
+script = ExtResource("3_y8oa7")
+name = "Olaf"
+portrait = ExtResource("4_8rwdf")
+image = ExtResource("3_n4fpq")
+hunger = 10
+thirst = 20
+actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_bumkp")])
+
+[sub_resource type="Resource" id="Resource_wt2mr"]
+script = ExtResource("14_lwmjw")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_8tjcw"]
+script = ExtResource("15_wnlhx")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_th6dn"]
+script = ExtResource("3_y8oa7")
+name = "Olga"
+portrait = ExtResource("7_pmpj5")
+image = ExtResource("6_8xp8g")
+hunger = 50
+thirst = 60
+actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lequ7")
+
+[node name="Logic" type="Node" parent="."]
+
+[node name="PhaseManager" type="Node" parent="Logic"]
+unique_name_in_owner = true
+script = ExtResource("2_ekfcy")
+morning_background = ExtResource("3_155ra")
+noon_background = ExtResource("4_u1bb2")
+afternoon_background = ExtResource("5_a1pxu")
+evening_background = ExtResource("6_5d6ox")
+night_background = ExtResource("7_dw64p")
+
+[node name="ActionManager" type="Node" parent="Logic"]
+unique_name_in_owner = true
+script = ExtResource("8_bedgx")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopLeftContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="TextboxContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="TextboxMargin" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Textbox" type="RichTextLabel" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxContainer/TextboxMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Textbox"
+scroll_following = true
+
+[node name="DepotContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="TopMiddleContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopMiddleTopContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ResourcesContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="FoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Food: 100
+"
+
+[node name="WaterLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Water: 100
+"
+
+[node name="WoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wood: 0
+"
+
+[node name="PhaseLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Phase"
+
+[node name="ProgressButton" type="Button" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer"]
+layout_mode = 2
+text = "Next Phase"
+
+[node name="ShelterContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/ShelterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/ShelterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ShelterBackground" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/ShelterContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("7_dw64p")
+expand_mode = 1
+
+[node name="TopRightContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopRightContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer/TopRightContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CharacterImage" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="ActionContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ActionButton" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer/ActionContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Gather Food"
+
+[node name="Button2" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer/ActionContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Rest"
+
+[node name="Button3" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer/ActionContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Custom Action 1"
+
+[node name="Button4" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightContainer/VBoxContainer/ActionContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Custom Action 2"
+
+[node name="BottomContainer" type="MarginContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Background" type="Panel" parent="UI/VBoxContainer/BottomContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/BottomContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BedContainer" type="HBoxContainer" parent="UI/VBoxContainer/BottomContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Bed1" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
+unique_name_in_owner = true
+layout_mode = 2
+character = SubResource("Resource_4xx7x")
+
+[node name="Bed2" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
+unique_name_in_owner = true
+layout_mode = 2
+character = SubResource("Resource_th6dn")
+
+[node name="Bed3" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Bed4" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
+unique_name_in_owner = true
+layout_mode = 2
+built = false
+
+[node name="Bed5" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
+unique_name_in_owner = true
+layout_mode = 2
+built = false
+
+[connection signal="pressed" from="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ProgressButton" to="." method="_on_progress_button_pressed"]

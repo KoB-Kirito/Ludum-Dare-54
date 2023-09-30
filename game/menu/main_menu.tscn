@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck7ehlrgovhus"]
+
+[ext_resource type="Script" path="res://game/menu/main_menu.gd" id="1_a3t2g"]
+[ext_resource type="Texture2D" uid="uid://3c15shsugef4" path="res://assets/menu/background.png" id="2_b6wpd"]
+[ext_resource type="Texture2D" uid="uid://mdusk21r3mu6" path="res://assets/button.png" id="3_h7w83"]
+[ext_resource type="Texture2D" uid="uid://dfa3s2oxs8btl" path="res://assets/button_focus.png" id="4_rf3t7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a3t2g")
+main_scene = "res://game/main/main.tscn"
+credits_scene = "res://game/menu/credits.tscn"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+scale = Vector2(10, 6.25)
+texture = ExtResource("2_b6wpd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -52.0
+offset_right = 70.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_h7w83")
+texture_hover = ExtResource("4_rf3t7")
+texture_focused = ExtResource("4_rf3t7")
+
+[node name="Label" type="Label" parent="VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_h7w83")
+texture_hover = ExtResource("4_rf3t7")
+texture_focused = ExtResource("4_rf3t7")
+
+[node name="Label" type="Label" parent="VBoxContainer/OptionsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="CreditsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_h7w83")
+texture_hover = ExtResource("4_rf3t7")
+texture_focused = ExtResource("4_rf3t7")
+
+[node name="Label" type="Label" parent="VBoxContainer/CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -11.5
+offset_right = 27.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_button_3_pressed"]
