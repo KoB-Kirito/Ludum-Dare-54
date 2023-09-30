@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=29 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/phase_manager.gd" id="2_ekfcy"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://scripts/actions/gather_food.gd" id="10_auikk"]
 [ext_resource type="Script" path="res://scripts/actions/gather_water.gd" id="14_lwmjw"]
 [ext_resource type="Script" path="res://scripts/actions/gather_wood.gd" id="15_wnlhx"]
+[ext_resource type="Texture2D" uid="uid://ch8gn1t4ntb5q" path="res://assets/CharacterImages/Emily_Screenshot.png" id="18_drp8k"]
+[ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/CharacterImages/Emily_Screenshot_Portrait.png" id="19_gr1s1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
 bg_color = Color(0.247059, 0.247059, 0.247059, 1)
@@ -58,6 +60,23 @@ image = ExtResource("6_8xp8g")
 hunger = 50
 thirst = 60
 actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
+
+[sub_resource type="Resource" id="Resource_vu3l2"]
+script = ExtResource("10_auikk")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_kit4w"]
+script = ExtResource("14_lwmjw")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_f6n6o"]
+script = ExtResource("3_y8oa7")
+name = "Emily"
+portrait = ExtResource("19_gr1s1")
+image = ExtResource("18_drp8k")
+hunger = 30
+thirst = 30
+actions = Array[Resource("res://scripts/action.gd")]([SubResource("Resource_vu3l2"), SubResource("Resource_kit4w")])
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -313,6 +332,7 @@ character = SubResource("Resource_th6dn")
 [node name="Bed3" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
 unique_name_in_owner = true
 layout_mode = 2
+character = SubResource("Resource_f6n6o")
 
 [node name="Bed4" parent="UI/VBoxContainer/BottomContainer/MarginContainer/BedContainer" instance=ExtResource("2_yayvv")]
 unique_name_in_owner = true
