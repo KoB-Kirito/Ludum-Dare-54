@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=52 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="2_414vw"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://game/main/managers/action_manager.gd" id="8_bedgx"]
 [ext_resource type="Texture2D" uid="uid://cmcoaurheiyf8" path="res://assets/characters/lizz.png" id="10_b1hmk"]
 [ext_resource type="Texture2D" uid="uid://bd40rskyv06q1" path="res://assets/characters/lizz_portrait.png" id="11_o2e3c"]
+[ext_resource type="Texture2D" uid="uid://drqe5xhh5bres" path="res://assets/characters/robert.png" id="12_7xunt"]
+[ext_resource type="Texture2D" uid="uid://ctajvewrass6y" path="res://assets/characters/robert_portrait.png" id="13_8shjp"]
 [ext_resource type="AudioStream" uid="uid://bgyogqxddrekg" path="res://assets/sounds/shs_cyber_button_ui_shooter_military_2.wav" id="14_443j1"]
 [ext_resource type="Script" path="res://game/main/ui.gd" id="15_vc2hc"]
 [ext_resource type="Script" path="res://game/actions/gather_water.gd" id="17_3u541"]
@@ -70,6 +72,30 @@ image = ExtResource("10_b1hmk")
 hunger = 4
 thirst = 5
 actions = Array[ExtResource("3_veadd")]([SubResource("Resource_q8sb1"), SubResource("Resource_ygnup"), SubResource("Resource_2mwpi"), SubResource("Resource_5eup4")])
+
+[sub_resource type="Resource" id="Resource_j4vmn"]
+script = ExtResource("3_veadd")
+
+[sub_resource type="Resource" id="Resource_fxawy"]
+script = ExtResource("3_66gar")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_iryxt"]
+script = ExtResource("17_3u541")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_7rviv"]
+script = ExtResource("18_5ewfh")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_e2foc"]
+script = ExtResource("3_y8oa7")
+name = "Robert"
+portrait = ExtResource("13_8shjp")
+image = ExtResource("12_7xunt")
+hunger = 9
+thirst = 12
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_j4vmn"), SubResource("Resource_fxawy"), SubResource("Resource_iryxt"), SubResource("Resource_7rviv")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
 bg_color = Color(0.247059, 0.247059, 0.247059, 1)
@@ -139,7 +165,7 @@ script = ExtResource("1_lequ7")
 [node name="CharacterManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
 script = ExtResource("2_414vw")
-characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf")])
+characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf"), SubResource("Resource_e2foc")])
 
 [node name="PhaseManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
