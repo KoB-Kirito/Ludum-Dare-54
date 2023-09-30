@@ -4,6 +4,14 @@
 [ext_resource type="FontFile" uid="uid://cdwckt6yp1jy8" path="res://assets/Fonts/great-vibes.regular.ttf" id="2_qs8q3"]
 
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.266667, 0.266667, 0.266667, 1)
+Button/colors/font_hover_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_hover_pressed_color = Color(0.215686, 0.215686, 0.215686, 1)
+Button/colors/font_outline_color = Color(0.298039, 0.298039, 0.298039, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/fonts/font = ExtResource("1_w1jkt")
+Label/colors/font_color = Color(0, 0, 0, 1)
 Label/fonts/font = ExtResource("1_w1jkt")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
 TextEdit/fonts/font = ExtResource("2_qs8q3")

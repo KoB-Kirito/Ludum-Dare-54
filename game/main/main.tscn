@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=59 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Texture2D" uid="uid://tf3gdpco850c" path="res://assets/segment.png" id="2_38tj6"]
@@ -30,6 +30,9 @@
 [ext_resource type="Script" path="res://game/actions/gather_water.gd" id="17_3u541"]
 [ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="18_5ewfh"]
 [ext_resource type="AudioStream" uid="uid://bs53xiyv00fdf" path="res://assets/sounds/BRS_Rooster_TJ_CockaDoodleDoo_Close_1.wav" id="18_unbea"]
+[ext_resource type="Texture2D" uid="uid://os0ictrdovel" path="res://assets/UI/Notizblock_Zeitverlauf.png" id="26_mtwss"]
+[ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="27_b747e"]
+[ext_resource type="Texture2D" uid="uid://cvdw1s31w3dd7" path="res://assets/UI/Charakterprofil.png" id="28_ekws5"]
 
 [sub_resource type="Resource" id="Resource_e5twr"]
 script = ExtResource("3_veadd")
@@ -342,6 +345,12 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
 
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxContainer/Background"]
+layout_mode = 0
+offset_right = 394.0
+offset_bottom = 194.0
+texture = ExtResource("26_mtwss")
+
 [node name="TextboxMargin" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -366,6 +375,12 @@ theme_override_constants/margin_bottom = 4
 [node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer/Background"]
+layout_mode = 0
+offset_right = 394.0
+offset_bottom = 194.0
+texture = ExtResource("27_b747e")
 
 [node name="ResourcesContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer"]
 layout_mode = 2
@@ -453,6 +468,10 @@ theme_override_constants/margin_bottom = 4
 [node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopRightContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopRightContainer"]
+layout_mode = 2
+texture = ExtResource("28_ekws5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer/TopRightContainer"]
 layout_mode = 2

@@ -20,7 +20,7 @@ func on_food_changed(value: int) -> void:
 	%FoodLabel.text = "Food: " + str(value)
 
 func on_water_changed(value: int) -> void:
-	%WaterLabel.text = "Water: " + str(value)
+	%MoraleLabel.text = "Morale: " + str(value)
 
 func on_wood_changed(value: int) -> void:
 	%WoodLabel.text = "Wood: " + str(value)

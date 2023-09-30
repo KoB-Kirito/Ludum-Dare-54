@@ -1,24 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://gbi8vlb130hx"]
+[gd_scene load_steps=7 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
 [ext_resource type="Texture2D" uid="uid://f31vab5n60h" path="res://assets/hunger.png" id="2_1hxa1"]
+[ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
 [ext_resource type="Texture2D" uid="uid://dr2fvy0mk6714" path="res://assets/thirst.png" id="3_83kj8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l5ko"]
-bg_color = Color(0.529412, 0.65098, 0.329412, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnddo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp64m"]
-bg_color = Color(0.85098, 0.823529, 0, 1)
+bg_color = Color(0.388235, 0.694118, 0.952941, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -28,34 +18,17 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vbno"]
-bg_color = Color(0.662745, 0.611765, 0.121569, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adg1f"]
-bg_color = Color(0.905882, 0.45098, 0.298039, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [node name="Bed" type="Panel"]
 custom_minimum_size = Vector2(310, 170)
 offset_right = 320.0
 offset_bottom = 180.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4l5ko")
 script = ExtResource("1_8cygb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 331.0
+offset_bottom = 194.0
+texture = ExtResource("2_rguvq")
 
 [node name="PortraitPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -63,9 +36,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -96.0
-offset_top = 12.0
+offset_top = 42.0
 offset_right = -11.0
-offset_bottom = 88.0
+offset_bottom = 118.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnddo")
 
@@ -88,45 +61,48 @@ expand_mode = 1
 [node name="NameLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 17.0
-offset_top = 15.0
-offset_right = 98.0
-offset_bottom = 55.0
+offset_left = 18.0
+offset_top = 99.0
+offset_right = 99.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Name"
 
 [node name="HungerIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 63.0
-offset_right = 44.0
-offset_bottom = 83.0
+offset_left = 25.0
+offset_top = 147.0
+offset_right = 45.0
+offset_bottom = 167.0
 texture = ExtResource("2_1hxa1")
 
 [node name="HungerLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 48.0
-offset_top = 61.0
-offset_right = 77.0
-offset_bottom = 91.0
+offset_left = 49.0
+offset_top = 145.0
+offset_right = 78.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "50"
 
 [node name="ThirstIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 62.0
-offset_right = 93.0
-offset_bottom = 82.0
+offset_left = 74.0
+offset_top = 146.0
+offset_right = 94.0
+offset_bottom = 166.0
 texture = ExtResource("3_83kj8")
 
 [node name="ThirstLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 98.0
-offset_top = 61.0
-offset_right = 158.0
-offset_bottom = 84.0
+offset_left = 99.0
+offset_top = 145.0
+offset_right = 159.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "40
 "
 
@@ -134,10 +110,10 @@ text = "40
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 14.0
-offset_top = 100.0
-offset_right = 309.0
-offset_bottom = 167.0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 313.0
+offset_bottom = 83.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fp64m")
 
 [node name="ActionLabel" type="Label" parent="ActionPanel"]
@@ -170,7 +146,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0vbno")
+
+[node name="TextureRect" type="TextureRect" parent="EmptyPanel"]
+modulate = Color(0.384314, 0.352941, 0.0941176, 1)
+offset_right = 331.0
+offset_bottom = 194.0
+texture = ExtResource("2_rguvq")
 
 [node name="Label" type="Label" parent="EmptyPanel"]
 layout_mode = 0
@@ -189,7 +170,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_adg1f")
+
+[node name="TextureRect" type="TextureRect" parent="BuildPanel"]
+modulate = Color(0.65098, 0.00784314, 0.231373, 1)
+offset_right = 331.0
+offset_bottom = 194.0
+texture = ExtResource("2_rguvq")
 
 [node name="Label" type="Label" parent="BuildPanel"]
 layout_mode = 0
