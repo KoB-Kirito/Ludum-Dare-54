@@ -30,6 +30,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Ludum-dare-54"
 
+[gui]
+
+theme/custom="res://OurTheme.tres"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

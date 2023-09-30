@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dd2nye2yumpi1"]
+
+[ext_resource type="FontFile" uid="uid://cin6bwow4vses" path="res://assets/Fonts/alex-brush.regular.ttf" id="1_w1jkt"]
+[ext_resource type="FontFile" uid="uid://cdwckt6yp1jy8" path="res://assets/Fonts/great-vibes.regular.ttf" id="2_qs8q3"]
+
+[resource]
+Button/fonts/font = ExtResource("1_w1jkt")
+Label/fonts/font = ExtResource("1_w1jkt")
+TextEdit/fonts/font = ExtResource("2_qs8q3")
