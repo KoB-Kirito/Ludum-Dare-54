@@ -37,7 +37,8 @@ func update_character() -> void:
 	%Portrait.texture = character.portrait
 	%NameLabel.text = character.name
 	%HungerLabel.text = str(character.hunger)
-	%ThirstLabel.text = str(character.thirst)
+	%ThirstLabel.text = str(character.morale)
+	#Wo kommen die Label her? :(
 
 
 func set_action(action: RestAction) -> void:

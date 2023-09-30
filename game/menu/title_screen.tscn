@@ -1,9 +1,27 @@
 [gd_scene load_steps=5 format=3 uid="uid://t83vddn4vvyu"]
 
 [ext_resource type="Script" path="res://game/menu/title_screen.gd" id="1_mwhjw"]
-[ext_resource type="Texture2D" uid="uid://3c15shsugef4" path="res://assets/menu/background.png" id="2_a1im3"]
-[ext_resource type="Texture2D" uid="uid://bx7ulk5ca1st8" path="res://assets/menu/press_start.png" id="3_o2xjw"]
-[ext_resource type="Texture2D" uid="uid://b3ojp5aqhstpm" path="res://assets/menu/title.png" id="4_w3qhg"]
+[ext_resource type="Texture2D" uid="uid://tf3gdpco850c" path="res://assets/segment.png" id="2_46r1s"]
+[ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="3_cwrvf"]
+
+[sub_resource type="GDScript" id="GDScript_4s735"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	
+	
+	#modulate = Color(white, 0.5f)
+	
+	
+	pass
+"
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -15,17 +33,57 @@ grow_vertical = 2
 script = ExtResource("1_mwhjw")
 main_menu = "res://game/menu/main_menu.tscn"
 
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+scale = Vector2(41.279, 69.878)
+texture = ExtResource("2_46r1s")
+
+[node name="Background2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(800, 450)
+scale = Vector2(36.8333, 59)
+texture = ExtResource("2_46r1s")
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(800, 450)
-scale = Vector2(10, 6.25)
-texture = ExtResource("2_a1im3")
+scale = Vector2(1, 0.625)
+texture = ExtResource("3_cwrvf")
 
-[node name="PressStart" type="Sprite2D" parent="."]
-position = Vector2(797, 717)
-scale = Vector2(4, 4)
-texture = ExtResource("3_o2xjw")
+[node name="Label" type="Label" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = 203.0
+offset_right = 335.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.54902)
+theme_override_font_sizes/font_size = 48
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_4s735")
 
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(787, 335)
-scale = Vector2(4, 4)
-texture = ExtResource("4_w3qhg")
+[node name="Label2" type="Label" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.0
+offset_top = 160.0
+offset_right = 335.0
+offset_bottom = 227.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.882353)
+theme_override_font_sizes/font_size = 96
+text = "Frozen Shelter"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
