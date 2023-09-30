@@ -10,12 +10,12 @@ func _ready() -> void:
 
 func on_food_collected(amount: int) -> void:
 	Globals.food += amount
-	Events.show_text.emit(str(amount) + " food collected")
+	Events.show_text.emit(str(amount) + " food collected", Color.GREEN_YELLOW)
 
 func on_water_collected(amount: int) -> void:
 	Globals.water += amount
-	Events.show_text.emit(str(amount) + " water collected")
+	Events.show_text.emit(str(amount) + " water collected", Color.GREEN_YELLOW)
 
 func on_wood_collected(amount: int) -> void:
 	Globals.wood += amount
-	Events.show_text.emit(str(amount) + " wood collected")
+	Events.show_text.emit(str(amount) + " wood collected", Color.GREEN_YELLOW)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=45 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="2_414vw"]
@@ -14,11 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://cpqna4n44yo76" path="res://assets/shelter_afternoon.png" id="5_a1pxu"]
 [ext_resource type="Texture2D" uid="uid://dcfnobqhjuxwc" path="res://assets/shelter_evening.png" id="6_5d6ox"]
 [ext_resource type="Texture2D" uid="uid://c8aqn0afsg7y6" path="res://assets/characters/olga.png" id="6_8xp8g"]
+[ext_resource type="Texture2D" uid="uid://ch8gn1t4ntb5q" path="res://assets/characters/emily.png" id="6_recy5"]
 [ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="7_dw64p"]
-[ext_resource type="Texture2D" uid="uid://ch8gn1t4ntb5q" path="res://assets/CharacterImages/Emily_Screenshot.png" id="7_f6bnv"]
 [ext_resource type="Texture2D" uid="uid://dmtrnpnk1ahsj" path="res://assets/characters/olga_portrait.png" id="7_pmpj5"]
+[ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/characters/emily_portrait.png" id="7_wclki"]
 [ext_resource type="Script" path="res://game/main/managers/action_manager.gd" id="8_bedgx"]
-[ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/CharacterImages/Emily_Screenshot_Portrait.png" id="8_uujek"]
+[ext_resource type="Texture2D" uid="uid://cmcoaurheiyf8" path="res://assets/characters/lizz.png" id="10_b1hmk"]
+[ext_resource type="Texture2D" uid="uid://bd40rskyv06q1" path="res://assets/characters/lizz_portrait.png" id="11_o2e3c"]
 [ext_resource type="AudioStream" uid="uid://bgyogqxddrekg" path="res://assets/sounds/shs_cyber_button_ui_shooter_military_2.wav" id="14_443j1"]
 [ext_resource type="Script" path="res://game/main/ui.gd" id="15_vc2hc"]
 [ext_resource type="Script" path="res://game/actions/gather_water.gd" id="17_3u541"]
@@ -36,18 +38,38 @@ amount = 1
 script = ExtResource("17_3u541")
 amount = 1
 
-[sub_resource type="Resource" id="Resource_06p4a"]
-script = ExtResource("18_5ewfh")
-amount = 1
-
 [sub_resource type="Resource" id="Resource_bncd3"]
 script = ExtResource("3_y8oa7")
 name = "Emily"
-portrait = ExtResource("8_uujek")
-image = ExtResource("7_f6bnv")
+portrait = ExtResource("7_wclki")
+image = ExtResource("6_recy5")
 hunger = 2
 thirst = 3
-actions = Array[ExtResource("3_veadd")]([SubResource("Resource_e5twr"), SubResource("Resource_htoye"), SubResource("Resource_mjvpr"), SubResource("Resource_06p4a")])
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_e5twr"), SubResource("Resource_htoye"), SubResource("Resource_mjvpr")])
+
+[sub_resource type="Resource" id="Resource_q8sb1"]
+script = ExtResource("3_veadd")
+
+[sub_resource type="Resource" id="Resource_ygnup"]
+script = ExtResource("3_66gar")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_2mwpi"]
+script = ExtResource("17_3u541")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_5eup4"]
+script = ExtResource("18_5ewfh")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_wyucf"]
+script = ExtResource("3_y8oa7")
+name = "Lizz"
+portrait = ExtResource("11_o2e3c")
+image = ExtResource("10_b1hmk")
+hunger = 4
+thirst = 5
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_q8sb1"), SubResource("Resource_ygnup"), SubResource("Resource_2mwpi"), SubResource("Resource_5eup4")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
 bg_color = Color(0.247059, 0.247059, 0.247059, 1)
@@ -60,6 +82,16 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67aux"]
+bg_color = Color(0.643137, 0.619608, 0.0980392, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Resource" id="Resource_m02x4"]
+script = ExtResource("3_veadd")
+
 [sub_resource type="Resource" id="Resource_bumkp"]
 script = ExtResource("3_66gar")
 amount = null
@@ -71,7 +103,10 @@ portrait = ExtResource("4_8rwdf")
 image = ExtResource("3_n4fpq")
 hunger = 10
 thirst = 20
-actions = Array[ExtResource("3_veadd")]([SubResource("Resource_bumkp")])
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_m02x4"), SubResource("Resource_bumkp")])
+
+[sub_resource type="Resource" id="Resource_32xf0"]
+script = ExtResource("3_veadd")
 
 [sub_resource type="Resource" id="Resource_wt2mr"]
 script = ExtResource("17_3u541")
@@ -88,7 +123,7 @@ portrait = ExtResource("7_pmpj5")
 image = ExtResource("6_8xp8g")
 hunger = 50
 thirst = 60
-actions = Array[ExtResource("3_veadd")]([SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
+actions = Array[ExtResource("3_veadd")]([SubResource("Resource_32xf0"), SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -104,7 +139,7 @@ script = ExtResource("1_lequ7")
 [node name="CharacterManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
 script = ExtResource("2_414vw")
-characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3")])
+characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf")])
 
 [node name="PhaseManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
@@ -193,6 +228,30 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
 
+[node name="ResourcesContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="FoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Food: 100
+"
+
+[node name="WaterLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Water: 100
+"
+
+[node name="WoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotContainer/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wood: 0
+"
+
 [node name="TopMiddleContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -209,32 +268,15 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer"]
-layout_mode = 2
-alignment = 2
-
-[node name="ResourcesContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 16
-
-[node name="FoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ResourcesContainer"]
+[node name="DayProgress" type="ProgressBar" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Food: 100
-"
-
-[node name="WaterLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ResourcesContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Water: 100
-"
-
-[node name="WoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer/HBoxContainer/ResourcesContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Wood: 0
-"
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_67aux")
+max_value = 5.0
+step = 1.0
+value = 1.0
+show_percentage = false
 
 [node name="ShelterContainer" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer"]
 layout_mode = 2

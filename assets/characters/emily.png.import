@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1rkxq1i2vk34"
-path="res://.godot/imported/Emily_Screenshot_Portrait.png-51df85f2464ae9c3da94031142be3704.ctex"
+uid="uid://ch8gn1t4ntb5q"
+path="res://.godot/imported/emily.png-914a64f665d86e1212b70ce8a6fe85a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterImages/Emily_Screenshot_Portrait.png"
-dest_files=["res://.godot/imported/Emily_Screenshot_Portrait.png-51df85f2464ae9c3da94031142be3704.ctex"]
+source_file="res://assets/characters/emily.png"
+dest_files=["res://.godot/imported/emily.png-914a64f665d86e1212b70ce8a6fe85a9.ctex"]
 
 [params]
 

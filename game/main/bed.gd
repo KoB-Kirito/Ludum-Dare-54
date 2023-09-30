@@ -75,7 +75,7 @@ func _on_gui_input(event: InputEvent) -> void:
 
 func _on_build_button_pressed() -> void:
 	if Globals.wood < 100:
-		Events.show_text.emit("Not enough wood")
+		Events.show_text.emit("Not enough wood", Color.DARK_RED)
 		return
 	
 	Globals.wood -= 100

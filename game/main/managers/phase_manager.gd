@@ -43,6 +43,7 @@ func advance_phase() -> void:
 	if current_phase > NIGHT:
 		current_phase = MORNING
 	
+	%DayProgress.value = current_phase
 	set_background(current_phase)
 	
 	if current_phase == MORNING:
@@ -53,6 +54,25 @@ func advance_phase() -> void:
 	# check events
 	# trigger events
 	# break
+	
+	if randi() % 4 == 0:
+		var new_character = %CharacterManager.get_random_character()
+		if new_character != null:
+			Events.show_text.emit("A new character appeared! (choices follor..)", Color.FUCHSIA)
+			var bed_found: bool = false
+			for bed: Bed in beds:
+				if bed.available:
+					bed.character = new_character
+					bed.update_character()
+					bed_found = true
+					break
+			
+			if bed_found:
+				Events.show_text.emit(new_character.name + " joins your group", Color.GREEN)
+			else:
+				Events.show_text.emit("You sent " + new_character.name + " away, because you had no bed available..", Color.RED)
+	
+	
 	
 	# auto-advance if still occupied
 	for bed: Bed in beds:
