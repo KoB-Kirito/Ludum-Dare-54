@@ -48,26 +48,33 @@ script = ExtResource("7_6h5ot")
 name = "Emily"
 portrait = ExtResource("6_1pdd5")
 image = ExtResource("5_1nwqe")
-healthpoints = 12
-healthpoints_max = 12
-sleep = 5
-sleep_max = 5
-hunger = 5
-hunger_max = 5
+healthpoints = 6
+healthpoints_max = 6
+sleep = 6
+sleep_max = 6
+hunger = 8
+hunger_max = 8
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 5
+=======
+Combat = 1
+Offense = 1
+Defense = 1
+>>>>>>> Stashed changes
 Loyalty = 5
-Leadership = 5
-Gather = 5
-Trading = 5
-Cooking = 5
-Crafting = 5
-Science = 5
-Medicine = 5
+Leadership = 3
+Gather = 6
+Trading = 3
+Cooking = 3
+Crafting = 3
+Science = 2
+Medicine = 2
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([SubResource("Resource_e5twr"), SubResource("Resource_htoye"), SubResource("Resource_mjvpr")])
 
 [sub_resource type="Resource" id="Resource_q8sb1"]
@@ -90,8 +97,8 @@ script = ExtResource("7_6h5ot")
 name = "Lizz"
 portrait = ExtResource("10_qi376")
 image = ExtResource("9_5maia")
-healthpoints = 12
-healthpoints_max = 12
+healthpoints = 8
+healthpoints_max = 8
 sleep = 5
 sleep_max = 5
 hunger = 5
@@ -99,6 +106,7 @@ hunger_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 5
@@ -110,6 +118,20 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+=======
+Combat = 4
+Offense = 4
+Defense = 4
+Loyalty = 3
+Leadership = 3
+Gather = 4
+Trading = 3
+Cooking = 3
+Crafting = 2
+Science = 2
+Medicine = 2
+Traits = "Not implemented yet"
+>>>>>>> Stashed changes
 actions = Array[ExtResource("2_27ood")]([SubResource("Resource_q8sb1"), SubResource("Resource_ygnup"), SubResource("Resource_2mwpi"), SubResource("Resource_5eup4")])
 
 [sub_resource type="Resource" id="Resource_j4vmn"]
@@ -132,8 +154,8 @@ script = ExtResource("7_6h5ot")
 name = "Robert"
 portrait = ExtResource("12_gx4ct")
 image = ExtResource("11_ltd6s")
-healthpoints = 12
-healthpoints_max = 12
+healthpoints = 8
+healthpoints_max = 8
 sleep = 5
 sleep_max = 5
 hunger = 5
@@ -141,17 +163,24 @@ hunger_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 5
+=======
+Combat = 2
+Offense = 2
+Defense = 2
+>>>>>>> Stashed changes
 Loyalty = 5
-Leadership = 5
+Leadership = 4
 Gather = 5
-Trading = 5
-Cooking = 5
-Crafting = 5
-Science = 5
-Medicine = 5
+Trading = 4
+Cooking = 7
+Crafting = 4
+Science = 3
+Medicine = 3
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([SubResource("Resource_j4vmn"), SubResource("Resource_fxawy"), SubResource("Resource_iryxt"), SubResource("Resource_7rviv")])
 
 [sub_resource type="Resource" id="Resource_76rie"]
@@ -163,26 +192,35 @@ script = ExtResource("7_6h5ot")
 name = ""
 portrait = ExtResource("15_jwfxu")
 image = ExtResource("14_25cfv")
-healthpoints = 12
-healthpoints_max = 12
-sleep = 5
-sleep_max = 5
-hunger = 5
-hunger_max = 5
-happyness = 5
-happyness_max = 5
+healthpoints = 7
+healthpoints_max = 7
+sleep = 6
+sleep_max = 6
+hunger = 6
+hunger_max = 6
+happyness = 7
+happyness_max = 7
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 6
 Loyalty = 5
 Leadership = 5
+=======
+Combat = 3
+Offense = 3
+Defense = 3
+Loyalty = 6
+Leadership = 2
+>>>>>>> Stashed changes
 Gather = 5
-Trading = 5
-Cooking = 5
-Crafting = 5
-Science = 5
-Medicine = 5
+Trading = 4
+Cooking = 3
+Crafting = 4
+Science = 2
+Medicine = 2
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([SubResource("Resource_76rie")])
 
 [sub_resource type="Resource" id="Resource_jv82g"]
@@ -190,26 +228,33 @@ script = ExtResource("7_6h5ot")
 name = ""
 portrait = ExtResource("17_tpuqg")
 image = ExtResource("16_6ubg1")
-healthpoints = 12
-healthpoints_max = 12
+healthpoints = 8
+healthpoints_max = 8
 sleep = 5
 sleep_max = 5
-hunger = 5
-hunger_max = 5
+hunger = 6
+hunger_max = 6
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 5
+=======
+Combat = 2
+Offense = 2
+Defense = 2
+>>>>>>> Stashed changes
 Loyalty = 5
-Leadership = 5
-Gather = 5
-Trading = 5
+Leadership = 4
+Gather = 4
+Trading = 4
 Cooking = 5
-Crafting = 5
-Science = 5
-Medicine = 5
+Crafting = 3
+Science = 3
+Medicine = 2
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_w1ttu"]
@@ -217,15 +262,16 @@ script = ExtResource("7_6h5ot")
 name = ""
 portrait = ExtResource("19_nd1by")
 image = ExtResource("18_ev0es")
-healthpoints = 12
-healthpoints_max = 12
-sleep = 5
-sleep_max = 5
-hunger = 5
-hunger_max = 5
+healthpoints = 6
+healthpoints_max = 6
+sleep = 4
+sleep_max = 4
+hunger = 6
+hunger_max = 6
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 5
@@ -237,6 +283,20 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+=======
+Combat = 3
+Offense = 3
+Defense = 3
+Loyalty = 4
+Leadership = 7
+Gather = 3
+Trading = 4
+Cooking = 4
+Crafting = 4
+Science = 6
+Medicine = 8
+Traits = "Not implemented yet"
+>>>>>>> Stashed changes
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_a3ixs"]
@@ -244,26 +304,36 @@ script = ExtResource("7_6h5ot")
 name = ""
 portrait = ExtResource("21_5jnhy")
 image = ExtResource("20_oq5cu")
-healthpoints = 12
-healthpoints_max = 12
-sleep = 5
-sleep_max = 5
-hunger = 5
-hunger_max = 5
-happyness = 5
-happyness_max = 5
+healthpoints = 6
+healthpoints_max = 6
+sleep = 8
+sleep_max = 8
+hunger = 8
+hunger_max = 8
+happyness = 8
+happyness_max = 8
 Location = "Shelter"
+<<<<<<< Updated upstream
 Combat = 5
 Offense = 5
 Defense = 5
 Loyalty = 5
 Leadership = 5
 Gather = 5
+=======
+Combat = 2
+Offense = 2
+Defense = 2
+Loyalty = 6
+Leadership = 7
+Gather = 4
+>>>>>>> Stashed changes
 Trading = 5
-Cooking = 5
+Cooking = 2
 Crafting = 5
-Science = 5
-Medicine = 5
+Science = 8
+Medicine = 6
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_ptjgk"]
@@ -291,6 +361,7 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_3w1b4"]
@@ -318,6 +389,7 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_ghv48"]
@@ -345,6 +417,7 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_jhfwk"]
@@ -372,6 +445,7 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [sub_resource type="Resource" id="Resource_aasu7"]
@@ -399,6 +473,7 @@ Cooking = 5
 Crafting = 5
 Science = 5
 Medicine = 5
+Traits = "Not implemented yet"
 actions = Array[ExtResource("2_27ood")]([])
 
 [node name="CharacterManager" type="Node"]
