@@ -4,6 +4,13 @@ extends Control
 @onready var current_bed: Bed = %Bed1
 
 func _ready() -> void:
+	# store beds globally
+	Globals.beds.append(%Bed1)
+	Globals.beds.append(%Bed2)
+	Globals.beds.append(%Bed3)
+	Globals.beds.append(%Bed4)
+	Globals.beds.append(%Bed5)
+	
 	Events.character_selected.connect(character_selected)
 	
 	# start with 1 selected

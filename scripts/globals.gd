@@ -1,6 +1,8 @@
 extends Node
 
 
+var beds: Array[Bed]
+
 var food: int = 100:
 	set(value):
 		food = value

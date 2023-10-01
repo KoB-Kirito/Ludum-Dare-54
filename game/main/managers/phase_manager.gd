@@ -19,24 +19,16 @@ enum {
 ## Starting phase
 @export var current_phase: int = NOON
 
-var beds: Array[Bed]
-
-
-func _ready() -> void:
-	beds.append(%Bed1)
-	beds.append(%Bed2)
-	beds.append(%Bed3)
-	beds.append(%Bed4)
-	beds.append(%Bed5)
+@export var test_event: Event
 
 
 func advance_phase() -> void:
 	# only advance if all characters are occupied
-	for bed: Bed in beds:
+	for bed: Bed in Globals.beds:
 		if bed.character_unoccupied:
 			return
 	
-	for bed: Bed in beds:
+	for bed: Bed in Globals.beds:
 		bed.advance_action()
 	
 	current_phase += 1
@@ -50,6 +42,9 @@ func advance_phase() -> void:
 		%snd_rooster.play()
 		Events.show_text.emit("A new day is dawning...", Color.YELLOW)
 	
+	# test
+	%EventManager.trigger_event(test_event)
+	
 	# TODO: Events
 	# check events
 	# trigger events
@@ -60,7 +55,7 @@ func advance_phase() -> void:
 		if new_character != null:
 			Events.show_text.emit("A new character appeared! (choices follor..)", Color.FUCHSIA)
 			var bed_found: bool = false
-			for bed: Bed in beds:
+			for bed: Bed in Globals.beds:
 				if bed.available:
 					bed.character = new_character
 					bed.update_character()
@@ -75,7 +70,7 @@ func advance_phase() -> void:
 	
 	
 	# auto-advance if still occupied
-	for bed: Bed in beds:
+	for bed: Bed in Globals.beds:
 		if bed.character_unoccupied:
 			return
 	%AutoAdvanceTimer.start()
