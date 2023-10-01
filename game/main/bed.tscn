@@ -149,6 +149,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="EmptyPanel"]
 modulate = Color(0.384314, 0.352941, 0.0941176, 1)
+layout_mode = 0
 offset_right = 331.0
 offset_bottom = 194.0
 texture = ExtResource("2_rguvq")
@@ -173,6 +174,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="BuildPanel"]
 modulate = Color(0.65098, 0.00784314, 0.231373, 1)
+layout_mode = 0
 offset_right = 331.0
 offset_bottom = 194.0
 texture = ExtResource("2_rguvq")

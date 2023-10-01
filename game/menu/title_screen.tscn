@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://t83vddn4vvyu"]
+[gd_scene load_steps=8 format=3 uid="uid://t83vddn4vvyu"]
 
 [ext_resource type="Script" path="res://game/menu/title_screen.gd" id="1_mwhjw"]
 [ext_resource type="Texture2D" uid="uid://tf3gdpco850c" path="res://assets/segment.png" id="2_46r1s"]
 [ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="3_cwrvf"]
+[ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="4_gjvma"]
 
 [sub_resource type="GDScript" id="GDScript_4s735"]
 script/source = "extends Label
@@ -22,6 +23,33 @@ func _process(delta):
 	
 	pass
 "
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_svtlv"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 3
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rjx7h"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(24, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(16, 54, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.5
+angular_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.4
+scale_max = 1.2
+color = Color(0.815686, 0.815686, 0.815686, 0.580392)
+hue_variation_max = 0.05
+turbulence_enabled = true
+turbulence_noise_strength = 10.0
+turbulence_noise_scale = 4.0
+turbulence_influence_max = 0.25
+anim_offset_max = 1.0
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -87,3 +115,13 @@ text = "Frozen Shelter"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_svtlv")
+position = Vector2(725, 77)
+scale = Vector2(39, 26.68)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_rjx7h")
+texture = ExtResource("4_gjvma")
+lifetime = 16.0
+fixed_fps = 64
