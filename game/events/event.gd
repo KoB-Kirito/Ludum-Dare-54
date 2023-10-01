@@ -5,7 +5,7 @@ extends Resource
 @export var conditions: Array[Condition]
 
 ## Title of the dialog box
-@export var title: String
+#@export var title: String
 ## Text of the dialog box
 @export_multiline var text: String
 

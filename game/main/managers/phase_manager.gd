@@ -43,13 +43,10 @@ func advance_phase() -> void:
 		Events.show_text.emit("A new day is dawning...", Color.YELLOW)
 	
 	# test
-	%EventManager.trigger_event(test_event)
+	if randi() % 2 == 0:
+		%EventManager.trigger_random_event()
 	
-	# TODO: Events
-	# check events
-	# trigger events
-	# break
-	
+	# TODO: put character appears in events
 	if randi() % 4 == 0:
 		var new_character = %CharacterManager.get_random_character()
 		if new_character != null:
@@ -66,9 +63,9 @@ func advance_phase() -> void:
 				Events.show_text.emit(new_character.name + " joins your group", Color.GREEN)
 			else:
 				Events.show_text.emit("You sent " + new_character.name + " away, because you had no bed available..", Color.RED)
-	
-	
-	
+
+
+func on_events_finished() -> void:
 	# auto-advance if still occupied
 	for bed: Bed in Globals.beds:
 		if bed.character_unoccupied:

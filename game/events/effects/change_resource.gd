@@ -1,4 +1,4 @@
-class_name ChangeResource
+class_name ChangeResourceEffect
 extends Effect
 
 enum ResourceType {FOOD, WATER, WOOD}
