@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://duwlyu1lu8nsr"]
+[gd_scene load_steps=4 format=3 uid="uid://duwlyu1lu8nsr"]
 
+[ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/Noon.png" id="2_gl5rt"]
 [ext_resource type="PackedScene" uid="uid://drhcjo60nky0b" path="res://snow.tscn" id="3_6476k"]
 [ext_resource type="Texture2D" uid="uid://1ryxqyxurqce" path="res://assets/MainBackground.png" id="3_g7hdy"]
 
@@ -9,6 +10,11 @@
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("3_g7hdy")
+
+[node name="Background6" type="Sprite2D" parent="."]
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("2_gl5rt")
 
 [node name="Snow" parent="." instance=ExtResource("3_6476k")]
 position = Vector2(634, -58)
