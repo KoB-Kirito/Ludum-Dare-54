@@ -2,14 +2,6 @@ class_name PhaseManager
 extends Node
 
 
-enum {
-	MORNING,
-	NOON,
-	AFTERNOON,
-	EVENING,
-	NIGHT
-}
-
 @export var morning_background: Texture2D
 @export var noon_background: Texture2D
 @export var afternoon_background: Texture2D
@@ -17,7 +9,7 @@ enum {
 @export var night_background: Texture2D
 
 ## Starting phase
-@export var current_phase: int = NOON
+@export var start_phase: int = Globals.Phase.NOON
 
 
 func advance_phase() -> void:
@@ -29,14 +21,15 @@ func advance_phase() -> void:
 	for bed: Bed in Globals.beds:
 		bed.advance_action()
 	
-	current_phase += 1
-	if current_phase > NIGHT:
-		current_phase = MORNING
+	Globals.current_phase += 1
+	if Globals.current_phase > Globals.Phase.NIGHT:
+		Globals.current_phase = Globals.Phase.MORNING
 	
-	%DayProgress.value = current_phase
-	set_background(current_phase)
+	%DayProgress.value = Globals.current_phase
+	set_background(Globals.current_phase)
+	Background.change_background(Globals.current_phase)
 	
-	if current_phase == MORNING:
+	if Globals.current_phase == Globals.Phase.MORNING:
 		%snd_rooster.play()
 		Events.show_text.emit("A new day is dawning...", Color.YELLOW)
 	
@@ -73,24 +66,16 @@ func on_events_finished() -> void:
 
 func set_background(phase) -> void:
 	match phase:
-		MORNING:
-			%ShelterBackground.texture = morning_background
+		Globals.Phase.MORNING:
 			Events.show_text.emit("Morning")
 		
-		NOON:
-			%ShelterBackground.texture = noon_background
+		Globals.Phase.NOON:
 			Events.show_text.emit("Noon")
 		
-		AFTERNOON:
-			%ShelterBackground.texture = afternoon_background
-			Events.show_text.emit("Afternoon")
-		
-		EVENING:
-			%ShelterBackground.texture = evening_background
+		Globals.Phase.EVENING:
 			Events.show_text.emit("Evening")
 		
-		NIGHT:
-			%ShelterBackground.texture = night_background
+		Globals.Phase.NIGHT:
 			Events.show_text.emit("Night")
 
 
