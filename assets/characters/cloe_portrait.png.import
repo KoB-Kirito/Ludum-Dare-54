@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b85wniepaw52w"
-path="res://.godot/imported/thug.png-baa2261850295e77689aa0da18212ae6.ctex"
+uid="uid://cuh0xubwotupx"
+path="res://.godot/imported/cloe_portrait.png-1ce23c1fe29e5fe26bc8a141bd6fbfbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/thug.png"
-dest_files=["res://.godot/imported/thug.png-baa2261850295e77689aa0da18212ae6.ctex"]
+source_file="res://assets/characters/cloe_portrait.png"
+dest_files=["res://.godot/imported/cloe_portrait.png-1ce23c1fe29e5fe26bc8a141bd6fbfbe.ctex"]
 
 [params]
 

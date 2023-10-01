@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cwnnrmv5j8qs4"]
+[gd_scene load_steps=56 format=3 uid="uid://cwnnrmv5j8qs4"]
 
 [ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="1_yuwwn"]
 [ext_resource type="Script" path="res://game/actions/rest.gd" id="2_27ood"]
@@ -19,6 +19,18 @@
 [ext_resource type="Texture2D" uid="uid://3ttn5k4hlm2b" path="res://assets/characters/pete_portrait.png" id="17_tpuqg"]
 [ext_resource type="Texture2D" uid="uid://dxvn85uslaf2k" path="res://assets/characters/drHeinekle.png" id="18_ev0es"]
 [ext_resource type="Texture2D" uid="uid://b1gdh41v5g67j" path="res://assets/characters/drHeinekle_portrait.png" id="19_nd1by"]
+[ext_resource type="Texture2D" uid="uid://b1pox5bxoyt5g" path="res://assets/characters/francis.png" id="20_oq5cu"]
+[ext_resource type="Texture2D" uid="uid://b2fa11uyubpdh" path="res://assets/characters/francis_portrait.png" id="21_5jnhy"]
+[ext_resource type="Texture2D" uid="uid://cm6yvnc8klfld" path="res://assets/characters/jack.png" id="22_3k15p"]
+[ext_resource type="Texture2D" uid="uid://j8hsklssosgw" path="res://assets/characters/jack_portrait.png" id="23_kic8r"]
+[ext_resource type="Texture2D" uid="uid://bqd7ym64n56om" path="res://assets/characters/jamiro.png" id="24_k3qm2"]
+[ext_resource type="Texture2D" uid="uid://b757sndalyh1" path="res://assets/characters/jamiro_portrait.png" id="25_jmjpe"]
+[ext_resource type="Texture2D" uid="uid://caa704tqo6a4u" path="res://assets/characters/omega.png" id="26_jmheu"]
+[ext_resource type="Texture2D" uid="uid://dao7kfh2h2rhh" path="res://assets/characters/omega_portrait.png" id="27_w8i28"]
+[ext_resource type="Texture2D" uid="uid://b85wniepaw52w" path="res://assets/characters/eric.png" id="28_7ne2o"]
+[ext_resource type="Texture2D" uid="uid://vcmbdsyoyq0e" path="res://assets/characters/eric_portrait.png" id="29_t5kup"]
+[ext_resource type="Texture2D" uid="uid://b676uimftm7gl" path="res://assets/characters/cloe.png" id="30_0yu5w"]
+[ext_resource type="Texture2D" uid="uid://cuh0xubwotupx" path="res://assets/characters/cloe_portrait.png" id="31_37uv4"]
 
 [sub_resource type="Resource" id="Resource_e5twr"]
 script = ExtResource("2_27ood")
@@ -37,10 +49,13 @@ name = "Emily"
 portrait = ExtResource("6_1pdd5")
 image = ExtResource("5_1nwqe")
 healthpoints = 12
+healthpoints_max = 12
 sleep = 5
+sleep_max = 5
 hunger = 5
-morale = 5
+hunger_max = 5
 happyness = 5
+happyness_max = 5
 Location = "Shelter"
 Offense = 5
 Defense = 5
@@ -75,10 +90,13 @@ name = "Lizz"
 portrait = ExtResource("10_qi376")
 image = ExtResource("9_5maia")
 healthpoints = 12
+healthpoints_max = 12
 sleep = 5
+sleep_max = 5
 hunger = 5
-morale = 5
+hunger_max = 5
 happyness = 5
+happyness_max = 5
 Location = "Shelter"
 Offense = 5
 Defense = 5
@@ -113,10 +131,13 @@ name = "Robert"
 portrait = ExtResource("12_gx4ct")
 image = ExtResource("11_ltd6s")
 healthpoints = 12
+healthpoints_max = 12
 sleep = 5
+sleep_max = 5
 hunger = 5
-morale = 5
+hunger_max = 5
 happyness = 5
+happyness_max = 5
 Location = "Shelter"
 Offense = 5
 Defense = 5
@@ -140,10 +161,13 @@ name = ""
 portrait = ExtResource("15_jwfxu")
 image = ExtResource("14_25cfv")
 healthpoints = 12
+healthpoints_max = 12
 sleep = 5
+sleep_max = 5
 hunger = 5
-morale = 5
+hunger_max = 5
 happyness = 5
+happyness_max = 5
 Location = "Shelter"
 Offense = 5
 Defense = 6
@@ -163,10 +187,13 @@ name = ""
 portrait = ExtResource("17_tpuqg")
 image = ExtResource("16_6ubg1")
 healthpoints = 12
+healthpoints_max = 12
 sleep = 5
+sleep_max = 5
 hunger = 5
-morale = 5
+hunger_max = 5
 happyness = 5
+happyness_max = 5
 Location = "Shelter"
 Offense = 5
 Defense = 5
@@ -186,10 +213,169 @@ name = ""
 portrait = ExtResource("19_nd1by")
 image = ExtResource("18_ev0es")
 healthpoints = 12
+healthpoints_max = 12
 sleep = 5
+sleep_max = 5
 hunger = 5
-morale = 5
+hunger_max = 5
 happyness = 5
+happyness_max = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_a3ixs"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("21_5jnhy")
+image = ExtResource("20_oq5cu")
+healthpoints = 12
+healthpoints_max = 12
+sleep = 5
+sleep_max = 5
+hunger = 5
+hunger_max = 5
+happyness = 5
+happyness_max = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_ptjgk"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("23_kic8r")
+image = ExtResource("22_3k15p")
+healthpoints = 12
+healthpoints_max = 12
+sleep = 5
+sleep_max = 5
+hunger = 5
+hunger_max = 5
+happyness = 5
+happyness_max = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_3w1b4"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("25_jmjpe")
+image = ExtResource("24_k3qm2")
+healthpoints = 12
+healthpoints_max = 12
+sleep = 5
+sleep_max = 5
+hunger = 5
+hunger_max = 5
+happyness = 5
+happyness_max = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_ghv48"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("27_w8i28")
+image = ExtResource("26_jmheu")
+healthpoints = 12
+healthpoints_max = 12
+sleep = 5
+sleep_max = 5
+hunger = 5
+hunger_max = 5
+happyness = 5
+happyness_max = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_jhfwk"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("29_t5kup")
+image = ExtResource("28_7ne2o")
+healthpoints = 12
+healthpoints_max = 12
+sleep = 5
+sleep_max = 5
+hunger = 5
+hunger_max = 5
+happyness = 5
+happyness_max = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_aasu7"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("31_37uv4")
+image = ExtResource("30_0yu5w")
+healthpoints = 12
+healthpoints_max = 12
+sleep = 5
+sleep_max = 5
+hunger = 5
+hunger_max = 5
+happyness = 5
+happyness_max = 5
 Location = "Shelter"
 Offense = 5
 Defense = 5
@@ -205,4 +391,4 @@ actions = Array[ExtResource("2_27ood")]([])
 
 [node name="CharacterManager" type="Node"]
 script = ExtResource("1_yuwwn")
-characters = Array[ExtResource("7_6h5ot")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf"), SubResource("Resource_e2foc"), SubResource("Resource_k4xq5"), SubResource("Resource_jv82g"), SubResource("Resource_w1ttu"), null, null, null, null, null])
+characters = Array[ExtResource("7_6h5ot")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf"), SubResource("Resource_e2foc"), SubResource("Resource_k4xq5"), SubResource("Resource_jv82g"), SubResource("Resource_w1ttu"), SubResource("Resource_a3ixs"), SubResource("Resource_ptjgk"), SubResource("Resource_3w1b4"), SubResource("Resource_ghv48"), SubResource("Resource_jhfwk"), SubResource("Resource_aasu7")])

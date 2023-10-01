@@ -10,15 +10,19 @@ extends Resource
 
 #Statuspoints
 @export var healthpoints: int = 12
+@export var healthpoints_max: int = 12
 @export var sleep: int = 5
+@export var sleep_max: int = 5
 @export var hunger: int = 5
-@export var morale: int = 5
+@export var hunger_max: int = 5
 @export var happyness: int = 5
+@export var happyness_max: int = 5
 
 
 @export var Location: String = "Shelter"
 
 #Stats
+@export var Combat: int = 5 #either this or offense & defense
 @export var Offense: int = 5
 @export var Defense: int = 5
 @export var Loyalty: int = 5
