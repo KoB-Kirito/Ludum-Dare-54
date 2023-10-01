@@ -37,6 +37,7 @@ func advance_phase() -> void:
 	if randi() % 2 == 0:
 		%EventManager.trigger_random_event()
 	
+	return
 	# TODO: put character appears in events
 	if randi() % 4 == 0:
 		var new_character = %CharacterManager.get_random_character()
