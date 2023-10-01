@@ -19,8 +19,6 @@ enum {
 ## Starting phase
 @export var current_phase: int = NOON
 
-@export var test_event: Event
-
 
 func advance_phase() -> void:
 	# only advance if all characters are occupied

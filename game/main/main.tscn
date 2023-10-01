@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=69 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="2_414vw"]
@@ -36,10 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://dxvn85uslaf2k" path="res://assets/characters/drHeinekle.png" id="19_p7mkw"]
 [ext_resource type="Texture2D" uid="uid://b1gdh41v5g67j" path="res://assets/characters/drHeinekle_portrait.png" id="20_3ep0h"]
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="22_tbnaf"]
-[ext_resource type="Script" path="res://game/events/effects/change_resource.gd" id="23_6mw4c"]
-[ext_resource type="Script" path="res://game/events/event.gd" id="24_g26nd"]
-[ext_resource type="Script" path="res://game/events/choice.gd" id="24_kenux"]
-[ext_resource type="Script" path="res://game/events/conditions/character_present.gd" id="25_7rhkd"]
 [ext_resource type="Texture2D" uid="uid://os0ictrdovel" path="res://assets/UI/Notizblock_Zeitverlauf.png" id="26_mtwss"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="27_b747e"]
 [ext_resource type="Texture2D" uid="uid://cvdw1s31w3dd7" path="res://assets/UI/Charakterprofil.png" id="28_ekws5"]
@@ -227,29 +223,6 @@ Science = 5
 Medicine = 5
 actions = Array[ExtResource("3_veadd")]([])
 
-[sub_resource type="Resource" id="Resource_nmos0"]
-script = ExtResource("23_pv4tm")
-
-[sub_resource type="Resource" id="Resource_crjad"]
-script = ExtResource("24_kenux")
-text = "Holz hinzufügen"
-effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_ibh5u")])
-
-[sub_resource type="Resource" id="Resource_7v05w"]
-script = ExtResource("24_kenux")
-text = "Nix machen"
-effects = Array[Resource("res://game/events/effect.gd")]([])
-
-[sub_resource type="Resource" id="Resource_lcn0i"]
-script = ExtResource("25_7rhkd")
-character_name = "Emily"
-
-[sub_resource type="Resource" id="Resource_r1k2e"]
-script = ExtResource("24_g26nd")
-conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_lcn0i")])
-text = "Das ist ein tolles Event"
-choices = Array[ExtResource("24_kenux")]([SubResource("Resource_crjad"), SubResource("Resource_7v05w")])
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
 bg_color = Color(0.247059, 0.247059, 0.247059, 1)
 border_width_left = 2
@@ -378,7 +351,6 @@ script = ExtResource("8_bedgx")
 [node name="EventManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
 script = ExtResource("22_tbnaf")
-events = Array[ExtResource("24_g26nd")]([SubResource("Resource_r1k2e")])
 
 [node name="AutoAdvanceTimer" type="Timer" parent="Logic"]
 unique_name_in_owner = true

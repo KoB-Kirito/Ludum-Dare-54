@@ -1,0 +1,208 @@
+[gd_scene load_steps=38 format=3 uid="uid://cwnnrmv5j8qs4"]
+
+[ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="1_yuwwn"]
+[ext_resource type="Script" path="res://game/actions/rest.gd" id="2_27ood"]
+[ext_resource type="Script" path="res://game/actions/gather_food.gd" id="3_2ad2b"]
+[ext_resource type="Script" path="res://game/actions/gather_water.gd" id="4_elevw"]
+[ext_resource type="Texture2D" uid="uid://ca4xxb5c4l2nt" path="res://assets/characters/emily.png" id="5_1nwqe"]
+[ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/characters/emily_portrait.png" id="6_1pdd5"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="7_6h5ot"]
+[ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="8_oplfu"]
+[ext_resource type="Texture2D" uid="uid://cmcoaurheiyf8" path="res://assets/characters/lizz.png" id="9_5maia"]
+[ext_resource type="Texture2D" uid="uid://bd40rskyv06q1" path="res://assets/characters/lizz_portrait.png" id="10_qi376"]
+[ext_resource type="Texture2D" uid="uid://drqe5xhh5bres" path="res://assets/characters/robert.png" id="11_ltd6s"]
+[ext_resource type="Texture2D" uid="uid://ctajvewrass6y" path="res://assets/characters/robert_portrait.png" id="12_gx4ct"]
+[ext_resource type="Script" path="res://game/actions/gather_ammo.gd" id="13_tkbri"]
+[ext_resource type="Texture2D" uid="uid://1854tukaknm0" path="res://assets/characters/jonathan.png" id="14_25cfv"]
+[ext_resource type="Texture2D" uid="uid://cpmtpav4xg15l" path="res://assets/characters/jonathan_portrait.png" id="15_jwfxu"]
+[ext_resource type="Texture2D" uid="uid://e3iira20y38f" path="res://assets/characters/Pete.png" id="16_6ubg1"]
+[ext_resource type="Texture2D" uid="uid://3ttn5k4hlm2b" path="res://assets/characters/pete_portrait.png" id="17_tpuqg"]
+[ext_resource type="Texture2D" uid="uid://dxvn85uslaf2k" path="res://assets/characters/drHeinekle.png" id="18_ev0es"]
+[ext_resource type="Texture2D" uid="uid://b1gdh41v5g67j" path="res://assets/characters/drHeinekle_portrait.png" id="19_nd1by"]
+
+[sub_resource type="Resource" id="Resource_e5twr"]
+script = ExtResource("2_27ood")
+
+[sub_resource type="Resource" id="Resource_htoye"]
+script = ExtResource("3_2ad2b")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_mjvpr"]
+script = ExtResource("4_elevw")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_bncd3"]
+script = ExtResource("7_6h5ot")
+name = "Emily"
+portrait = ExtResource("6_1pdd5")
+image = ExtResource("5_1nwqe")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([SubResource("Resource_e5twr"), SubResource("Resource_htoye"), SubResource("Resource_mjvpr")])
+
+[sub_resource type="Resource" id="Resource_q8sb1"]
+script = ExtResource("2_27ood")
+
+[sub_resource type="Resource" id="Resource_ygnup"]
+script = ExtResource("3_2ad2b")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_2mwpi"]
+script = ExtResource("4_elevw")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_5eup4"]
+script = ExtResource("8_oplfu")
+amount = null
+
+[sub_resource type="Resource" id="Resource_wyucf"]
+script = ExtResource("7_6h5ot")
+name = "Lizz"
+portrait = ExtResource("10_qi376")
+image = ExtResource("9_5maia")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([SubResource("Resource_q8sb1"), SubResource("Resource_ygnup"), SubResource("Resource_2mwpi"), SubResource("Resource_5eup4")])
+
+[sub_resource type="Resource" id="Resource_j4vmn"]
+script = ExtResource("2_27ood")
+
+[sub_resource type="Resource" id="Resource_fxawy"]
+script = ExtResource("3_2ad2b")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_iryxt"]
+script = ExtResource("4_elevw")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_7rviv"]
+script = ExtResource("8_oplfu")
+amount = null
+
+[sub_resource type="Resource" id="Resource_e2foc"]
+script = ExtResource("7_6h5ot")
+name = "Robert"
+portrait = ExtResource("12_gx4ct")
+image = ExtResource("11_ltd6s")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([SubResource("Resource_j4vmn"), SubResource("Resource_fxawy"), SubResource("Resource_iryxt"), SubResource("Resource_7rviv")])
+
+[sub_resource type="Resource" id="Resource_76rie"]
+script = ExtResource("13_tkbri")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_k4xq5"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("15_jwfxu")
+image = ExtResource("14_25cfv")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 6
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([SubResource("Resource_76rie")])
+
+[sub_resource type="Resource" id="Resource_jv82g"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("17_tpuqg")
+image = ExtResource("16_6ubg1")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[sub_resource type="Resource" id="Resource_w1ttu"]
+script = ExtResource("7_6h5ot")
+name = ""
+portrait = ExtResource("19_nd1by")
+image = ExtResource("18_ev0es")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("2_27ood")]([])
+
+[node name="CharacterManager" type="Node"]
+script = ExtResource("1_yuwwn")
+characters = Array[ExtResource("7_6h5ot")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf"), SubResource("Resource_e2foc"), SubResource("Resource_k4xq5"), SubResource("Resource_jv82g"), SubResource("Resource_w1ttu"), null, null, null, null, null])
