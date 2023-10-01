@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqna4n44yo76" path="res://assets/shelter_afternoon.png" id="5_a1pxu"]
 [ext_resource type="Texture2D" uid="uid://dcfnobqhjuxwc" path="res://assets/shelter_evening.png" id="6_5d6ox"]
 [ext_resource type="Texture2D" uid="uid://c8aqn0afsg7y6" path="res://assets/characters/olga.png" id="6_8xp8g"]
-[ext_resource type="Texture2D" uid="uid://ch8gn1t4ntb5q" path="res://assets/characters/emily.png" id="6_recy5"]
+[ext_resource type="Texture2D" uid="uid://ca4xxb5c4l2nt" path="res://assets/characters/emily.png" id="6_recy5"]
 [ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="7_dw64p"]
 [ext_resource type="Texture2D" uid="uid://dmtrnpnk1ahsj" path="res://assets/characters/olga_portrait.png" id="7_pmpj5"]
 [ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/characters/emily_portrait.png" id="7_wclki"]
