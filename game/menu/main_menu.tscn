@@ -1,38 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck7ehlrgovhus"]
+[gd_scene load_steps=4 format=3 uid="uid://ck7ehlrgovhus"]
 
 [ext_resource type="Script" path="res://game/menu/main_menu.gd" id="1_a3t2g"]
-[ext_resource type="Texture2D" uid="uid://tf3gdpco850c" path="res://assets/segment.png" id="2_odvah"]
 [ext_resource type="Texture2D" uid="uid://mdusk21r3mu6" path="res://assets/button.png" id="3_h7w83"]
-[ext_resource type="Texture2D" uid="uid://cnt0mqefrc6ni" path="res://assets/shelter_night.png" id="3_qrujb"]
-[ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="4_6emqw"]
 [ext_resource type="Texture2D" uid="uid://dfa3s2oxs8btl" path="res://assets/button_focus.png" id="4_rf3t7"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_22lxm"]
-particles_animation = true
-particles_anim_h_frames = 4
-particles_anim_v_frames = 3
-particles_anim_loop = false
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5b1an"]
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_box_extents = Vector3(24, 1, 1)
-particle_flag_disable_z = true
-gravity = Vector3(16, 54, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 1.5
-angular_velocity_max = 30.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 0.4
-scale_max = 1.2
-color = Color(0.815686, 0.815686, 0.815686, 0.580392)
-hue_variation_max = 0.05
-turbulence_enabled = true
-turbulence_noise_strength = 10.0
-turbulence_noise_scale = 4.0
-turbulence_influence_max = 0.25
-anim_offset_max = 1.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -44,32 +14,6 @@ grow_vertical = 2
 script = ExtResource("1_a3t2g")
 main_scene = "res://game/main/main.tscn"
 credits_scene = "res://game/menu/credits.tscn"
-
-[node name="Background3" type="Sprite2D" parent="."]
-position = Vector2(800, 450)
-scale = Vector2(41.279, 69.878)
-texture = ExtResource("2_odvah")
-
-[node name="Background2" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(800, 450)
-scale = Vector2(36.8333, 59)
-texture = ExtResource("2_odvah")
-
-[node name="Background4" type="Sprite2D" parent="."]
-position = Vector2(800, 450)
-scale = Vector2(1, 0.625)
-texture = ExtResource("3_qrujb")
-
-[node name="Snow" type="GPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_22lxm")
-position = Vector2(725, 77)
-scale = Vector2(39, 26.68)
-amount = 200
-process_material = SubResource("ParticleProcessMaterial_5b1an")
-texture = ExtResource("4_6emqw")
-lifetime = 16.0
-fixed_fps = 64
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

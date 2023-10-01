@@ -23,19 +23,7 @@ func _process(delta):
 	timer += 1
 
 	var tween = get_tree().create_tween()
-	var tempColor
-	var tempScale
-	if(timer < 140):
-		tempColor = Color(Color.WHITE,0.1)
-		tempScale = 36
-		
-	if(timer > 140):
-		tempColor = Color(Color.WHITE,0.8)
-		tempScale = 48
-		
-	tween.tween_property($\".\", \"modulate\", tempColor,4)
-	#tween.tween_property($\".\", \"theme_override_font_sizes/font_size\", tempScale, 8)
-	#tween.tween_property($\".\", , tempColor,4) adding scale animation? :(
+	tween.tween_property($\".\", \"modulate\", Color.RED, timer/2)
 	
 	if(timer > 280):
 		timer = 0
@@ -74,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.54902)
 theme_override_font_sizes/font_size = 48
-text = "Press any key to Start"
+text = "Press Start"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = SubResource("GDScript_4s735")
