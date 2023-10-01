@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://scripts/globals.gd"
 Events="*res://scripts/events.gd"
-BackgroundSzene="*res://BackgroundSzene.tscn"
+Background="*res://scripts/background.tscn"
 
 [display]
 
@@ -33,7 +33,7 @@ project/assembly_name="Ludum-dare-54"
 
 [gui]
 
-theme/custom="res://OurTheme.tres"
+theme/custom="res://assets/theme/our_theme.tres"
 
 [rendering]
 

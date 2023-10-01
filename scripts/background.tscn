@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://drhcjo60nky0b"]
+[gd_scene load_steps=7 format=3 uid="uid://duwlyu1lu8nsr"]
 
-[ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="1_7frn1"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_2wsxs"]
+[ext_resource type="Texture2D" uid="uid://1ryxqyxurqce" path="res://assets/MainBackground.png" id="2_c63ta"]
+[ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/Noon.png" id="3_ghvio"]
+[ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="4_vmwl4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_22lxm"]
 particles_animation = true
@@ -29,12 +32,25 @@ turbulence_noise_scale = 4.0
 turbulence_influence_max = 0.25
 anim_offset_max = 1.0
 
-[node name="Snow" type="GPUParticles2D"]
+[node name="Background" type="Node2D"]
+script = ExtResource("1_2wsxs")
+
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("2_c63ta")
+
+[node name="Background6" type="Sprite2D" parent="."]
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("3_ghvio")
+
+[node name="Snow" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_22lxm")
-position = Vector2(725, 77)
+position = Vector2(634, -58)
 scale = Vector2(39, 26.68)
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_5b1an")
-texture = ExtResource("1_7frn1")
+texture = ExtResource("4_vmwl4")
 lifetime = 16.0
 fixed_fps = 64

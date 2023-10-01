@@ -2,7 +2,7 @@ class_name EventManager
 extends Node
 
 
-signal event_finished
+signal events_finished
 
 
 @export var events: Array[Event]
@@ -58,8 +58,27 @@ func trigger_event(event: Event) -> void:
 		%ChoicesContainer.add_child(choice_button)
 		choice_button.text = choice.text
 		choice_button.pressed.connect(on_choice_selected.bind(choice.effects))
+	
+	# catch empty choices
+	if %ChoicesContainer.get_child_count() == 0:
+		var choice_button := Button.new()
+		%ChoicesContainer.add_child(choice_button)
+		choice_button.text = "Exit"
+		choice_button.pressed.connect(on_choice_selected)
 
 
 func on_choice_selected(effects: Array[Effect]) -> void:
-	for effect: Effect in effects:
-		effect.process()
+	if effects != null:
+		for effect: Effect in effects:
+			if effect is ChainEventEffect:
+				trigger_event(effect.event)
+				return
+			
+			effect.process()
+	
+	close_event()
+
+
+func close_event() -> void:
+	%EventLayer.hide()
+	events_finished.emit()

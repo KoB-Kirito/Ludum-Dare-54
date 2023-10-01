@@ -1,6 +1,15 @@
 extends Node
 
 
+enum Phase {
+	MORNING,
+	NOON,
+	EVENING,
+	NIGHT
+}
+
+var current_phase: Phase
+
 var beds: Array[Bed]
 
 var food: int = 100:
