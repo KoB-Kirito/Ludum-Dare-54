@@ -34,7 +34,7 @@ extends Resource
 @export var Science: int = 5
 @export var Medicine: int = 5
 
-@export var Traits: String = "Not implemented yet"
+
 
 # etc..
 
