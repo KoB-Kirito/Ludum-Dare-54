@@ -3,12 +3,8 @@ extends Condition
 
 
 ## Name of character that has to be present
-@export var character_name: String
+@export var phase: Globals.Phase
 
 
 func is_met() -> bool:
-	for bed: Bed in Globals.beds:
-		if bed.character != null and bed.character.name == character_name:
-			return true
-	
-	return false
+	return phase == Globals.current_phase

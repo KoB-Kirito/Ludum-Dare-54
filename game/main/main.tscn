@@ -239,13 +239,19 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 16
 alignment = 1
 
+[node name="MoraleLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Morale: 100
+"
+
 [node name="FoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Food: 100
 "
 
-[node name="MoraleLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
+[node name="WaterLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Water: 100
@@ -410,6 +416,7 @@ built = false
 
 [node name="EventLayer" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
