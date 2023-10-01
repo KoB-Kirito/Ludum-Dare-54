@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=73 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="2_414vw"]
@@ -26,9 +26,15 @@
 [ext_resource type="Script" path="res://game/actions/gather_ammo.gd" id="14_5uwic"]
 [ext_resource type="AudioStream" uid="uid://bgyogqxddrekg" path="res://assets/sounds/shs_cyber_button_ui_shooter_military_2.wav" id="14_443j1"]
 [ext_resource type="Script" path="res://game/main/ui.gd" id="15_vc2hc"]
+[ext_resource type="Texture2D" uid="uid://1854tukaknm0" path="res://assets/characters/jonathan.png" id="15_xsmr1"]
+[ext_resource type="Texture2D" uid="uid://cpmtpav4xg15l" path="res://assets/characters/jonathan_portrait.png" id="16_mthtk"]
 [ext_resource type="Script" path="res://game/actions/gather_water.gd" id="17_3u541"]
+[ext_resource type="Texture2D" uid="uid://e3iira20y38f" path="res://assets/characters/Pete.png" id="17_myhcr"]
 [ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="18_5ewfh"]
 [ext_resource type="AudioStream" uid="uid://bs53xiyv00fdf" path="res://assets/sounds/BRS_Rooster_TJ_CockaDoodleDoo_Close_1.wav" id="18_unbea"]
+[ext_resource type="Texture2D" uid="uid://3ttn5k4hlm2b" path="res://assets/characters/pete_portrait.png" id="18_y5pnu"]
+[ext_resource type="Texture2D" uid="uid://dxvn85uslaf2k" path="res://assets/characters/drHeinekle.png" id="19_p7mkw"]
+[ext_resource type="Texture2D" uid="uid://b1gdh41v5g67j" path="res://assets/characters/drHeinekle_portrait.png" id="20_3ep0h"]
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="22_tbnaf"]
 [ext_resource type="Script" path="res://game/events/condition.gd" id="23_pv4tm"]
 [ext_resource type="Script" path="res://game/events/event.gd" id="24_g26nd"]
@@ -153,6 +159,8 @@ amount = 1
 [sub_resource type="Resource" id="Resource_k4xq5"]
 script = ExtResource("3_y8oa7")
 name = ""
+portrait = ExtResource("16_mthtk")
+image = ExtResource("15_xsmr1")
 healthpoints = 12
 sleep = 5
 hunger = 5
@@ -170,6 +178,52 @@ Crafting = 5
 Science = 5
 Medicine = 5
 actions = Array[ExtResource("3_veadd")]([SubResource("Resource_76rie")])
+
+[sub_resource type="Resource" id="Resource_jv82g"]
+script = ExtResource("3_y8oa7")
+name = ""
+portrait = ExtResource("18_y5pnu")
+image = ExtResource("17_myhcr")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("3_veadd")]([])
+
+[sub_resource type="Resource" id="Resource_w1ttu"]
+script = ExtResource("3_y8oa7")
+name = ""
+portrait = ExtResource("20_3ep0h")
+image = ExtResource("19_p7mkw")
+healthpoints = 12
+sleep = 5
+hunger = 5
+morale = 5
+happyness = 5
+Location = "Shelter"
+Offense = 5
+Defense = 5
+Loyalty = 5
+Leadership = 5
+Gather = 5
+Trading = 5
+Cooking = 5
+Crafting = 5
+Science = 5
+Medicine = 5
+actions = Array[ExtResource("3_veadd")]([])
 
 [sub_resource type="Resource" id="Resource_nmos0"]
 script = ExtResource("23_pv4tm")
@@ -291,7 +345,7 @@ script = ExtResource("1_lequ7")
 [node name="CharacterManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
 script = ExtResource("2_414vw")
-characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf"), SubResource("Resource_e2foc"), SubResource("Resource_k4xq5")])
+characters = Array[ExtResource("3_y8oa7")]([SubResource("Resource_bncd3"), SubResource("Resource_wyucf"), SubResource("Resource_e2foc"), SubResource("Resource_k4xq5"), SubResource("Resource_jv82g"), SubResource("Resource_w1ttu"), null, null, null, null, null])
 
 [node name="PhaseManager" type="Node" parent="Logic"]
 unique_name_in_owner = true
