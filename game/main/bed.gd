@@ -109,6 +109,18 @@ func advance_action() -> void:
 		# action finished
 		%ActionPanel.hide()
 		current_action.process_finished()
+		
+		# default actions
+		if current_action is Eat:
+			character.hunger += 5
+			if character.hunger >= character.hunger_max:
+				character.hunger = character.hunger_max
+			
+		elif current_action is Drink:
+			character.thirst += 5
+			if character.thirst >= character.thirst_max:
+				character.thirst = character.thirst_max
+		
 		current_action = null
 
 

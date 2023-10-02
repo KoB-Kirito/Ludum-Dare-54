@@ -1,12 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://gbi8vlb130hx"]
+[gd_scene load_steps=23 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
 [ext_resource type="Script" path="res://game/actions/rest.gd" id="2_q6rrv"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
 [ext_resource type="Script" path="res://game/actions/eat.gd" id="3_mjmtx"]
 [ext_resource type="Texture2D" uid="uid://bfkfjt27fm41j" path="res://assets/UI/meat.png" id="4_gri1q"]
+[ext_resource type="Script" path="res://game/actions/drink.gd" id="4_p283m"]
+[ext_resource type="Script" path="res://game/actions/gather_food.gd" id="5_lj61x"]
 [ext_resource type="Texture2D" uid="uid://bk0wt2putupt0" path="res://assets/UI/mood_high.png" id="6_2q4a4"]
 [ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="6_w1twf"]
+[ext_resource type="Script" path="res://game/actions/gather_water.gd" id="6_y1w3j"]
+[ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="7_81403"]
 [ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
 [ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="8_alyq7"]
 [ext_resource type="Texture2D" uid="uid://b5n7w1pg0hhte" path="res://assets/UI/HP.png" id="8_oh2us"]
@@ -17,7 +21,25 @@ conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_ds1t6"]
 script = ExtResource("3_mjmtx")
-amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+
+[sub_resource type="Resource" id="Resource_kvkqe"]
+script = ExtResource("4_p283m")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+
+[sub_resource type="Resource" id="Resource_1qnis"]
+script = ExtResource("5_lj61x")
+amount = 4
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+
+[sub_resource type="Resource" id="Resource_t0fry"]
+script = ExtResource("6_y1w3j")
+amount = 5
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+
+[sub_resource type="Resource" id="Resource_dbv6c"]
+script = ExtResource("7_81403")
+amount = 20
 conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0brh7"]
@@ -42,7 +64,8 @@ custom_minimum_size = Vector2(316, 160)
 offset_right = 300.0
 offset_bottom = 160.0
 script = ExtResource("1_8cygb")
-default_actions = Array[ExtResource("2_q6rrv")]([SubResource("Resource_epy2c"), SubResource("Resource_ds1t6")])
+built = null
+default_actions = Array[ExtResource("2_q6rrv")]([SubResource("Resource_epy2c"), SubResource("Resource_ds1t6"), SubResource("Resource_kvkqe"), SubResource("Resource_1qnis"), SubResource("Resource_t0fry"), SubResource("Resource_dbv6c")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -84,16 +107,17 @@ expand_mode = 1
 
 [node name="IconContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 27.0
-offset_right = 297.0
-offset_bottom = 59.0
-theme_override_constants/separation = 20
+offset_left = 9.0
+offset_top = 26.0
+offset_right = 301.0
+offset_bottom = 58.0
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="HungerContainer" type="HBoxContainer" parent="IconContainer"]
 layout_mode = 2
 tooltip_text = "Hunger"
+theme_override_constants/separation = 0
 
 [node name="HungerIcon2" type="TextureRect" parent="IconContainer/HungerContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -113,6 +137,7 @@ vertical_alignment = 2
 [node name="ThirstContainer" type="HBoxContainer" parent="IconContainer"]
 layout_mode = 2
 tooltip_text = "Thirst"
+theme_override_constants/separation = 0
 
 [node name="ThirstIcon2" type="TextureRect" parent="IconContainer/ThirstContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -133,6 +158,7 @@ vertical_alignment = 2
 [node name="SleepContainer" type="HBoxContainer" parent="IconContainer"]
 layout_mode = 2
 tooltip_text = "Sleepyness"
+theme_override_constants/separation = 0
 
 [node name="SleepIcon" type="TextureRect" parent="IconContainer/SleepContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -153,6 +179,7 @@ vertical_alignment = 2
 [node name="HappynessContainer" type="HBoxContainer" parent="IconContainer"]
 layout_mode = 2
 tooltip_text = "Happyness"
+theme_override_constants/separation = 0
 
 [node name="HappynessIcon" type="TextureRect" parent="IconContainer/HappynessContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -162,6 +189,25 @@ texture = ExtResource("6_2q4a4")
 expand_mode = 1
 
 [node name="HappynessLabel" type="Label" parent="IconContainer/HappynessContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+vertical_alignment = 2
+
+[node name="HealthContainer" type="HBoxContainer" parent="IconContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HPIcon" type="TextureRect" parent="IconContainer/HealthContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_oh2us")
+expand_mode = 1
+
+[node name="HPLabel" type="Label" parent="IconContainer/HealthContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -180,27 +226,6 @@ offset_bottom = 111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Name"
-
-[node name="HPIcon" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 161.0
-offset_top = 72.0
-offset_right = 197.0
-offset_bottom = 108.0
-texture = ExtResource("8_oh2us")
-expand_mode = 1
-
-[node name="HPLabel" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 123.0
-offset_top = 73.0
-offset_right = 183.0
-offset_bottom = 114.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "40
-"
 
 [node name="ActionsDropdown" type="OptionButton" parent="."]
 unique_name_in_owner = true

@@ -1,9 +1,9 @@
-class_name Eat
+class_name Drink
 extends RestAction
 
 
 func _init() -> void:
-	name = "Eat"
+	name = "Drink"
 	duration = 1
 
 
