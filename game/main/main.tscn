@@ -82,7 +82,7 @@ stream = ExtResource("18_unbea")
 
 [node name="HideCharacterTimer" type="Timer" parent="Logic"]
 unique_name_in_owner = true
-wait_time = 5.0
+wait_time = 10.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
