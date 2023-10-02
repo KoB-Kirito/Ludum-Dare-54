@@ -51,12 +51,27 @@ func check_death() -> bool:
 	if die:
 		character = null
 		current_action = null
+		
+		# check game over
+		var all_dead: bool = true
+		for bed: Bed in Globals.beds:
+			if bed.character != null:
+				all_dead = false
+				break
+		if all_dead:
+			Music.change_music(Globals.Phase.NIGHT)
+			game_over.call_deferred()
+			return true
+		
 		update_character()
 		return true
 		
 	else:
 		return false
 
+
+func game_over() -> void:
+	get_tree().change_scene_to_file("res://game/game_over.tscn")
 
 func update_character() -> void:
 	if character == null:
@@ -74,6 +89,7 @@ func update_character() -> void:
 	%ThirstLabel.text = str(character.thirst)
 	%SleepLabel.text = str(character.sleep)
 	%HappynessLabel.text = str(character.happyness)
+	%HPLabel.text = str(character.healthpoints)
 	
 	# set actions
 	%ActionsDropdown.clear()
@@ -134,14 +150,13 @@ func set_action(action: RestAction) -> void:
 
 
 func advance_action() -> void:
-	if current_action == null:
+	if current_action == null or not is_instance_valid(current_action):
 		return
 	
 	# lower values
 	character.hunger -= 1
 	character.sleep -= 1
 	character.happyness -= 1
-	update_character()
 	
 	%ActionProgress.value += 1
 	if %ActionProgress.value >= %ActionProgress.max_value:
@@ -161,6 +176,8 @@ func advance_action() -> void:
 				character.thirst = character.thirst_max
 		
 		current_action = null
+	
+	update_character()
 
 
 func _on_gui_input(event: InputEvent) -> void:
