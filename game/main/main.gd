@@ -1,8 +1,6 @@
 extends Control
 
 
-@onready var current_bed: Bed = %Bed1
-
 func _ready() -> void:
 	# store beds globally
 	Globals.beds.append(%Bed1)
@@ -13,14 +11,31 @@ func _ready() -> void:
 	
 	Events.character_selected.connect(character_selected)
 	
-	# start with 1 selected
-	character_selected(%Bed1.character, %Bed1)
+	add_character(%CharacterManager.get_random_character())
+	add_character(%CharacterManager.get_random_character())
+
+
+func add_character(character: Character) -> void:
+	if character == null:
+		return
+	
+	var bed_found: bool = false
+	for bed: Bed in Globals.beds:
+		if bed.available:
+			bed.character = character
+			bed.update_character()
+			bed_found = true
+			break
+	
+	if bed_found:
+		Events.show_text.emit(character.name + " joined your group", Color.GREEN)
+	else:
+		Events.show_text.emit("You sent " + character.name + " away, because you had no bed available..", Color.RED)
 
 
 func character_selected(character: Character, bed: Bed) -> void:
 	%TopRightBackground.show()
 	%CharacterImage.texture = character.image
-	current_bed = bed
 	
 	%HideCharacterTimer.start()
 

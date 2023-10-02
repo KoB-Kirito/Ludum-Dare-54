@@ -2,6 +2,7 @@ class_name Event
 extends Resource
 
 @export var name: String
+@export_range(1, 100, 1) var weight: int = 1
 
 @export_group("Settings")
 

@@ -43,6 +43,13 @@ func update_character() -> void:
 	%ActionsDropdown.clear()
 	actions.clear()
 	
+	%ActionsDropdown.add_item("Actions")
+	%ActionsDropdown.set_item_disabled(0, true)
+	%ActionsDropdown.add_separator()
+	var default_action := RestAction.new()
+	%ActionsDropdown.add_item(default_action.name)
+	actions[default_action.name] = default_action
+	
 	for action: RestAction in character.actions:
 		%ActionsDropdown.add_item(action.name)
 		actions[action.name] = action
