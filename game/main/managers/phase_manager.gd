@@ -16,6 +16,7 @@ func _ready() -> void:
 	%EventManager.events_finished.connect(on_events_finished)
 	Events.advance_phase.connect(advance_phase)
 
+
 func advance_phase() -> void:
 	# only advance if all characters are occupied
 	for bed: Bed in Globals.beds:

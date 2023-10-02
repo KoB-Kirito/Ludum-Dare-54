@@ -9,7 +9,7 @@ func _ready() -> void:
 	Events.wood_changed.connect(on_wood_changed)
 
 
-func show_text(text: String, color: Color = Color.WHITE) -> void:
+func show_text(text: String, color: Color = Color.BLACK) -> void:
 	%snd_message.play()
 	%Textbox.push_color(color)
 	%Textbox.append_text("\n" + text)
