@@ -92,6 +92,7 @@ lifetime = 16.0
 fixed_fps = 64
 
 [node name="Smoke" type="GPUParticles2D" parent="."]
+visible = false
 material = SubResource("CanvasItemMaterial_22lxm")
 position = Vector2(954, 379)
 scale = Vector2(39, 26.68)
