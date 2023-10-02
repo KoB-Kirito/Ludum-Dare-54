@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=104 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://game/events/conditions/character_present.gd" id="12_36hyt"]
 [ext_resource type="Resource" uid="uid://bgclj5rvkbx0e" path="res://game/main/managers/event_W2.tres" id="12_43005"]
 [ext_resource type="Texture2D" uid="uid://c4b3yjlq21jr6" path="res://assets/UI/medicine.png" id="14_xkaow"]
+[ext_resource type="Script" path="res://game/events/effects/take_damage.gd" id="15_w1hn6"]
 
 [sub_resource type="Resource" id="Resource_7nnu4"]
 script = ExtResource("2_ouvbw")
@@ -434,11 +435,41 @@ conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Res
 text = "Heat it up..."
 effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_qsp58")])
 
+[sub_resource type="Resource" id="Resource_6hhyt"]
+script = ExtResource("15_w1hn6")
+amount = 2
+character = ""
+bed = 1
+
+[sub_resource type="Resource" id="Resource_grusy"]
+script = ExtResource("15_w1hn6")
+amount = 2
+character = ""
+bed = 1
+
+[sub_resource type="Resource" id="Resource_rdfpr"]
+script = ExtResource("15_w1hn6")
+amount = 2
+character = ""
+bed = 2
+
+[sub_resource type="Resource" id="Resource_6m2om"]
+script = ExtResource("15_w1hn6")
+amount = 2
+character = ""
+bed = 3
+
+[sub_resource type="Resource" id="Resource_e3hco"]
+script = ExtResource("15_w1hn6")
+amount = 2
+character = ""
+bed = 4
+
 [sub_resource type="Resource" id="Resource_p6nei"]
 script = ExtResource("2_ouvbw")
 conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "We need that wood."
-effects = Array[Resource("res://game/events/effect.gd")]([null])
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_6hhyt"), SubResource("Resource_grusy"), SubResource("Resource_rdfpr"), SubResource("Resource_6m2om"), SubResource("Resource_e3hco")])
 
 [sub_resource type="Resource" id="Resource_n0m1m"]
 script = ExtResource("4_75cuk")
@@ -453,11 +484,41 @@ conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Res
 text = "The night was so cold. Everyone agreed to heat up the oven."
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_32dfs"), SubResource("Resource_p6nei")])
 
+[sub_resource type="Resource" id="Resource_8cg4y"]
+script = ExtResource("15_w1hn6")
+amount = 1
+character = ""
+bed = 0
+
+[sub_resource type="Resource" id="Resource_t1mg0"]
+script = ExtResource("15_w1hn6")
+amount = 1
+character = ""
+bed = 1
+
+[sub_resource type="Resource" id="Resource_nishj"]
+script = ExtResource("15_w1hn6")
+amount = 1
+character = ""
+bed = 2
+
+[sub_resource type="Resource" id="Resource_ihb5s"]
+script = ExtResource("15_w1hn6")
+amount = 1
+character = ""
+bed = 3
+
+[sub_resource type="Resource" id="Resource_5j6xb"]
+script = ExtResource("15_w1hn6")
+amount = 1
+character = ""
+bed = 4
+
 [sub_resource type="Resource" id="Resource_guui2"]
 script = ExtResource("2_ouvbw")
 conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "Stay strong."
-effects = Array[Resource("res://game/events/effect.gd")]([null])
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_8cg4y"), SubResource("Resource_t1mg0"), SubResource("Resource_nishj"), SubResource("Resource_ihb5s"), SubResource("Resource_5j6xb")])
 
 [sub_resource type="Resource" id="Resource_nquel"]
 script = ExtResource("5_17kgw")
