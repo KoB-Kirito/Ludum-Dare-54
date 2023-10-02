@@ -18,8 +18,8 @@ func change_background(phase: Globals.Phase) -> void:
 			$Evening.hide()
 			$Night.hide()
 			$Snow.show()
-			$Snow_intro.hide()
-			$Snow_Night.hide()
+			$Night/Snow_intro.hide()
+			$Night/Snow_Night.hide()
 			$Smoke.hide()
 			pass
 		
@@ -29,8 +29,8 @@ func change_background(phase: Globals.Phase) -> void:
 			$Evening.hide()
 			$Night.hide()
 			$Snow.hide()
-			$Snow_intro.hide()
-			$Snow_Night.hide()
+			$Night/Snow_intro.hide()
+			$Night/Snow_Night.hide()
 			$Smoke.hide()
 			pass
 		
@@ -40,8 +40,8 @@ func change_background(phase: Globals.Phase) -> void:
 			$Evening.show()
 			$Night.hide()
 			$Snow.show()
-			$Snow_intro.hide()
-			$Snow_Night.hide()
+			$Night/Snow_intro.hide()
+			$Night/Snow_Night.hide()
 			$Smoke.show()
 			pass
 		
@@ -51,7 +51,7 @@ func change_background(phase: Globals.Phase) -> void:
 			$Evening.hide()
 			$Night.show()
 			$Snow.show()
-			$Snow_intro.hide()
-			$Snow_Night.show()
+			$Night/Snow_intro.hide()
+			$Night/Snow_Night.show()
 			$Smoke.show()
 			pass
