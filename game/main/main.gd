@@ -1,3 +1,4 @@
+class_name Main
 extends Control
 
 
@@ -8,6 +9,9 @@ func _ready() -> void:
 	Globals.beds.append(%Bed3)
 	Globals.beds.append(%Bed4)
 	Globals.beds.append(%Bed5)
+	
+	Globals.character_manager = %CharacterManager
+	Globals.main = self
 	
 	Events.character_selected.connect(character_selected)
 	

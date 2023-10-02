@@ -8,7 +8,7 @@ extends Condition
 
 func is_met() -> bool:
 	for bed: Bed in Globals.beds:
-		if bed.character != null and bed.character.name == character_name:
+		if bed.character != null and bed.character.name.to_lower() == character_name.to_lower():
 			return true
 	
 	return false

@@ -12,6 +12,9 @@ var current_phase: Phase
 
 var beds: Array[Bed]
 
+var character_manager: CharacterManager
+var main: Main
+
 var food: int = 100:
 	set(value):
 		food = value

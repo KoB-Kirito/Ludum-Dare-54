@@ -16,3 +16,16 @@ func get_random_character() -> Character:
 	characters.erase(output)
 	
 	return output
+
+
+func get_character(character_name: String) -> Character:
+	if characters.is_empty():
+		return null
+	
+	for character: Character in characters:
+		if character.name.to_lower() == character_name.to_lower():
+			characters.erase(character)
+			return character
+	
+	print_debug("character not found: " + character_name)
+	return null
