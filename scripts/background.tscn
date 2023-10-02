@@ -41,7 +41,13 @@ position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("2_c63ta")
 
+[node name="Intro" type="Sprite2D" parent="."]
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("7_553nk")
+
 [node name="Night" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("3_me5c0")
@@ -63,11 +69,6 @@ visible = false
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("6_216mt")
-
-[node name="Intro" type="Sprite2D" parent="."]
-position = Vector2(800, 449.937)
-scale = Vector2(1, 1.00014)
-texture = ExtResource("7_553nk")
 
 [node name="Snow" type="GPUParticles2D" parent="."]
 visible = false
