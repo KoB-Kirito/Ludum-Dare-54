@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
-[ext_resource type="Texture2D" uid="uid://dr2fvy0mk6714" path="res://assets/thirst.png" id="3_83kj8"]
 [ext_resource type="Texture2D" uid="uid://bfkfjt27fm41j" path="res://assets/UI/meat.png" id="4_gri1q"]
+[ext_resource type="Texture2D" uid="uid://bk0wt2putupt0" path="res://assets/UI/mood_high.png" id="6_2q4a4"]
 [ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="6_w1twf"]
 [ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
 [ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="8_alyq7"]
@@ -62,30 +62,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -35.0
-offset_right = 35.0
-offset_bottom = 35.0
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
 [node name="IconContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 25.0
-offset_right = 293.0
-offset_bottom = 65.0
-theme_override_constants/separation = 10
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 297.0
+offset_bottom = 59.0
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="HungerIcon2" type="TextureRect" parent="IconContainer"]
+[node name="HungerContainer" type="HBoxContainer" parent="IconContainer"]
+layout_mode = 2
+tooltip_text = "Hunger"
+
+[node name="HungerIcon2" type="TextureRect" parent="IconContainer/HungerContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_gri1q")
 expand_mode = 1
 
-[node name="HungerLabel" type="Label" parent="IconContainer"]
+[node name="HungerLabel" type="Label" parent="IconContainer/HungerContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -93,13 +98,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "50"
 vertical_alignment = 2
 
-[node name="ThirstIcon2" type="TextureRect" parent="IconContainer"]
+[node name="ThirstContainer" type="HBoxContainer" parent="IconContainer"]
+layout_mode = 2
+tooltip_text = "Thirst"
+
+[node name="ThirstIcon2" type="TextureRect" parent="IconContainer/ThirstContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("6_w1twf")
 expand_mode = 1
 
-[node name="ThirstLabel" type="Label" parent="IconContainer"]
+[node name="ThirstLabel" type="Label" parent="IconContainer/ThirstContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -108,13 +118,18 @@ text = "40
 "
 vertical_alignment = 2
 
-[node name="SleepIcon" type="TextureRect" parent="IconContainer"]
+[node name="SleepContainer" type="HBoxContainer" parent="IconContainer"]
+layout_mode = 2
+tooltip_text = "Sleepyness"
+
+[node name="SleepIcon" type="TextureRect" parent="IconContainer/SleepContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_e0rmg")
 expand_mode = 1
 
-[node name="SleepLabel" type="Label" parent="IconContainer"]
+[node name="SleepLabel" type="Label" parent="IconContainer/SleepContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -123,12 +138,18 @@ text = "40
 "
 vertical_alignment = 2
 
-[node name="HappynessIcon" type="TextureRect" parent="IconContainer"]
+[node name="HappynessContainer" type="HBoxContainer" parent="IconContainer"]
+layout_mode = 2
+tooltip_text = "Happyness"
+
+[node name="HappynessIcon" type="TextureRect" parent="IconContainer/HappynessContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("3_83kj8")
+mouse_filter = 2
+texture = ExtResource("6_2q4a4")
+expand_mode = 1
 
-[node name="HappynessLabel" type="Label" parent="IconContainer"]
+[node name="HappynessLabel" type="Label" parent="IconContainer/HappynessContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
