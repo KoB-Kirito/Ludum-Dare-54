@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=8 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -15,6 +15,17 @@ conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "Test event"
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_0q7o6")])
 
+[sub_resource type="Resource" id="Resource_7nnu4"]
+script = ExtResource("2_ouvbw")
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([])
+
+[sub_resource type="Resource" id="Resource_qqr2j"]
+script = ExtResource("3_61jya")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "It's a cloudy day, but everything seems nice and quiet."
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_7nnu4")])
+
 [node name="EventManager" type="Node"]
 script = ExtResource("1_p3b38")
-events = Array[ExtResource("3_61jya")]([SubResource("Resource_hgvv0")])
+events = Array[ExtResource("3_61jya")]([SubResource("Resource_hgvv0"), SubResource("Resource_qqr2j")])
