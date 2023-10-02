@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://gbi8vlb130hx"]
+[gd_scene load_steps=11 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
 [ext_resource type="Texture2D" uid="uid://f31vab5n60h" path="res://assets/hunger.png" id="2_1hxa1"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
 [ext_resource type="Texture2D" uid="uid://dr2fvy0mk6714" path="res://assets/thirst.png" id="3_83kj8"]
 [ext_resource type="Texture2D" uid="uid://bfkfjt27fm41j" path="res://assets/UI/meat.png" id="4_gri1q"]
+[ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="6_w1twf"]
+[ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
+[ext_resource type="Texture2D" uid="uid://b5n7w1pg0hhte" path="res://assets/UI/HP.png" id="8_oh2us"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnddo"]
 
@@ -40,10 +43,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -98.0
-offset_top = 25.0
-offset_right = -13.0
-offset_bottom = 101.0
+offset_left = -101.0
+offset_top = 72.0
+offset_right = -16.0
+offset_bottom = 148.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnddo")
 
@@ -66,10 +69,10 @@ expand_mode = 1
 [node name="NameLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 14.0
-offset_top = 23.0
-offset_right = 95.0
-offset_bottom = 64.0
+offset_left = 16.0
+offset_top = 74.0
+offset_right = 97.0
+offset_bottom = 115.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Name"
@@ -85,20 +88,20 @@ texture = ExtResource("2_1hxa1")
 
 [node name="HungerIcon2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 117.0
-offset_right = 47.0
-offset_bottom = 157.0
+offset_left = 9.0
+offset_top = 19.0
+offset_right = 41.0
+offset_bottom = 51.0
 texture = ExtResource("4_gri1q")
 expand_mode = 4
 
 [node name="HungerLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 52.0
-offset_top = 133.0
-offset_right = 81.0
-offset_bottom = 163.0
+offset_left = 44.0
+offset_top = 30.0
+offset_right = 73.0
+offset_bottom = 60.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "50"
 
@@ -113,86 +116,158 @@ texture = ExtResource("3_83kj8")
 
 [node name="ThirstIcon2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 94.0
-offset_top = 129.0
-offset_right = 114.0
-offset_bottom = 149.0
-texture = ExtResource("3_83kj8")
+offset_left = 80.0
+offset_top = 19.0
+offset_right = 112.0
+offset_bottom = 51.0
+texture = ExtResource("6_w1twf")
+expand_mode = 1
 
 [node name="ThirstLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 118.0
-offset_top = 132.0
-offset_right = 178.0
-offset_bottom = 155.0
+offset_left = 110.0
+offset_top = 29.0
+offset_right = 170.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "40
 "
 
 [node name="SleepIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 129.0
-offset_right = 179.0
-offset_bottom = 149.0
-texture = ExtResource("3_83kj8")
+offset_left = 141.0
+offset_top = 20.0
+offset_right = 173.0
+offset_bottom = 52.0
+texture = ExtResource("7_e0rmg")
+expand_mode = 1
 
 [node name="SleepLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 184.0
-offset_top = 132.0
-offset_right = 244.0
-offset_bottom = 155.0
+offset_left = 176.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "40
 "
 
 [node name="HappynessIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 218.0
-offset_top = 130.0
-offset_right = 238.0
-offset_bottom = 150.0
+offset_left = 210.0
+offset_top = 27.0
+offset_right = 230.0
+offset_bottom = 47.0
 texture = ExtResource("3_83kj8")
 
 [node name="HappynessLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 251.0
-offset_top = 131.0
-offset_right = 311.0
-offset_bottom = 154.0
+offset_left = 243.0
+offset_top = 28.0
+offset_right = 303.0
+offset_bottom = 51.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+
+[node name="HPIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 76.0
+offset_right = 198.0
+offset_bottom = 112.0
+texture = ExtResource("8_oh2us")
+expand_mode = 1
+
+[node name="HPLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 124.0
+offset_top = 77.0
+offset_right = 184.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
 text = "40
 "
 
 [node name="ActionPanel" type="Panel" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
-offset_left = 14.0
-offset_top = 56.0
-offset_right = 195.0
-offset_bottom = 123.0
+offset_left = 13.0
+offset_top = 112.0
+offset_right = 194.0
+offset_bottom = 148.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fp64m")
 
 [node name="ActionLabel" type="Label" parent="ActionPanel"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 8.0
-offset_top = 6.0
-offset_right = 109.0
-offset_bottom = 29.0
+offset_top = 8.0
+offset_right = 185.0
+offset_bottom = 31.0
 text = "Current Action: Action-Name"
 
 [node name="ActionProgress" type="ProgressBar" parent="ActionPanel"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 7.0
-offset_top = 30.0
+offset_top = 4.0
 offset_right = 175.0
-offset_bottom = 57.0
+offset_bottom = 31.0
+max_value = 3.0
+step = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="ActionProgress2" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 116.0
+offset_right = 188.0
+offset_bottom = 143.0
+max_value = 3.0
+step = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Platzhalter Aktionswahl" type="Label" parent="ActionProgress2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 178.0
+offset_bottom = 27.0
+text = "Platzhalter Aktionswahl"
+
+[node name="ActionPanel2" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 13.0
+offset_top = 112.0
+offset_right = 194.0
+offset_bottom = 148.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fp64m")
+
+[node name="ActionLabel" type="Label" parent="ActionPanel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 185.0
+offset_bottom = 31.0
+text = "Current Action: Action-Name"
+
+[node name="ActionProgress" type="ProgressBar" parent="ActionPanel2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 175.0
+offset_bottom = 31.0
 max_value = 3.0
 step = 1.0
 value = 1.0
