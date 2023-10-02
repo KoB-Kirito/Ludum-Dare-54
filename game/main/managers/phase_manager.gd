@@ -56,16 +56,16 @@ func on_events_finished() -> void:
 func set_background(phase) -> void:
 	match phase:
 		Globals.Phase.MORNING:
-			Events.show_text.emit("Morning")
+			Events.show_text.emit("The morning dawns..", Color.DIM_GRAY)
 		
 		Globals.Phase.NOON:
-			Events.show_text.emit("Noon")
+			Events.show_text.emit("It is bright day..", Color.DIM_GRAY)
 		
 		Globals.Phase.EVENING:
-			Events.show_text.emit("Evening")
+			Events.show_text.emit("The sun is setting. Evening is coming...", Color.DIM_GRAY)
 		
 		Globals.Phase.NIGHT:
-			Events.show_text.emit("Night")
+			Events.show_text.emit("It is dark night...", Color.DIM_GRAY)
 
 
 func _on_auto_advance_timer_timeout() -> void:

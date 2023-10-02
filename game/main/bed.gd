@@ -32,18 +32,6 @@ func _ready() -> void:
 
 func check_death() -> bool:
 	var die: bool = false
-	if character.hunger <= 0:
-		Events.show_text.emit(character.name + " starved to death..", Color.RED)
-		die = true
-	
-	if character.thirst <= 0:
-		Events.show_text.emit(character.name + " died of thirst..", Color.RED)
-		die = true
-	
-	if character.sleep <= 0:
-		Events.show_text.emit(character.name + " died of exhaustion..", Color.RED)
-		die = true
-	
 	if character.happyness <= 0:
 		Events.show_text.emit(character.name + " died of sadness..", Color.RED)
 		die = true

@@ -112,7 +112,7 @@ offset_left = 9.0
 offset_top = 26.0
 offset_right = 301.0
 offset_bottom = 58.0
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="HungerContainer" type="HBoxContainer" parent="IconContainer"]
@@ -132,7 +132,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "50"
+text = "5"
 vertical_alignment = 2
 
 [node name="ThirstContainer" type="HBoxContainer" parent="IconContainer"]
@@ -152,8 +152,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
+text = "4"
 vertical_alignment = 2
 
 [node name="SleepContainer" type="HBoxContainer" parent="IconContainer"]
@@ -173,8 +172,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
+text = "3"
 vertical_alignment = 2
 
 [node name="HappynessContainer" type="HBoxContainer" parent="IconContainer"]
@@ -194,7 +192,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
+text = "5
 "
 vertical_alignment = 2
 
