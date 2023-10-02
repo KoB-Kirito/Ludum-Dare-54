@@ -1,6 +1,10 @@
 class_name Event
 extends Resource
 
+@export var name: String
+
+@export_group("Settings")
+
 ## All conditions have to be met for this event to get selected
 @export var conditions: Array[Condition]
 
