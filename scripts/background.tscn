@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://duwlyu1lu8nsr"]
+[gd_scene load_steps=35 format=3 uid="uid://duwlyu1lu8nsr"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_2wsxs"]
 [ext_resource type="Texture2D" uid="uid://1ryxqyxurqce" path="res://assets/MainBackground.png" id="2_c63ta"]
@@ -7,10 +7,159 @@
 [ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="4_vmwl4"]
 [ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/noon.png" id="5_gqtnu"]
 [ext_resource type="Texture2D" uid="uid://b0w7w6l11owg7" path="res://assets/Backgrounds/morning.png" id="6_216mt"]
+[ext_resource type="Texture2D" uid="uid://dhwyfdwvg76lg" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 29.png" id="6_pax85"]
 [ext_resource type="Texture2D" uid="uid://b37ysvfjxiagh" path="res://assets/Backgrounds/intro.png" id="7_553nk"]
+[ext_resource type="Texture2D" uid="uid://nn7ko1pkqa6r" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 30.png" id="7_qcufl"]
 [ext_resource type="Material" uid="uid://ceqkit2a43ewq" path="res://scripts/SnowCommon.tres" id="8_3ose0"]
+[ext_resource type="Texture2D" uid="uid://b3dx3hikbrtih" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 31.png" id="8_f0vlh"]
 [ext_resource type="Texture2D" uid="uid://rss85x34xe62" path="res://assets/UI/1px.png" id="9_3jfd6"]
+[ext_resource type="Texture2D" uid="uid://c4isagwnj1i6v" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 32.png" id="9_t4m0g"]
 [ext_resource type="Material" uid="uid://d0vpo5cfgdl68" path="res://scripts/SnowIntro.tres" id="10_5ae2y"]
+[ext_resource type="Texture2D" uid="uid://cn6nynwa0bo8c" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 33.png" id="10_8h2j0"]
+[ext_resource type="Texture2D" uid="uid://7ah0f5ae6s07" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 34.png" id="11_qr4bp"]
+[ext_resource type="Texture2D" uid="uid://5hgvaotmb1sg" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 35.png" id="12_ncd8i"]
+[ext_resource type="Texture2D" uid="uid://c41jbnymadaqu" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 36.png" id="13_h8omu"]
+[ext_resource type="Texture2D" uid="uid://cga7t1f1mluju" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 37.png" id="14_5gh6c"]
+[ext_resource type="Script" path="res://scripts/AutmaticBGAnimations.gd" id="15_ele6r"]
+[ext_resource type="Texture2D" uid="uid://behb8rilp56y1" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 39.png" id="15_tvkwh"]
+[ext_resource type="Texture2D" uid="uid://bnd6hmnaf54yx" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 40.png" id="16_kx8fb"]
+[ext_resource type="Texture2D" uid="uid://b4rk01uh8b1vv" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 41.png" id="17_uk2vq"]
+[ext_resource type="Texture2D" uid="uid://r1q2mqda31x4" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/leer.png" id="17_v5iv1"]
+[ext_resource type="Texture2D" uid="uid://b28f3skpnk4qs" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 42.png" id="18_62vll"]
+[ext_resource type="Texture2D" uid="uid://dwb5rifwmn2g8" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 42a.png" id="19_qg0j1"]
+[ext_resource type="Texture2D" uid="uid://47t6vm1v748c" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 43.png" id="20_haey7"]
+[ext_resource type="Texture2D" uid="uid://bt0sdsnw8mems" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 43a.png" id="21_h0qoj"]
+[ext_resource type="Texture2D" uid="uid://i7g2lvyluy86" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 44.png" id="22_qaets"]
+[ext_resource type="Texture2D" uid="uid://cey3v052ot838" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 45.png" id="23_f3obn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ni5lf"]
+animations = [{
+"frames": [{
+"duration": 20.0,
+"texture": ExtResource("6_pax85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qcufl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f0vlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t4m0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8h2j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qr4bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ncd8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h8omu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5gh6c")
+}, {
+"duration": 100.0,
+"texture": ExtResource("17_v5iv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tvkwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kx8fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_uk2vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_62vll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qg0j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_haey7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_h0qoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qaets")
+}, {
+"duration": 40.0,
+"texture": ExtResource("23_f3obn")
+}],
+"loop": true,
+"name": &"Full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_tvkwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kx8fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_uk2vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_62vll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qg0j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_haey7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_h0qoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qaets")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_f3obn")
+}],
+"loop": true,
+"name": &"comeBack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pax85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qcufl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f0vlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t4m0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8h2j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qr4bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ncd8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h8omu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5gh6c")
+}],
+"loop": true,
+"name": &"flyAway",
+"speed": 5.0
+}]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_22lxm"]
 particles_animation = true
@@ -46,6 +195,11 @@ position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("7_553nk")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Intro"]
+sprite_frames = SubResource("SpriteFrames_ni5lf")
+animation = &"Full"
+script = ExtResource("15_ele6r")
+
 [node name="Night" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(800, 449.937)
@@ -57,6 +211,11 @@ visible = false
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("4_17ps3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Evening"]
+sprite_frames = SubResource("SpriteFrames_ni5lf")
+animation = &"Full"
+script = ExtResource("15_ele6r")
 
 [node name="Noon" type="Sprite2D" parent="."]
 visible = false
