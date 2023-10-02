@@ -227,7 +227,7 @@ animations = [{
 "texture": ExtResource("17_v5iv1")
 }],
 "loop": true,
-"name": &"Deer",
+"name": &"Full",
 "speed": 5.0
 }]
 
@@ -310,7 +310,9 @@ texture = ExtResource("3_me5c0")
 position = Vector2(-1.00002, 0)
 scale = Vector2(0.912844, 1)
 sprite_frames = SubResource("SpriteFrames_22sa7")
-animation = &"Deer"
+animation = &"Full"
+frame_progress = 0.956502
+script = ExtResource("15_ele6r")
 
 [node name="Snow_Night" type="GPUParticles2D" parent="Night"]
 visible = false
@@ -354,7 +356,8 @@ texture = ExtResource("5_gqtnu")
 position = Vector2(-1, 0)
 scale = Vector2(0.912844, 1)
 sprite_frames = SubResource("SpriteFrames_22sa7")
-animation = &"Deer"
+animation = &"Full"
+script = ExtResource("15_ele6r")
 
 [node name="Morning" type="Sprite2D" parent="."]
 visible = false
