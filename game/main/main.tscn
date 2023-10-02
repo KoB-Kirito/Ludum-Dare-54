@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=40 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/phase_manager.gd" id="2_ekfcy"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="18_5ewfh"]
 [ext_resource type="AudioStream" uid="uid://bs53xiyv00fdf" path="res://assets/sounds/BRS_Rooster_TJ_CockaDoodleDoo_Close_1.wav" id="18_unbea"]
 [ext_resource type="Texture2D" uid="uid://os0ictrdovel" path="res://assets/UI/Notizblock_Zeitverlauf.png" id="26_mtwss"]
+[ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="27_8rjxu"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="27_b747e"]
 [ext_resource type="Texture2D" uid="uid://cvdw1s31w3dd7" path="res://assets/UI/Charakterprofil.png" id="28_ekws5"]
 
@@ -130,6 +131,17 @@ Crafting = 5
 Science = 5
 Medicine = 5
 actions = Array[ExtResource("3_veadd")]([SubResource("Resource_32xf0"), SubResource("Resource_wt2mr"), SubResource("Resource_8tjcw")])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7wco"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -441,21 +453,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.501961)
 
-[node name="ChoicesContainer" type="VBoxContainer" parent="EventLayer"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="EventImage" type="TextureRect" parent="EventLayer"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -467,5 +464,29 @@ offset_top = 38.0
 offset_right = -34.0
 offset_bottom = 435.0
 grow_horizontal = 0
+
+[node name="Panel" type="PanelContainer" parent="EventLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r7wco")
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="EventLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button" type="Button" parent="EventLayer/Panel/ChoicesContainer"]
+layout_mode = 2
+theme = ExtResource("27_8rjxu")
+text = "Test Text und so"
 
 [connection signal="timeout" from="Logic/AutoAdvanceTimer" to="Logic/PhaseManager" method="_on_auto_advance_timer_timeout"]
