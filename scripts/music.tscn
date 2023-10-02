@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqs6aoeno3sqn"]
+
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_4phiv"]
+[ext_resource type="AudioStream" uid="uid://eooc1bihuxrm" path="res://assets/music/morning.ogg" id="2_w3iq8"]
+[ext_resource type="AudioStream" uid="uid://cbk88lqcpxbwa" path="res://assets/music/noon.ogg" id="3_8f0tt"]
+[ext_resource type="AudioStream" uid="uid://c55if7sxagrit" path="res://assets/music/evening.ogg" id="4_aqhpg"]
+[ext_resource type="AudioStream" uid="uid://b86bl0j3aoofx" path="res://assets/music/night.ogg" id="5_eeomm"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_4phiv")
+
+[node name="bgm_morning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w3iq8")
+
+[node name="bgm_noon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8f0tt")
+
+[node name="bgm_evening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_aqhpg")
+
+[node name="bgm_night" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_eeomm")

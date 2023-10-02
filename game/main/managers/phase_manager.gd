@@ -33,6 +33,7 @@ func advance_phase() -> void:
 	#%DayProgress.value = Globals.current_phase
 	set_background(Globals.current_phase)
 	Background.change_background(Globals.current_phase)
+	Music.change_music(Globals.current_phase)
 	
 	if Globals.current_phase == Globals.Phase.MORNING:
 		%snd_rooster.play()

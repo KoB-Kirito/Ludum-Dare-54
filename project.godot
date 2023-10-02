@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Globals="*res://scripts/globals.gd"
 Events="*res://scripts/events.gd"
 Background="*res://scripts/background.tscn"
+Music="*res://scripts/music.tscn"
 
 [display]
 
