@@ -2,9 +2,12 @@ class_name PhaseCondition
 extends Condition
 
 
-## Name of character that has to be present
-@export var phase: Globals.Phase
+## OR - If any
+@export var phases: Array[Globals.Phase]
 
 
 func is_met() -> bool:
-	return phase == Globals.current_phase
+	for phase in phases:
+		if phase == Globals.current_phase:
+			return true
+	return false
