@@ -39,10 +39,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -96.0
-offset_top = 42.0
-offset_right = -11.0
-offset_bottom = 118.0
+offset_left = -103.0
+offset_top = 27.0
+offset_right = -18.0
+offset_bottom = 103.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnddo")
 
@@ -65,47 +65,47 @@ expand_mode = 1
 [node name="NameLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 18.0
-offset_top = 99.0
-offset_right = 99.0
-offset_bottom = 140.0
+offset_left = 11.0
+offset_top = 22.0
+offset_right = 92.0
+offset_bottom = 63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Name"
 
 [node name="HungerIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 123.0
-offset_right = 45.0
-offset_bottom = 143.0
+offset_left = 12.0
+offset_top = 57.0
+offset_right = 32.0
+offset_bottom = 77.0
 texture = ExtResource("2_1hxa1")
 
 [node name="HungerLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 49.0
-offset_top = 145.0
-offset_right = 78.0
-offset_bottom = 175.0
+offset_left = 32.0
+offset_top = 58.0
+offset_right = 61.0
+offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "50"
 
 [node name="ThirstIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 126.0
-offset_right = 97.0
-offset_bottom = 146.0
+offset_left = 67.0
+offset_top = 54.0
+offset_right = 87.0
+offset_bottom = 74.0
 texture = ExtResource("3_83kj8")
 
 [node name="ThirstLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 99.0
-offset_top = 145.0
-offset_right = 159.0
-offset_bottom = 168.0
+offset_left = 87.0
+offset_top = 56.0
+offset_right = 147.0
+offset_bottom = 79.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "40
 "
@@ -114,10 +114,10 @@ text = "40
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 274.0
-offset_bottom = 83.0
+offset_left = 13.0
+offset_top = 80.0
+offset_right = 194.0
+offset_bottom = 147.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fp64m")
 
 [node name="ActionLabel" type="Label" parent="ActionPanel"]
@@ -134,7 +134,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 7.0
 offset_top = 30.0
-offset_right = 257.0
+offset_right = 175.0
 offset_bottom = 57.0
 max_value = 3.0
 step = 1.0
@@ -175,7 +175,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Available"
+text = "Free Bed"
 horizontal_alignment = 1
 
 [node name="BuildPanel" type="Panel" parent="."]
@@ -201,19 +201,20 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="BuildPanel"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 39.0
-offset_right = 200.0
-offset_bottom = 62.0
-text = "Not build"
+offset_left = 59.0
+offset_top = 36.0
+offset_right = 230.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 32
+text = "Available space"
 
 [node name="BuildButton" type="Button" parent="BuildPanel"]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 80.0
-offset_right = 229.0
-offset_bottom = 111.0
-text = "Build (100 wood)"
+offset_left = 14.0
+offset_top = 83.0
+offset_right = 286.0
+offset_bottom = 132.0
+text = "Build Bed (100 wood)"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="BuildPanel/BuildButton" to="." method="_on_build_button_pressed"]
