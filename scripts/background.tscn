@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://duwlyu1lu8nsr"]
+[gd_scene load_steps=36 format=3 uid="uid://duwlyu1lu8nsr"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_2wsxs"]
 [ext_resource type="Texture2D" uid="uid://1ryxqyxurqce" path="res://assets/MainBackground.png" id="2_c63ta"]
@@ -161,6 +161,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_22sa7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Deer",
+"speed": 5.0
+}]
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_22lxm"]
 particles_animation = true
 particles_anim_h_frames = 4
@@ -205,6 +213,10 @@ visible = false
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("3_me5c0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Night"]
+sprite_frames = SubResource("SpriteFrames_22sa7")
+animation = &"Deer"
 
 [node name="Evening" type="Sprite2D" parent="."]
 visible = false
