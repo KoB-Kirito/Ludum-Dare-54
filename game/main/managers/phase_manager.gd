@@ -9,7 +9,7 @@ extends Node
 @export var night_background: Texture2D
 
 ## Starting phase
-@export var start_phase: int = Globals.Phase.NOON
+@export var start_phase: Globals.Phase = Globals.Phase.NOON
 
 
 func _ready() -> void:
