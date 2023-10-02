@@ -367,7 +367,7 @@ Cooking = 2
 Crafting = 2
 Science = 1
 Medicine = 1
-actions = Array[Resource("res://game/actions/rest.gd")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([null])
 
 [sub_resource type="Resource" id="Resource_aasu7"]
 script = ExtResource("7_6h5ot")
