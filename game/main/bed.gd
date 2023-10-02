@@ -116,6 +116,9 @@ func update_character() -> void:
 	
 	# special actions
 	for action: RestAction in character.actions:
+		if action == null:
+			continue
+		
 		var conditions_met: bool = true
 		var fail_text: String = ""
 		for condition: Condition in action.conditions:
