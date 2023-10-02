@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=23 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/phase_manager.gd" id="2_ekfcy"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bgyogqxddrekg" path="res://assets/sounds/shs_cyber_button_ui_shooter_military_2.wav" id="14_443j1"]
 [ext_resource type="Script" path="res://game/main/ui.gd" id="15_vc2hc"]
 [ext_resource type="AudioStream" uid="uid://bs53xiyv00fdf" path="res://assets/sounds/BRS_Rooster_TJ_CockaDoodleDoo_Close_1.wav" id="18_unbea"]
+[ext_resource type="PackedScene" uid="uid://cxyu6o2143fkv" path="res://game/game_over.tscn" id="19_lkyf8"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="27_b747e"]
 [ext_resource type="Texture2D" uid="uid://c7ih24o6x6m17" path="res://assets/UI/notebook_small.png" id="27_hcrbx"]
 [ext_resource type="Texture2D" uid="uid://cvdw1s31w3dd7" path="res://assets/UI/Charakterprofil.png" id="28_ekws5"]
@@ -217,7 +218,7 @@ built = false
 
 [node name="Notebook" type="TextureRect" parent="UI"]
 unique_name_in_owner = true
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_right = 481.0
 offset_bottom = 616.0
@@ -372,6 +373,11 @@ text = "EXAMPLE"
 [node name="Button4" type="Button" parent="UI/EventLayer/PanelContainer/MarginContainer/ChoicesContainer"]
 layout_mode = 2
 text = "EXAMPLE"
+
+[node name="GameOver" parent="UI" instance=ExtResource("19_lkyf8")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [connection signal="timeout" from="Logic/AutoAdvanceTimer" to="Logic/PhaseManager" method="_on_auto_advance_timer_timeout"]
 [connection signal="timeout" from="Logic/HideCharacterTimer" to="." method="_on_hide_character_timer_timeout"]

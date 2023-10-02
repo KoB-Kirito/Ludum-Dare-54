@@ -48,6 +48,11 @@ func check_death() -> bool:
 		Events.show_text.emit(character.name + " died of sadness..", Color.RED)
 		die = true
 	
+	if character.healthpoints <= 0:
+		Events.show_text.emit(character.name + " died of wounds..", Color.RED)
+		die = true
+	
+	
 	if die:
 		character = null
 		current_action = null
@@ -71,7 +76,8 @@ func check_death() -> bool:
 
 
 func game_over() -> void:
-	get_tree().change_scene_to_file("res://game/game_over.tscn")
+	Events.game_over.emit()
+
 
 func update_character() -> void:
 	if character == null:
@@ -155,8 +161,24 @@ func advance_action() -> void:
 	
 	# lower values
 	character.hunger -= 1
+	if character.hunger < 0:
+		character.hunger = 0
+	character.thirst -= 1
+	if character.thirst < 0:
+		character.thirst = 0
+		
 	character.sleep -= 1
-	character.happyness -= 1
+	if character.sleep < 0:
+		character.sleep = 0
+	
+	if character.sleep <= 0:
+		character.happyness -= 1
+		character.healthpoints -= 2
+		Events.show_text.emit(character.name + " lost health and happyness because of tirement..", Color.YELLOW)
+	
+	if character.hunger <= 0 or character.thirst <= 0:
+		character.healthpoints -= 1
+		Events.show_text.emit(character.name + " lost health because of hunger..", Color.YELLOW)
 	
 	%ActionProgress.value += 1
 	if %ActionProgress.value >= %ActionProgress.max_value:
@@ -174,6 +196,16 @@ func advance_action() -> void:
 			character.thirst += 5
 			if character.thirst >= character.thirst_max:
 				character.thirst = character.thirst_max
+		
+		elif current_action is RestAction:
+			character.sleep += 3
+			if Globals.current_phase == Globals.Phase.NIGHT:
+				character.sleep += 2
+			if character.sleep > character.sleep_max:
+				character.happyness += character.sleep - character.sleep_max
+				if character.happyness > character.happyness_max:
+					character.happyness = character.happyness_max
+				character.sleep = character.sleep_max
 		
 		current_action = null
 	

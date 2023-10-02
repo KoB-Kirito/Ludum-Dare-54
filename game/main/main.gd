@@ -14,9 +14,16 @@ func _ready() -> void:
 	Globals.main = self
 	
 	Events.character_selected.connect(character_selected)
+	Events.game_over.connect(on_game_over)
 	
 	add_character(%CharacterManager.get_random_character())
 	add_character(%CharacterManager.get_random_character())
+
+
+func on_game_over() -> void:
+	%GameOver.show()
+	Events.show_text.emit("All characters died..", Color.WEB_PURPLE)
+	%Notebook.scroll_in()
 
 
 func add_character(character: Character) -> void:
