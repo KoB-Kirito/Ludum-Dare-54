@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl7ycqmk74tns"
-path="res://.godot/imported/noon.png-068b06602c20d47f0f4b1f16afa93146.ctex"
+uid="uid://dbi3nkqgglx3e"
+path="res://.godot/imported/mood_middle.png-c9b233b73b0adeae4603365358d13f2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/noon.png"
-dest_files=["res://.godot/imported/noon.png-068b06602c20d47f0f4b1f16afa93146.ctex"]
+source_file="res://assets/UI/mood_middle.png"
+dest_files=["res://.godot/imported/mood_middle.png-c9b233b73b0adeae4603365358d13f2c.ctex"]
 
 [params]
 

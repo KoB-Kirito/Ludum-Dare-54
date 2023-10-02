@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gbi8vlb130hx"]
+[gd_scene load_steps=13 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
 [ext_resource type="Texture2D" uid="uid://f31vab5n60h" path="res://assets/hunger.png" id="2_1hxa1"]
@@ -8,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="6_w1twf"]
 [ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
 [ext_resource type="Texture2D" uid="uid://b5n7w1pg0hhte" path="res://assets/UI/HP.png" id="8_oh2us"]
+[ext_resource type="Texture2D" uid="uid://bk0wt2putupt0" path="res://assets/UI/mood_high.png" id="8_ovbsx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw640"]
+bg_color = Color(0.670588, 0.662745, 0.54902, 0.792157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnddo"]
 
@@ -37,6 +45,109 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_rguvq")
 expand_mode = 1
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 26.0
+offset_right = 285.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bw640")
+
+[node name="HungerIcon" type="TextureRect" parent="TextureRect/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 21.0
+offset_bottom = 19.0
+texture = ExtResource("2_1hxa1")
+
+[node name="HungerIcon2" type="TextureRect" parent="TextureRect/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 37.0
+offset_bottom = 32.0
+texture = ExtResource("4_gri1q")
+expand_mode = 4
+
+[node name="HungerLabel" type="Label" parent="TextureRect/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 11.0
+offset_right = 69.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "50"
+
+[node name="ThirstIcon" type="TextureRect" parent="TextureRect/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 76.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 52.0
+texture = ExtResource("3_83kj8")
+
+[node name="ThirstIcon2" type="TextureRect" parent="TextureRect/Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_right = 108.0
+offset_bottom = 32.0
+texture = ExtResource("6_w1twf")
+expand_mode = 1
+
+[node name="ThirstLabel" type="Label" parent="TextureRect/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 106.0
+offset_top = 10.0
+offset_right = 166.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+
+[node name="SleepIcon" type="TextureRect" parent="TextureRect/Panel"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 1.0
+offset_right = 169.0
+offset_bottom = 33.0
+texture = ExtResource("7_e0rmg")
+expand_mode = 1
+
+[node name="SleepLabel" type="Label" parent="TextureRect/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 172.0
+offset_top = 10.0
+offset_right = 232.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+
+[node name="HappynessIcon" type="TextureRect" parent="TextureRect/Panel"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 8.0
+offset_right = 226.0
+offset_bottom = 28.0
+texture = ExtResource("8_ovbsx")
+expand_mode = 1
+
+[node name="HappynessLabel" type="Label" parent="TextureRect/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 239.0
+offset_top = 9.0
+offset_right = 299.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
 
 [node name="PortraitPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -76,102 +187,6 @@ offset_bottom = 115.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Name"
-
-[node name="HungerIcon" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 13.0
-offset_top = 25.0
-offset_right = 33.0
-offset_bottom = 45.0
-texture = ExtResource("2_1hxa1")
-
-[node name="HungerIcon2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 19.0
-offset_right = 41.0
-offset_bottom = 51.0
-texture = ExtResource("4_gri1q")
-expand_mode = 4
-
-[node name="HungerLabel" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 44.0
-offset_top = 30.0
-offset_right = 73.0
-offset_bottom = 60.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "50"
-
-[node name="ThirstIcon" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 88.0
-offset_top = 58.0
-offset_right = 108.0
-offset_bottom = 78.0
-texture = ExtResource("3_83kj8")
-
-[node name="ThirstIcon2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 19.0
-offset_right = 112.0
-offset_bottom = 51.0
-texture = ExtResource("6_w1twf")
-expand_mode = 1
-
-[node name="ThirstLabel" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 110.0
-offset_top = 29.0
-offset_right = 170.0
-offset_bottom = 52.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
-
-[node name="SleepIcon" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 20.0
-offset_right = 173.0
-offset_bottom = 52.0
-texture = ExtResource("7_e0rmg")
-expand_mode = 1
-
-[node name="SleepLabel" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 176.0
-offset_top = 29.0
-offset_right = 236.0
-offset_bottom = 52.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
-
-[node name="HappynessIcon" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 210.0
-offset_top = 27.0
-offset_right = 230.0
-offset_bottom = 47.0
-texture = ExtResource("3_83kj8")
-
-[node name="HappynessLabel" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 243.0
-offset_top = 28.0
-offset_right = 303.0
-offset_bottom = 51.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
 
 [node name="HPIcon" type="TextureRect" parent="."]
 layout_mode = 0
