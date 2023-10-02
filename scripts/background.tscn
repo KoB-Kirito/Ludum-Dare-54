@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://duwlyu1lu8nsr"]
+[gd_scene load_steps=12 format=3 uid="uid://duwlyu1lu8nsr"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_2wsxs"]
 [ext_resource type="Texture2D" uid="uid://1ryxqyxurqce" path="res://assets/MainBackground.png" id="2_c63ta"]
-[ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/Noon.png" id="3_ghvio"]
+[ext_resource type="Texture2D" uid="uid://bdgt256fr5ed2" path="res://assets/Backgrounds/night.png" id="3_me5c0"]
+[ext_resource type="Texture2D" uid="uid://bnkvmbiws2b18" path="res://assets/Backgrounds/evening.png" id="4_17ps3"]
 [ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="4_vmwl4"]
+[ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/noon.png" id="5_gqtnu"]
+[ext_resource type="Texture2D" uid="uid://b0w7w6l11owg7" path="res://assets/Backgrounds/morning.png" id="6_216mt"]
+[ext_resource type="Texture2D" uid="uid://b37ysvfjxiagh" path="res://assets/Backgrounds/intro.png" id="7_553nk"]
+[ext_resource type="Texture2D" uid="uid://rss85x34xe62" path="res://assets/UI/1px.png" id="9_3jfd6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_22lxm"]
 particles_animation = true
@@ -40,10 +45,33 @@ position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("2_c63ta")
 
-[node name="Background6" type="Sprite2D" parent="."]
+[node name="Night" type="Sprite2D" parent="."]
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
-texture = ExtResource("3_ghvio")
+texture = ExtResource("3_me5c0")
+
+[node name="Evening" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("4_17ps3")
+
+[node name="Noon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("5_gqtnu")
+
+[node name="Morning" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("6_216mt")
+
+[node name="Intro" type="Sprite2D" parent="."]
+position = Vector2(800, 449.937)
+scale = Vector2(1, 1.00014)
+texture = ExtResource("7_553nk")
 
 [node name="Snow" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_22lxm")
@@ -54,3 +82,15 @@ process_material = SubResource("ParticleProcessMaterial_5b1an")
 texture = ExtResource("4_vmwl4")
 lifetime = 16.0
 fixed_fps = 64
+
+[node name="Border_Top" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(800, 33)
+scale = Vector2(1600, 66)
+texture = ExtResource("9_3jfd6")
+
+[node name="Border_Top2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(800, 867)
+scale = Vector2(1600, 66)
+texture = ExtResource("9_3jfd6")

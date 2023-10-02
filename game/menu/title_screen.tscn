@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://t83vddn4vvyu"]
+[gd_scene load_steps=4 format=3 uid="uid://t83vddn4vvyu"]
 
 [ext_resource type="Script" path="res://game/menu/title_screen.gd" id="1_mwhjw"]
+[ext_resource type="Texture2D" uid="uid://ctegv1yjtbol6" path="res://assets/UI/Logo.png" id="2_72gd3"]
 
 [sub_resource type="GDScript" id="GDScript_4s735"]
 script/source = "extends Label
@@ -25,15 +26,15 @@ func _process(delta):
 	var tween = get_tree().create_tween()
 	var tempColor
 	var tempScale
-	if(timer < 140):
-		tempColor = Color(Color.WHITE,0.1)
+	if(timer < 180):
+		tempColor = Color(Color.BLACK,0.3)
 		tempScale = 36
 		
-	if(timer > 140):
-		tempColor = Color(Color.WHITE,0.8)
+	if(timer > 180):
+		tempColor = Color(Color.BLACK,1)
 		tempScale = 48
 		
-	tween.tween_property($\".\", \"modulate\", tempColor,4)
+	tween.tween_property($\".\", \"modulate\", tempColor,1.5)
 	#tween.tween_property($\".\", \"theme_override_font_sizes/font_size\", tempScale, 8)
 	#tween.tween_property($\".\", , tempColor,4) adding scale animation? :(
 	
@@ -72,7 +73,7 @@ offset_right = 335.0
 offset_bottom = 327.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.54902)
+theme_override_colors/font_color = Color(0, 0, 0, 0.54902)
 theme_override_font_sizes/font_size = 48
 text = "Press any key to Start"
 horizontal_alignment = 1
@@ -80,6 +81,7 @@ vertical_alignment = 1
 script = SubResource("GDScript_4s735")
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
@@ -98,3 +100,10 @@ text = "Frozen Shelter"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.833329, 0.833323)
+texture = ExtResource("2_72gd3")
