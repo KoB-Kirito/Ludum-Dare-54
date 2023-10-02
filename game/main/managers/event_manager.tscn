@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=130 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -13,8 +13,12 @@
 [ext_resource type="Script" path="res://game/events/conditions/resource.gd" id="11_d5ty8"]
 [ext_resource type="Script" path="res://game/events/conditions/character_present.gd" id="12_36hyt"]
 [ext_resource type="Resource" uid="uid://bgclj5rvkbx0e" path="res://game/main/managers/event_W2.tres" id="12_43005"]
+[ext_resource type="Texture2D" uid="uid://ctuqombygawf1" path="res://assets/UI/vegetable.png" id="13_axnbt"]
 [ext_resource type="Texture2D" uid="uid://c4b3yjlq21jr6" path="res://assets/UI/medicine.png" id="14_xkaow"]
 [ext_resource type="Script" path="res://game/events/effects/take_damage.gd" id="15_w1hn6"]
+[ext_resource type="Script" path="res://game/events/effects/character_join.gd" id="16_gv1uf"]
+[ext_resource type="Texture2D" uid="uid://brvodcfalcc0y" path="res://assets/UI/tools.png" id="18_k4y01"]
+[ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="19_pf1ym"]
 
 [sub_resource type="Resource" id="Resource_7nnu4"]
 script = ExtResource("2_ouvbw")
@@ -311,6 +315,7 @@ name = "M2"
 weight = 100
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_n3e32")])
 text = "An old lady comes to your shelter. She certainly looks like a witch, but she offers medicine in trade for food."
+image = ExtResource("13_axnbt")
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_swmpw"), SubResource("Resource_bxpwh")])
 
 [sub_resource type="Resource" id="Resource_0cyjv"]
@@ -564,6 +569,152 @@ conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Res
 text = "The food looks rotten. Should we throw it away or take the risk of food poisoning?"
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_jhnir"), null])
 
+[sub_resource type="Resource" id="Resource_03xie"]
+script = ExtResource("16_gv1uf")
+character = "pete"
+
+[sub_resource type="Resource" id="Resource_p6jyg"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Come in!"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_03xie")])
+
+[sub_resource type="Resource" id="Resource_3scxa"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "No, please leave..."
+effects = Array[Resource("res://game/events/effect.gd")]([])
+
+[sub_resource type="Resource" id="Resource_42qhx"]
+script = ExtResource("3_61jya")
+name = "B1"
+weight = 5
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Someone want to join your shelter!"
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_p6jyg"), SubResource("Resource_3scxa")])
+
+[sub_resource type="Resource" id="Resource_1rhe6"]
+script = ExtResource("15_w1hn6")
+amount = -1
+character = ""
+bed = 0
+
+[sub_resource type="Resource" id="Resource_ymbxd"]
+script = ExtResource("15_w1hn6")
+amount = -1
+character = ""
+bed = 1
+
+[sub_resource type="Resource" id="Resource_o37to"]
+script = ExtResource("15_w1hn6")
+amount = -1
+character = ""
+bed = 2
+
+[sub_resource type="Resource" id="Resource_44t5o"]
+script = ExtResource("15_w1hn6")
+amount = -1
+character = ""
+bed = 3
+
+[sub_resource type="Resource" id="Resource_j58w4"]
+script = ExtResource("15_w1hn6")
+amount = -1
+character = ""
+bed = 4
+
+[sub_resource type="Resource" id="Resource_4i66q"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_1rhe6"), SubResource("Resource_ymbxd"), SubResource("Resource_o37to"), SubResource("Resource_44t5o"), SubResource("Resource_j58w4")])
+
+[sub_resource type="Resource" id="Resource_64808"]
+script = ExtResource("3_61jya")
+name = "AllHeal1"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "You found some medicine to share between your characters."
+image = ExtResource("14_xkaow")
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_4i66q")])
+
+[sub_resource type="Resource" id="Resource_8eirb"]
+script = ExtResource("5_17kgw")
+resource = 0
+amount = 8
+
+[sub_resource type="Resource" id="Resource_xt1ie"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_8eirb")])
+
+[sub_resource type="Resource" id="Resource_yy0kq"]
+script = ExtResource("3_61jya")
+name = "FoodForAll"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "You found some bread for your shelter."
+image = ExtResource("7_1e5m6")
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_xt1ie")])
+
+[sub_resource type="Resource" id="Resource_t3mru"]
+script = ExtResource("11_d5ty8")
+resource = 2
+operator = 0
+amount = 3
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_m6avl"]
+script = ExtResource("5_17kgw")
+resource = 2
+amount = -4
+
+[sub_resource type="Resource" id="Resource_2dv4d"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_t3mru")])
+text = "Repair"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_m6avl")])
+
+[sub_resource type="Resource" id="Resource_ob5pu"]
+script = ExtResource("15_w1hn6")
+amount = 4
+character = ""
+bed = 1
+
+[sub_resource type="Resource" id="Resource_8ubsb"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Who cares?"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_ob5pu")])
+
+[sub_resource type="Resource" id="Resource_mfrpt"]
+script = ExtResource("3_61jya")
+name = "UseTools"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "You need to repair your roof or your survivors might get hurt."
+image = ExtResource("18_k4y01")
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_2dv4d"), SubResource("Resource_8ubsb")])
+
+[sub_resource type="Resource" id="Resource_85ek8"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Cool, thanks!"
+effects = Array[Resource("res://game/events/effect.gd")]([])
+
+[sub_resource type="Resource" id="Resource_i3u08"]
+script = ExtResource("3_61jya")
+name = "Botschaft"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Their is a message from the developers!
+
+\"We are very happy that you playtest our game. We did our best, but hope to improve with some more time after the jam! 
+Thank you a lot!\""
+image = ExtResource("19_pf1ym")
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_85ek8")])
+
 [node name="EventManager" type="Node"]
 script = ExtResource("1_p3b38")
-events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_f5ogj"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i"), SubResource("Resource_ghli2"), ExtResource("12_43005"), SubResource("Resource_yl30o"), SubResource("Resource_yjstx"), SubResource("Resource_q2kqu"), SubResource("Resource_mpttj"), SubResource("Resource_txq3a")])
+events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_f5ogj"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i"), SubResource("Resource_ghli2"), ExtResource("12_43005"), SubResource("Resource_yl30o"), SubResource("Resource_yjstx"), SubResource("Resource_q2kqu"), SubResource("Resource_mpttj"), SubResource("Resource_txq3a"), SubResource("Resource_42qhx"), SubResource("Resource_64808"), SubResource("Resource_yy0kq"), SubResource("Resource_mfrpt"), SubResource("Resource_i3u08")])

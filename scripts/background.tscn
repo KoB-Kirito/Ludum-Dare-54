@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bdgt256fr5ed2" path="res://assets/Backgrounds/night.png" id="3_me5c0"]
 [ext_resource type="Texture2D" uid="uid://bnkvmbiws2b18" path="res://assets/Backgrounds/evening.png" id="4_17ps3"]
 [ext_resource type="Texture2D" uid="uid://cc36ak33w34gh" path="res://assets/VFX/Snow.png" id="4_vmwl4"]
-[ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/Noon.png" id="5_gqtnu"]
+[ext_resource type="Texture2D" uid="uid://bl7ycqmk74tns" path="res://assets/Backgrounds/noon.png" id="5_gqtnu"]
 [ext_resource type="Texture2D" uid="uid://b0w7w6l11owg7" path="res://assets/Backgrounds/morning.png" id="6_216mt"]
 [ext_resource type="Texture2D" uid="uid://dhwyfdwvg76lg" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 29.png" id="6_pax85"]
 [ext_resource type="Texture2D" uid="uid://b37ysvfjxiagh" path="res://assets/Backgrounds/intro.png" id="7_553nk"]
