@@ -61,11 +61,29 @@ func update_character() -> void:
 	# default action
 	%ActionsDropdown.add_item("Actions")
 	%ActionsDropdown.set_item_disabled(0, true)
-	%ActionsDropdown.add_separator()
-	var default_action := RestAction.new()
-	%ActionsDropdown.add_item(default_action.name)
-	actions[default_action.name] = default_action
 	
+	%ActionsDropdown.add_separator()
+	
+	for action: RestAction in default_actions:
+		var conditions_met: bool = true
+		var fail_text: String = ""
+		for condition: Condition in action.conditions:
+			if condition.is_met():
+				conditions_met = false
+				fail_text = condition.fail_text
+		
+		if conditions_met:
+			%ActionsDropdown.add_item(action.name)
+			actions[action.name] = action
+			
+		else:
+			if fail_text != null and not fail_text.is_empty():
+				%ActionsDropdown.add_item(action.name + " [" + fail_text + "]")
+				%ActionsDropdown.set_item_disabled(%ActionsDropdown.size() - 1, true)
+	
+	%ActionsDropdown.add_separator()
+	
+	# special actions
 	for action: RestAction in character.actions:
 		var conditions_met: bool = true
 		var fail_text: String = ""

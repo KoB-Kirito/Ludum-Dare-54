@@ -64,7 +64,6 @@ custom_minimum_size = Vector2(316, 160)
 offset_right = 300.0
 offset_bottom = 160.0
 script = ExtResource("1_8cygb")
-built = null
 default_actions = Array[ExtResource("2_q6rrv")]([SubResource("Resource_epy2c"), SubResource("Resource_ds1t6"), SubResource("Resource_kvkqe"), SubResource("Resource_1qnis"), SubResource("Resource_t0fry"), SubResource("Resource_dbv6c")])
 
 [node name="Background" type="TextureRect" parent="."]
