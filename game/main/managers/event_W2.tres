@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Event" load_steps=11 format=3 uid="uid://bv5j82t810qrr"]
+
+[ext_resource type="Script" path="res://game/events/effects/change_resource.gd" id="1_48t3v"]
+[ext_resource type="Script" path="res://game/events/choice.gd" id="2_loaxg"]
+[ext_resource type="Script" path="res://game/events/conditions/character_present.gd" id="3_w10jt"]
+[ext_resource type="Script" path="res://game/events/conditions/resource.gd" id="4_bvsyh"]
+[ext_resource type="Texture2D" uid="uid://c4b3yjlq21jr6" path="res://assets/UI/medicine.png" id="5_cw2kt"]
+[ext_resource type="Script" path="res://game/events/event.gd" id="6_g4wcs"]
+
+[sub_resource type="Resource" id="Resource_7fh4n"]
+script = ExtResource("1_48t3v")
+resource = 3
+amount = -99
+
+[sub_resource type="Resource" id="Resource_rfbb1"]
+script = ExtResource("2_loaxg")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_7fh4n")])
+
+[sub_resource type="Resource" id="Resource_rscpd"]
+script = ExtResource("3_w10jt")
+character_name = "lizz"
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_hp4ju"]
+script = ExtResource("4_bvsyh")
+resource = 3
+operator = 0
+amount = 0
+fail_text = ""
+
+[resource]
+script = ExtResource("6_g4wcs")
+name = "W2"
+weight = 5
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_rscpd"), SubResource("Resource_hp4ju")])
+text = "There is nothing more valueable then medicine, but it’s gone. Is there a thief in the house?"
+image = ExtResource("5_cw2kt")
+choices = Array[ExtResource("2_loaxg")]([SubResource("Resource_rfbb1")])
