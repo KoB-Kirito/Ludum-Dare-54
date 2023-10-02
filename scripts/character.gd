@@ -6,6 +6,7 @@ extends Resource
 
 @export var portrait: Texture2D
 @export var image: Texture2D
+@export_multiline var description: String
 
 
 #Statuspoints
