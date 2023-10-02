@@ -40,6 +40,7 @@ func add_character(character: Character) -> void:
 func character_selected(character: Character, bed: Bed) -> void:
 	%TopRightBackground.show()
 	%CharacterImage.texture = character.image
+	%DescriptionLabel.text = character.description
 	
 	%HideCharacterTimer.start()
 

@@ -127,7 +127,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TopRightBackground" type="TextureRect" parent="UI/VBoxContainer/TopContainer"]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 texture = ExtResource("28_ekws5")
@@ -165,11 +164,19 @@ expand_mode = 1
 [node name="ActionMargin" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 20
 
-[node name="Label" type="Label" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin"]
+[node name="DescriptionLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 260)
 layout_mode = 2
-text = "Character description.."
+theme_override_constants/line_spacing = 2
+theme_override_font_sizes/font_size = 26
+text = "Character description.. Can get very long, so it should wrap words and stuff.
+Lorem ipsum
+More lines, more better..."
+autowrap_mode = 3
+text_overrun_behavior = 3
 
 [node name="BottomContainer" type="MarginContainer" parent="UI/VBoxContainer"]
 layout_mode = 2

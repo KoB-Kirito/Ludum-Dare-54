@@ -87,6 +87,7 @@ offset_top = 72.0
 offset_right = -16.0
 offset_bottom = 148.0
 grow_horizontal = 0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0brh7")
 
 [node name="Portrait" type="TextureRect" parent="PortraitPanel"]
@@ -103,6 +104,7 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
 
 [node name="IconContainer" type="HBoxContainer" parent="."]
@@ -137,7 +139,7 @@ vertical_alignment = 2
 [node name="ThirstContainer" type="HBoxContainer" parent="IconContainer"]
 layout_mode = 2
 tooltip_text = "Thirst"
-theme_override_constants/separation = 0
+theme_override_constants/separation = -8
 
 [node name="ThirstIcon2" type="TextureRect" parent="IconContainer/ThirstContainer"]
 custom_minimum_size = Vector2(32, 32)
