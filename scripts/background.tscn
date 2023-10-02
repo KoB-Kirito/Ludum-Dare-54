@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://duwlyu1lu8nsr"]
+[gd_scene load_steps=53 format=3 uid="uid://duwlyu1lu8nsr"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_2wsxs"]
 [ext_resource type="Texture2D" uid="uid://1ryxqyxurqce" path="res://assets/MainBackground.png" id="2_c63ta"]
@@ -31,6 +31,20 @@
 [ext_resource type="Texture2D" uid="uid://bt0sdsnw8mems" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 43a.png" id="21_h0qoj"]
 [ext_resource type="Texture2D" uid="uid://i7g2lvyluy86" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 44.png" id="22_qaets"]
 [ext_resource type="Texture2D" uid="uid://cey3v052ot838" path="res://assets/Backgrounds/BackgroundAnimations/Background_crow/Ordner 1/Ebene 45.png" id="23_f3obn"]
+[ext_resource type="Texture2D" uid="uid://bwd55wyu7fugs" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh1.png" id="25_m7alr"]
+[ext_resource type="Texture2D" uid="uid://bes7lyr15yh3d" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh2.png" id="26_lg3kg"]
+[ext_resource type="Texture2D" uid="uid://bxoi41kdthdln" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh3.png" id="27_dnagv"]
+[ext_resource type="Texture2D" uid="uid://dqyffjmnftbln" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh4.png" id="28_f1ima"]
+[ext_resource type="Texture2D" uid="uid://deu5u3wa3lpq1" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh5.png" id="29_rfoeh"]
+[ext_resource type="Texture2D" uid="uid://csne1q2th2rhg" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh6.png" id="30_dbj2h"]
+[ext_resource type="Texture2D" uid="uid://cwpa3kgplm53r" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh7.png" id="31_8tbmb"]
+[ext_resource type="Texture2D" uid="uid://b5wjf7y0fqg01" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh8.png" id="32_obb85"]
+[ext_resource type="Texture2D" uid="uid://bkxc2qi62y4vl" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh9.png" id="33_k0d7k"]
+[ext_resource type="Texture2D" uid="uid://chcq5nemjfsf6" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh10.png" id="34_dxrh8"]
+[ext_resource type="Texture2D" uid="uid://bexmbwv60dq0l" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh11.png" id="35_px3to"]
+[ext_resource type="Texture2D" uid="uid://rfrn7f6hkvie" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh12.png" id="36_onx03"]
+[ext_resource type="Texture2D" uid="uid://mfipyto1sqvh" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh13.png" id="37_j0xni"]
+[ext_resource type="Texture2D" uid="uid://d4ewsqfoq75pw" path="res://assets/Backgrounds/BackgroundAnimations/Background_reh/Reh14.png" id="38_2pcp1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni5lf"]
 animations = [{
@@ -163,7 +177,55 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_22sa7"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 50.0,
+"texture": ExtResource("25_m7alr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lg3kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dnagv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f1ima")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_rfoeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_dbj2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8tbmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_obb85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_k0d7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dxrh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_px3to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_onx03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_j0xni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_2pcp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_v5iv1")
+}, {
+"duration": 200.0,
+"texture": ExtResource("17_v5iv1")
+}],
 "loop": true,
 "name": &"Deer",
 "speed": 5.0
@@ -174,6 +236,36 @@ particles_animation = true
 particles_anim_h_frames = 4
 particles_anim_v_frames = 3
 particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_djv8k"]
+min_value = -1.0
+_data = [Vector2(0, 0.0338984), 0.0, 0.0, 0, 0, Vector2(0.254072, -0.152542), 0.0, 0.0, 0, 0, Vector2(0.791531, -0.0847458), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1i6g6"]
+curve = SubResource("Curve_djv8k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_76dfo"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(24, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(16, 54, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.5
+angular_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.4
+scale_max = 1.2
+color = Color(0.8, 0.282353, 0.85098, 1)
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("CurveTexture_1i6g6")
+turbulence_enabled = true
+turbulence_noise_strength = 10.0
+turbulence_noise_scale = 4.0
+turbulence_influence_max = 0.25
+anim_offset_max = 1.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ldqh8"]
 emission_shape = 1
@@ -215,8 +307,31 @@ scale = Vector2(1, 1.00014)
 texture = ExtResource("3_me5c0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Night"]
+position = Vector2(-1.00002, 0)
+scale = Vector2(0.912844, 1)
 sprite_frames = SubResource("SpriteFrames_22sa7")
 animation = &"Deer"
+
+[node name="Snow_Night" type="GPUParticles2D" parent="Night"]
+visible = false
+material = SubResource("CanvasItemMaterial_22lxm")
+position = Vector2(-166, -507.866)
+scale = Vector2(39, 26.6763)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_76dfo")
+texture = ExtResource("4_vmwl4")
+lifetime = 16.0
+fixed_fps = 64
+
+[node name="Snow_intro" type="GPUParticles2D" parent="Night"]
+material = SubResource("CanvasItemMaterial_22lxm")
+position = Vector2(-166, -507.866)
+scale = Vector2(39, 26.6763)
+amount = 200
+process_material = ExtResource("10_5ae2y")
+texture = ExtResource("4_vmwl4")
+lifetime = 16.0
+fixed_fps = 64
 
 [node name="Evening" type="Sprite2D" parent="."]
 visible = false
@@ -235,11 +350,22 @@ position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("5_gqtnu")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Noon"]
+position = Vector2(-1, 0)
+scale = Vector2(0.912844, 1)
+sprite_frames = SubResource("SpriteFrames_22sa7")
+animation = &"Deer"
+
 [node name="Morning" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(800, 449.937)
 scale = Vector2(1, 1.00014)
 texture = ExtResource("6_216mt")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Morning"]
+sprite_frames = SubResource("SpriteFrames_ni5lf")
+animation = &"Full"
+script = ExtResource("15_ele6r")
 
 [node name="Snow" type="GPUParticles2D" parent="."]
 visible = false
@@ -248,16 +374,6 @@ position = Vector2(634, -58)
 scale = Vector2(39, 26.68)
 amount = 200
 process_material = ExtResource("8_3ose0")
-texture = ExtResource("4_vmwl4")
-lifetime = 16.0
-fixed_fps = 64
-
-[node name="Snow_intro" type="GPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_22lxm")
-position = Vector2(634, -58)
-scale = Vector2(39, 26.68)
-amount = 200
-process_material = ExtResource("10_5ae2y")
 texture = ExtResource("4_vmwl4")
 lifetime = 16.0
 fixed_fps = 64
