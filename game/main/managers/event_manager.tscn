@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=47 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -39,13 +39,18 @@ conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Res
 text = "The night feels cold, like always. Nothing of interest has happened so far."
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_26htg")])
 
+[sub_resource type="Resource" id="Resource_opogi"]
+script = ExtResource("2_ouvbw")
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([])
+
 [sub_resource type="Resource" id="Resource_mtf5g"]
 script = ExtResource("3_61jya")
 name = "Emily1"
 conditions = Array[Resource("res://game/events/condition.gd")]([null])
 text = "Emily was playing with a butterfly. She seems happy now! "
 image = ExtResource("5_ls188")
-choices = Array[ExtResource("2_ouvbw")]([])
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_opogi")])
 
 [sub_resource type="Resource" id="Resource_kc1le"]
 script = ExtResource("5_17kgw")
