@@ -329,6 +329,7 @@ theme_override_constants/margin_bottom = 2
 
 [node name="ShelterImage" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/ShelterBackground/ShelterMargin"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 texture = ExtResource("7_dw64p")
 expand_mode = 1
