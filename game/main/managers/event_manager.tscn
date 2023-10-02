@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=93 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qgo3gm8lf71" path="res://assets/UI/geschenk.png" id="9_xrhp6"]
 [ext_resource type="Script" path="res://game/events/conditions/resource.gd" id="11_d5ty8"]
 [ext_resource type="Script" path="res://game/events/conditions/character_present.gd" id="12_36hyt"]
-[ext_resource type="Resource" uid="uid://bv5j82t810qrr" path="res://game/main/managers/event_W2.tres" id="12_43005"]
+[ext_resource type="Resource" uid="uid://bgclj5rvkbx0e" path="res://game/main/managers/event_W2.tres" id="12_43005"]
 [ext_resource type="Texture2D" uid="uid://c4b3yjlq21jr6" path="res://assets/UI/medicine.png" id="14_xkaow"]
 
 [sub_resource type="Resource" id="Resource_7nnu4"]
@@ -54,11 +54,16 @@ conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "Ok"
 effects = Array[Resource("res://game/events/effect.gd")]([])
 
+[sub_resource type="Resource" id="Resource_waolu"]
+script = ExtResource("12_36hyt")
+character_name = "emily"
+fail_text = ""
+
 [sub_resource type="Resource" id="Resource_mtf5g"]
 script = ExtResource("3_61jya")
 name = "Emily1"
 weight = 3
-conditions = Array[Resource("res://game/events/condition.gd")]([null])
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_waolu")])
 text = "Emily was playing with a butterfly. She seems happy now! "
 image = ExtResource("5_ls188")
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_opogi")])
