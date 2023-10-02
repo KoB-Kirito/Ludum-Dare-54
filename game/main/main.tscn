@@ -374,13 +374,15 @@ theme_override_constants/margin_left = 40
 
 [node name="ActionContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 280)
+custom_minimum_size = Vector2(0, 265)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/separation = -12
 
 [node name="ActionButton" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin/ActionContainer"]
 layout_mode = 2
+theme = ExtResource("27_8rjxu")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ekffd")
 text = "Gather Food"
