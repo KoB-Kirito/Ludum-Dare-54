@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=80 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -55,7 +55,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([])
 [sub_resource type="Resource" id="Resource_mtf5g"]
 script = ExtResource("3_61jya")
 name = "Emily1"
-weight = 10
+weight = 3
 conditions = Array[Resource("res://game/events/condition.gd")]([null])
 text = "Emily was playing with a butterfly. She seems happy now! "
 image = ExtResource("5_ls188")
@@ -80,7 +80,7 @@ fail_text = ""
 [sub_resource type="Resource" id="Resource_x5ggb"]
 script = ExtResource("3_61jya")
 name = "P1"
-weight = 10
+weight = 2
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_77772")])
 text = "Somebody left a package at our door. It’s stuffed with food, but noone can be seen."
 image = ExtResource("7_1e5m6")
@@ -105,7 +105,7 @@ fail_text = ""
 [sub_resource type="Resource" id="Resource_gnxd4"]
 script = ExtResource("3_61jya")
 name = "P2"
-weight = 10
+weight = 2
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_uk8fn")])
 text = "Some wood was deliverd to your doorstep. But where does it come from?"
 image = ExtResource("8_0ytcp")
@@ -136,20 +136,20 @@ fail_text = ""
 [sub_resource type="Resource" id="Resource_tm6xp"]
 script = ExtResource("3_61jya")
 name = "P3"
-weight = 10
+weight = 2
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_x6gjg")])
 text = "This morning you found some water bottles in front of your door. It’s probably safe to drink… is it?"
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_r3ytv"), SubResource("Resource_6x8wy")])
 
 [sub_resource type="Resource" id="Resource_cfwas"]
 script = ExtResource("5_17kgw")
-resource = 0
-amount = 0
+resource = 3
+amount = 2
 
 [sub_resource type="Resource" id="Resource_og7e3"]
 script = ExtResource("2_ouvbw")
 conditions = Array[Resource("res://game/events/condition.gd")]([])
-text = ""
+text = "Ok"
 effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_cfwas")])
 
 [sub_resource type="Resource" id="Resource_2rc5n"]
@@ -160,11 +160,30 @@ fail_text = ""
 [sub_resource type="Resource" id="Resource_l5ja4"]
 script = ExtResource("3_61jya")
 name = "P4"
-weight = 10
+weight = 2
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_2rc5n")])
 text = "There is a gift at your door. It contains some medicine! "
 image = ExtResource("9_xrhp6")
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_og7e3")])
+
+[sub_resource type="Resource" id="Resource_iyxam"]
+script = ExtResource("5_17kgw")
+resource = 4
+amount = 2
+
+[sub_resource type="Resource" id="Resource_pu2f7"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_iyxam")])
+
+[sub_resource type="Resource" id="Resource_f5ogj"]
+script = ExtResource("3_61jya")
+name = "P5"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "In a corner of your shelter you found some ammunition. Maybe some Soldier left it behind?"
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_pu2f7")])
 
 [sub_resource type="Resource" id="Resource_a1xx8"]
 script = ExtResource("3_61jya")
@@ -184,6 +203,13 @@ conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "Shoot him!"
 effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_lhefc")])
 
+[sub_resource type="Resource" id="Resource_bpi21"]
+script = ExtResource("11_d5ty8")
+resource = 2
+operator = 0
+amount = 1
+fail_text = ""
+
 [sub_resource type="Resource" id="Resource_xk5ik"]
 script = ExtResource("5_17kgw")
 resource = 0
@@ -196,7 +222,7 @@ amount = -2
 
 [sub_resource type="Resource" id="Resource_lklsa"]
 script = ExtResource("2_ouvbw")
-conditions = Array[Resource("res://game/events/condition.gd")]([])
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_bpi21")])
 text = "Trade"
 effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_xk5ik"), SubResource("Resource_k73ty")])
 
@@ -241,18 +267,18 @@ choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_3j8pl"), SubResou
 script = ExtResource("11_d5ty8")
 resource = 0
 operator = 0
-amount = 3
+amount = 5
 fail_text = "Not enough food for the trade"
 
 [sub_resource type="Resource" id="Resource_gpl6b"]
 script = ExtResource("5_17kgw")
 resource = 0
-amount = -3
+amount = -5
 
 [sub_resource type="Resource" id="Resource_roc4c"]
 script = ExtResource("5_17kgw")
-resource = 0
-amount = 3
+resource = 3
+amount = 4
 
 [sub_resource type="Resource" id="Resource_swmpw"]
 script = ExtResource("2_ouvbw")
@@ -368,6 +394,43 @@ text = "You detected worms in your wood. Those piles can’t be used no more…"
 image = ExtResource("8_0ytcp")
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_s46up")])
 
+[sub_resource type="Resource" id="Resource_qrj8b"]
+script = ExtResource("11_d5ty8")
+resource = 2
+operator = 0
+amount = 3
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_qsp58"]
+script = ExtResource("5_17kgw")
+resource = 2
+amount = -3
+
+[sub_resource type="Resource" id="Resource_32dfs"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_qrj8b")])
+text = "Heat it up..."
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_qsp58")])
+
+[sub_resource type="Resource" id="Resource_p6nei"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "We need that wood."
+effects = Array[Resource("res://game/events/effect.gd")]([null])
+
+[sub_resource type="Resource" id="Resource_n0m1m"]
+script = ExtResource("4_75cuk")
+phases = Array[int]([3])
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_mpttj"]
+script = ExtResource("3_61jya")
+name = "W4"
+weight = 4
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_n0m1m")])
+text = "The night was so cold. Everyone agreed to heat up the oven."
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_32dfs"), SubResource("Resource_p6nei")])
+
 [node name="EventManager" type="Node"]
 script = ExtResource("1_p3b38")
-events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i"), SubResource("Resource_ghli2"), SubResource("Resource_1cf0n"), SubResource("Resource_q2kqu")])
+events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_f5ogj"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i"), SubResource("Resource_ghli2"), SubResource("Resource_1cf0n"), SubResource("Resource_q2kqu"), SubResource("Resource_mpttj")])
