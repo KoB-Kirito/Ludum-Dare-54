@@ -15,6 +15,8 @@ extends Resource
 @export var sleep_max: int = 5
 @export var hunger: int = 5
 @export var hunger_max: int = 5
+@export var thirst: int = 5
+@export var thirst_max: int = 5
 @export var happyness: int = 5
 @export var happyness_max: int = 5
 

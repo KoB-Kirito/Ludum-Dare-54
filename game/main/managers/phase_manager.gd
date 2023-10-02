@@ -42,6 +42,9 @@ func advance_phase() -> void:
 
 
 func on_events_finished() -> void:
+	for bed: Bed in Globals.beds:
+		bed.update_character()
+	
 	# auto-advance if still occupied
 	for bed: Bed in Globals.beds:
 		if bed.character_unoccupied:

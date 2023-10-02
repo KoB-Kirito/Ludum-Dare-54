@@ -34,14 +34,17 @@
 
 [sub_resource type="Resource" id="Resource_e5twr"]
 script = ExtResource("2_27ood")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_htoye"]
 script = ExtResource("3_2ad2b")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_mjvpr"]
 script = ExtResource("4_elevw")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_bncd3"]
 script = ExtResource("7_6h5ot")
@@ -54,6 +57,8 @@ sleep = 6
 sleep_max = 6
 hunger = 8
 hunger_max = 8
+thirst = 5
+thirst_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
@@ -72,18 +77,22 @@ actions = Array[ExtResource("2_27ood")]([SubResource("Resource_e5twr"), SubResou
 
 [sub_resource type="Resource" id="Resource_q8sb1"]
 script = ExtResource("2_27ood")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_ygnup"]
 script = ExtResource("3_2ad2b")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_2mwpi"]
 script = ExtResource("4_elevw")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_5eup4"]
 script = ExtResource("8_oplfu")
 amount = null
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_wyucf"]
 script = ExtResource("7_6h5ot")
@@ -96,6 +105,8 @@ sleep = 5
 sleep_max = 5
 hunger = 5
 hunger_max = 5
+thirst = 5
+thirst_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
@@ -114,18 +125,22 @@ actions = Array[ExtResource("2_27ood")]([SubResource("Resource_q8sb1"), SubResou
 
 [sub_resource type="Resource" id="Resource_j4vmn"]
 script = ExtResource("2_27ood")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_fxawy"]
 script = ExtResource("3_2ad2b")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_iryxt"]
 script = ExtResource("4_elevw")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_7rviv"]
 script = ExtResource("8_oplfu")
 amount = null
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_e2foc"]
 script = ExtResource("7_6h5ot")
@@ -138,6 +153,8 @@ sleep = 5
 sleep_max = 5
 hunger = 5
 hunger_max = 5
+thirst = 5
+thirst_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
@@ -157,6 +174,7 @@ actions = Array[ExtResource("2_27ood")]([SubResource("Resource_j4vmn"), SubResou
 [sub_resource type="Resource" id="Resource_76rie"]
 script = ExtResource("13_tkbri")
 amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_k4xq5"]
 script = ExtResource("7_6h5ot")
@@ -169,6 +187,8 @@ sleep = 6
 sleep_max = 6
 hunger = 6
 hunger_max = 6
+thirst = 5
+thirst_max = 5
 happyness = 7
 happyness_max = 7
 Location = "Shelter"
@@ -196,6 +216,8 @@ sleep = 5
 sleep_max = 5
 hunger = 6
 hunger_max = 6
+thirst = 5
+thirst_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
@@ -223,6 +245,8 @@ sleep = 4
 sleep_max = 4
 hunger = 6
 hunger_max = 6
+thirst = 5
+thirst_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"
@@ -250,6 +274,8 @@ sleep = 8
 sleep_max = 8
 hunger = 8
 hunger_max = 8
+thirst = 5
+thirst_max = 5
 happyness = 8
 happyness_max = 8
 Location = "Shelter"
@@ -277,6 +303,8 @@ sleep = 6
 sleep_max = 6
 hunger = 3
 hunger_max = 3
+thirst = 5
+thirst_max = 5
 happyness = 6
 happyness_max = 6
 Location = "Shelter"
@@ -304,6 +332,8 @@ sleep = 10
 sleep_max = 10
 hunger = 8
 hunger_max = 8
+thirst = 5
+thirst_max = 5
 happyness = 4
 happyness_max = 4
 Location = "Shelter"
@@ -331,6 +361,8 @@ sleep = 6
 sleep_max = 6
 hunger = 5
 hunger_max = 5
+thirst = 5
+thirst_max = 5
 happyness = 4
 happyness_max = 4
 Location = "Shelter"
@@ -358,6 +390,8 @@ sleep = 4
 sleep_max = 4
 hunger = 4
 hunger_max = 4
+thirst = 5
+thirst_max = 5
 happyness = 4
 happyness_max = 4
 Location = "Shelter"
@@ -385,6 +419,8 @@ sleep = 6
 sleep_max = 6
 hunger = 5
 hunger_max = 5
+thirst = 5
+thirst_max = 5
 happyness = 5
 happyness_max = 5
 Location = "Shelter"

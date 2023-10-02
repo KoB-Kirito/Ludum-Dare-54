@@ -1,13 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://gbi8vlb130hx"]
+[gd_scene load_steps=15 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
+[ext_resource type="Script" path="res://game/actions/rest.gd" id="2_q6rrv"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
+[ext_resource type="Script" path="res://game/actions/eat.gd" id="3_mjmtx"]
 [ext_resource type="Texture2D" uid="uid://bfkfjt27fm41j" path="res://assets/UI/meat.png" id="4_gri1q"]
 [ext_resource type="Texture2D" uid="uid://bk0wt2putupt0" path="res://assets/UI/mood_high.png" id="6_2q4a4"]
 [ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="6_w1twf"]
 [ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
 [ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="8_alyq7"]
 [ext_resource type="Texture2D" uid="uid://b5n7w1pg0hhte" path="res://assets/UI/HP.png" id="8_oh2us"]
+
+[sub_resource type="Resource" id="Resource_epy2c"]
+script = ExtResource("2_q6rrv")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+
+[sub_resource type="Resource" id="Resource_ds1t6"]
+script = ExtResource("3_mjmtx")
+amount = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0brh7"]
 corner_radius_top_left = 5
@@ -31,6 +42,7 @@ custom_minimum_size = Vector2(316, 160)
 offset_right = 300.0
 offset_bottom = 160.0
 script = ExtResource("1_8cygb")
+default_actions = Array[ExtResource("2_q6rrv")]([SubResource("Resource_epy2c"), SubResource("Resource_ds1t6")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
