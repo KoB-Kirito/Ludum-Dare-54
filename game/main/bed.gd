@@ -31,10 +31,31 @@ func _ready() -> void:
 
 
 func check_death() -> bool:
+	var die: bool = false
 	if character.hunger <= 0:
-		pass
-	# TODO
-	return false
+		Events.show_text.emit(character.name + " starved to death..", Color.RED)
+		die = true
+	
+	if character.thirst <= 0:
+		Events.show_text.emit(character.name + " died of thirst..", Color.RED)
+		die = true
+	
+	if character.sleep <= 0:
+		Events.show_text.emit(character.name + " died of exhaustion..", Color.RED)
+		die = true
+	
+	if character.happyness <= 0:
+		Events.show_text.emit(character.name + " died of sadness..", Color.RED)
+		die = true
+	
+	if die:
+		character = null
+		current_action = null
+		update_character()
+		return true
+		
+	else:
+		return false
 
 
 func update_character() -> void:
@@ -118,7 +139,7 @@ func advance_action() -> void:
 	
 	# lower values
 	character.hunger -= 1
-	character.sleep -= 2
+	character.sleep -= 1
 	character.happyness -= 1
 	update_character()
 	
