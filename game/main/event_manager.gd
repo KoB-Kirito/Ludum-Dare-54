@@ -11,6 +11,10 @@ signal events_finished
 func trigger_random_event() -> void:
 	var valid_events := get_valid_events()
 	
+	if valid_events.is_empty():
+		push_warning("no valid event found")
+		return
+	
 	valid_events.shuffle()
 	
 	# always trigger 100
@@ -20,7 +24,7 @@ func trigger_random_event() -> void:
 			break
 	
 	var weighted_events := get_weighted_events(valid_events)
-	var r: int = randi() % 100
+	var r: int = randi() % weighted_events.size()
 	
 	if weighted_events.size() < r:
 		# no event
@@ -92,6 +96,7 @@ func trigger_event(event: Event) -> void:
 	
 	# show event layer > dims screen, disables all inputs
 	%EventLayer.show()
+	%Notebook.scroll_in()
 	
 	# show image if set
 	if event.image == null:

@@ -15,6 +15,7 @@ func show_text(text: String, color: Color = Color.WHITE) -> void:
 	%Textbox.append_text("\n" + text)
 	%Textbox.pop()
 	%Notebook.scroll_in()
+	%Notebook.autohide()
 
 func on_food_changed(value: int) -> void:
 	%FoodLabel.text = "Food: " + str(value)

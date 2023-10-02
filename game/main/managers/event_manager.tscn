@@ -34,6 +34,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([])
 [sub_resource type="Resource" id="Resource_ti7cw"]
 script = ExtResource("4_75cuk")
 phases = Array[int]([])
+fail_text = ""
 
 [sub_resource type="Resource" id="Resource_31agq"]
 script = ExtResource("3_61jya")
@@ -72,6 +73,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_
 [sub_resource type="Resource" id="Resource_77772"]
 script = ExtResource("4_75cuk")
 phases = Array[int]([0])
+fail_text = ""
 
 [sub_resource type="Resource" id="Resource_x5ggb"]
 script = ExtResource("3_61jya")
@@ -96,6 +98,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_
 [sub_resource type="Resource" id="Resource_uk8fn"]
 script = ExtResource("4_75cuk")
 phases = Array[int]([0])
+fail_text = ""
 
 [sub_resource type="Resource" id="Resource_gnxd4"]
 script = ExtResource("3_61jya")
@@ -126,6 +129,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([])
 [sub_resource type="Resource" id="Resource_x6gjg"]
 script = ExtResource("4_75cuk")
 phases = Array[int]([0])
+fail_text = ""
 
 [sub_resource type="Resource" id="Resource_tm6xp"]
 script = ExtResource("3_61jya")
@@ -149,6 +153,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_
 [sub_resource type="Resource" id="Resource_2rc5n"]
 script = ExtResource("4_75cuk")
 phases = Array[int]([0])
+fail_text = ""
 
 [sub_resource type="Resource" id="Resource_l5ja4"]
 script = ExtResource("3_61jya")
@@ -220,6 +225,7 @@ effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_
 [sub_resource type="Resource" id="Resource_r84oa"]
 script = ExtResource("4_75cuk")
 phases = Array[int]([2])
+fail_text = ""
 
 [sub_resource type="Resource" id="Resource_3a1eh"]
 script = ExtResource("3_61jya")

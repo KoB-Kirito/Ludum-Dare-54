@@ -24,6 +24,10 @@ var wood: int = 0:
 	set(value):
 		wood = value
 		Events.wood_changed.emit(value)
+var medicine: int = 0:
+	set(value):
+		medicine = value
+		Events.medicine_changed.emit(value)
 var ammo: int = 0:
 	set(value):
 		ammo = value
