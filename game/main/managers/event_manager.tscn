@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=19 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
 [ext_resource type="Script" path="res://game/events/event.gd" id="3_61jya"]
 [ext_resource type="Script" path="res://game/events/conditions/phase.gd" id="4_75cuk"]
+[ext_resource type="Script" path="res://game/events/effects/change_resource.gd" id="5_17kgw"]
 
 [sub_resource type="Resource" id="Resource_7nnu4"]
 script = ExtResource("2_ouvbw")
@@ -12,10 +13,15 @@ effects = Array[Resource("res://game/events/effect.gd")]([])
 
 [sub_resource type="Resource" id="Resource_qqr2j"]
 script = ExtResource("3_61jya")
-name = ""
+name = "c1"
 conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "It's a cloudy day, but everything seems nice and quiet."
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_7nnu4")])
+
+[sub_resource type="Resource" id="Resource_26htg"]
+script = ExtResource("2_ouvbw")
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([])
 
 [sub_resource type="Resource" id="Resource_ti7cw"]
 script = ExtResource("4_75cuk")
@@ -23,18 +29,56 @@ phases = Array[int]([])
 
 [sub_resource type="Resource" id="Resource_31agq"]
 script = ExtResource("3_61jya")
-name = ""
+name = "c2"
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_ti7cw")])
 text = "The night feels cold, like always. Nothing of interest has happened so far."
-choices = Array[ExtResource("2_ouvbw")]([])
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_26htg")])
 
 [sub_resource type="Resource" id="Resource_mtf5g"]
 script = ExtResource("3_61jya")
-name = ""
+name = "Emily1"
 conditions = Array[Resource("res://game/events/condition.gd")]([null])
 text = "Emily was playing with a butterfly. She seems happy now! "
 choices = Array[ExtResource("2_ouvbw")]([])
 
+[sub_resource type="Resource" id="Resource_kc1le"]
+script = ExtResource("5_17kgw")
+resource = 0
+amount = 4
+
+[sub_resource type="Resource" id="Resource_fp7au"]
+script = ExtResource("2_ouvbw")
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_kc1le")])
+
+[sub_resource type="Resource" id="Resource_77772"]
+script = ExtResource("4_75cuk")
+phases = Array[int]([0])
+
+[sub_resource type="Resource" id="Resource_x5ggb"]
+script = ExtResource("3_61jya")
+name = "P1"
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_77772")])
+text = "Somebody left a package at our door. It’s stuffed with food, but noone can be seen."
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_fp7au")])
+
+[sub_resource type="Resource" id="Resource_028t4"]
+script = ExtResource("5_17kgw")
+resource = 2
+amount = 2
+
+[sub_resource type="Resource" id="Resource_xoxdf"]
+script = ExtResource("2_ouvbw")
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_028t4")])
+
+[sub_resource type="Resource" id="Resource_gnxd4"]
+script = ExtResource("3_61jya")
+name = "P2"
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Some wood was deliverd to your doorstep. But where does it come from?"
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_xoxdf")])
+
 [node name="EventManager" type="Node"]
 script = ExtResource("1_p3b38")
-events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g")])
+events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4")])
