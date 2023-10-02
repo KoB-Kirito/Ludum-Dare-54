@@ -1,0 +1,22 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://ceqkit2a43ewq"]
+
+[resource]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(24, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(16, 54, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.5
+angular_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.4
+scale_max = 1.2
+color = Color(0.886275, 0.886275, 0.886275, 1)
+hue_variation_max = 0.01
+turbulence_enabled = true
+turbulence_noise_strength = 10.0
+turbulence_noise_scale = 4.0
+turbulence_influence_max = 0.25
+anim_offset_max = 1.0
