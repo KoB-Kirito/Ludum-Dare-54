@@ -45,6 +45,7 @@ func trigger_event(event: Event) -> void:
 	
 	# show event layer > dims screen, disables all inputs
 	%EventLayer.show()
+	%Notebook.scroll_in()
 	
 	# show image if set
 	if event.image == null:
@@ -75,7 +76,7 @@ func trigger_event(event: Event) -> void:
 	if not choice_added:
 		var choice_button := Button.new()
 		%ChoicesContainer.add_child(choice_button)
-		choice_button.text = "Exit"
+		choice_button.text = "Ok"
 		choice_button.pressed.connect(on_choice_selected.bind(null))
 
 
@@ -93,4 +94,5 @@ func on_choice_selected(effects: Array[Effect]) -> void:
 
 func close_event() -> void:
 	%EventLayer.hide()
+	%Notebook.scroll_out()
 	events_finished.emit()

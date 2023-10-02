@@ -12,6 +12,10 @@ extends Node
 @export var start_phase: int = Globals.Phase.NOON
 
 
+func _ready() -> void:
+	%EventManager.events_finished.connect(on_events_finished)
+	Events.advance_phase.connect(advance_phase)
+
 func advance_phase() -> void:
 	# only advance if all characters are occupied
 	for bed: Bed in Globals.beds:
@@ -25,7 +29,7 @@ func advance_phase() -> void:
 	if Globals.current_phase > Globals.Phase.NIGHT:
 		Globals.current_phase = Globals.Phase.MORNING
 	
-	%DayProgress.value = Globals.current_phase
+	#%DayProgress.value = Globals.current_phase
 	set_background(Globals.current_phase)
 	Background.change_background(Globals.current_phase)
 	

@@ -18,25 +18,12 @@ func _ready() -> void:
 
 
 func character_selected(character: Character, bed: Bed) -> void:
+	%TopRightBackground.show()
 	%CharacterImage.texture = character.image
 	current_bed = bed
 	
-	for child in %ActionContainer.get_children():
-		child.queue_free()
-	
-	for action: RestAction in character.actions:
-		var button := Button.new()
-		%ActionContainer.add_child(button)
-		button.text = action.name
-		button.pressed.connect(on_action_button_pressed.bind(action, bed))
+	%HideCharacterTimer.start()
 
 
-func on_action_button_pressed(action: RestAction, bed: Bed) -> void:
-	if bed.current_action != null:
-		# action already active
-		return
-	
-	bed.set_action(action)
-	
-	# advance phase if all characters are occupied
-	%PhaseManager.advance_phase()
+func _on_hide_character_timer_timeout() -> void:
+	%TopRightBackground.hide()

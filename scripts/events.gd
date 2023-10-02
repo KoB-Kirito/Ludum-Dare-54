@@ -14,3 +14,4 @@ signal wood_changed(value: int)
 signal ammo_changed(value: int)
 
 signal show_text(text: String, color: Color)
+signal advance_phase

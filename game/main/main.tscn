@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bxc0o27g1hsi1"]
+[gd_scene load_steps=39 format=3 uid="uid://bxc0o27g1hsi1"]
 
 [ext_resource type="Script" path="res://game/main/main.gd" id="1_lequ7"]
 [ext_resource type="Script" path="res://game/main/managers/phase_manager.gd" id="2_ekfcy"]
@@ -23,42 +23,19 @@
 [ext_resource type="Script" path="res://game/actions/gather_water.gd" id="17_3u541"]
 [ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="18_5ewfh"]
 [ext_resource type="AudioStream" uid="uid://bs53xiyv00fdf" path="res://assets/sounds/BRS_Rooster_TJ_CockaDoodleDoo_Close_1.wav" id="18_unbea"]
-[ext_resource type="Texture2D" uid="uid://os0ictrdovel" path="res://assets/UI/Notizblock_Zeitverlauf.png" id="26_mtwss"]
 [ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="27_8rjxu"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="27_b747e"]
+[ext_resource type="Texture2D" uid="uid://c7ih24o6x6m17" path="res://assets/UI/notebook_small.png" id="27_hcrbx"]
 [ext_resource type="Texture2D" uid="uid://cvdw1s31w3dd7" path="res://assets/UI/Charakterprofil.png" id="28_ekws5"]
+[ext_resource type="Script" path="res://game/main/ui/notebook.gd" id="28_qit2u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36111"]
-bg_color = Color(0.247059, 0.247059, 0.247059, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="Gradient" id="Gradient_ggipv"]
+offsets = PackedFloat32Array(0, 0.49434, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67aux"]
-bg_color = Color(0.643137, 0.619608, 0.0980392, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6qvu"]
-bg_color = Color(0.247059, 0.247059, 0.247059, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.407843, 0.407843, 0.407843, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekffd"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0q57p"]
+gradient = SubResource("Gradient_ggipv")
+fill_from = Vector2(1, 1)
 
 [sub_resource type="Resource" id="Resource_m02x4"]
 script = ExtResource("3_veadd")
@@ -185,6 +162,10 @@ stream = ExtResource("14_443j1")
 unique_name_in_owner = true
 stream = ExtResource("18_unbea")
 
+[node name="HideCharacterTimer" type="Timer" parent="Logic"]
+unique_name_in_owner = true
+wait_time = 5.0
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -213,76 +194,6 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TextboxBackground" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopLeftContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("26_mtwss")
-expand_mode = 1
-
-[node name="TextboxMargin" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxBackground"]
-layout_mode = 2
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 400.0
-offset_bottom = 525.0
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 28
-theme_override_constants/margin_bottom = 20
-
-[node name="Textbox" type="RichTextLabel" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/TextboxBackground/TextboxMargin"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "It is cloudy.."
-scroll_following = true
-
-[node name="DepotBackground" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopLeftContainer"]
-layout_mode = 2
-texture = ExtResource("27_b747e")
-
-[node name="DepotMargin" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="ResourcesContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 16
-alignment = 1
-
-[node name="MoraleLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Morale: 100
-"
-
-[node name="FoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Food: 100
-"
-
-[node name="WaterLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Water: 100
-"
-
-[node name="WoodLabel" type="Label" parent="UI/VBoxContainer/TopContainer/TopLeftContainer/DepotBackground/DepotMargin/ResourcesContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Wood: 0
-"
-
 [node name="TopMiddleContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -296,45 +207,9 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Background" type="Panel" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_36111")
-
-[node name="DayProgress" type="ProgressBar" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/TopMiddleTopContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/fill = SubResource("StyleBoxFlat_67aux")
-max_value = 5.0
-step = 1.0
-value = 1.0
-show_percentage = false
-
-[node name="ShelterBackground" type="Panel" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_c6qvu")
-
-[node name="ShelterMargin" type="MarginContainer" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/ShelterBackground"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
-
-[node name="ShelterImage" type="TextureRect" parent="UI/VBoxContainer/TopContainer/TopMiddleContainer/ShelterBackground/ShelterMargin"]
+[node name="TopRightBackground" type="TextureRect" parent="UI/VBoxContainer/TopContainer"]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
-texture = ExtResource("7_dw64p")
-expand_mode = 1
-
-[node name="TopRightBackground" type="TextureRect" parent="UI/VBoxContainer/TopContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 texture = ExtResource("28_ekws5")
@@ -373,44 +248,23 @@ expand_mode = 1
 layout_mode = 2
 theme_override_constants/margin_left = 40
 
-[node name="ActionContainer" type="VBoxContainer" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 265)
+[node name="Label" type="Label" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin"]
+custom_minimum_size = Vector2(0, 260)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/separation = -12
-
-[node name="ActionButton" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin/ActionContainer"]
-layout_mode = 2
-theme = ExtResource("27_8rjxu")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ekffd")
-text = "Gather Food"
-
-[node name="Button2" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin/ActionContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Rest"
-
-[node name="Button3" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin/ActionContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Custom Action 1"
-
-[node name="Button4" type="Button" parent="UI/VBoxContainer/TopContainer/TopRightBackground/TopRightContainer/VBoxContainer/ActionMargin/ActionContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Custom Action 2"
+text = "Character description.."
 
 [node name="BottomContainer" type="MarginContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
+[node name="Gradient" type="TextureRect" parent="UI/VBoxContainer/BottomContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_0q57p")
+
 [node name="BedContainer" type="HBoxContainer" parent="UI/VBoxContainer/BottomContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="Bed1" parent="UI/VBoxContainer/BottomContainer/BedContainer" instance=ExtResource("2_yayvv")]
@@ -436,6 +290,89 @@ built = false
 unique_name_in_owner = true
 layout_mode = 2
 built = false
+
+[node name="Notebook" type="TextureRect" parent="UI"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_right = 481.0
+offset_bottom = 616.0
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("27_hcrbx")
+script = ExtResource("28_qit2u")
+out_position = Vector2(-353, 0)
+
+[node name="TextboxMargin" type="MarginContainer" parent="UI/Notebook"]
+layout_mode = 1
+offset_right = 402.0
+offset_bottom = 519.0
+mouse_filter = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="Textbox" type="RichTextLabel" parent="UI/Notebook/TextboxMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "It is cloudy.."
+scroll_following = true
+
+[node name="StatusBar" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = ExtResource("27_b747e")
+expand_mode = 1
+
+[node name="DepotMargin" type="MarginContainer" parent="UI/StatusBar"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ResourcesContainer" type="HBoxContainer" parent="UI/StatusBar/DepotMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MoraleLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Morale: 100
+"
+
+[node name="FoodLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Food: 100
+"
+
+[node name="WaterLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Water: 100
+"
+
+[node name="WoodLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wood: 0
+"
 
 [node name="EventLayer" type="Control" parent="."]
 unique_name_in_owner = true
@@ -493,3 +430,6 @@ theme = ExtResource("27_8rjxu")
 text = "Test Text und so"
 
 [connection signal="timeout" from="Logic/AutoAdvanceTimer" to="Logic/PhaseManager" method="_on_auto_advance_timer_timeout"]
+[connection signal="timeout" from="Logic/HideCharacterTimer" to="." method="_on_hide_character_timer_timeout"]
+[connection signal="mouse_entered" from="UI/Notebook" to="UI/Notebook" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Notebook" to="UI/Notebook" method="_on_mouse_exited"]

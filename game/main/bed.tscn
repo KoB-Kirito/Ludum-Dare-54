@@ -1,23 +1,20 @@
 [gd_scene load_steps=13 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
-[ext_resource type="Texture2D" uid="uid://f31vab5n60h" path="res://assets/hunger.png" id="2_1hxa1"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
 [ext_resource type="Texture2D" uid="uid://dr2fvy0mk6714" path="res://assets/thirst.png" id="3_83kj8"]
 [ext_resource type="Texture2D" uid="uid://bfkfjt27fm41j" path="res://assets/UI/meat.png" id="4_gri1q"]
 [ext_resource type="Texture2D" uid="uid://bjey55w88fx7p" path="res://assets/UI/botschaft.png" id="6_w1twf"]
 [ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
+[ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="8_alyq7"]
 [ext_resource type="Texture2D" uid="uid://b5n7w1pg0hhte" path="res://assets/UI/HP.png" id="8_oh2us"]
 [ext_resource type="Texture2D" uid="uid://bk0wt2putupt0" path="res://assets/UI/mood_high.png" id="8_ovbsx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw640"]
-bg_color = Color(0.670588, 0.662745, 0.54902, 0.792157)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0brh7"]
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnddo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp64m"]
 bg_color = Color(0.388235, 0.694118, 0.952941, 1)
@@ -31,12 +28,12 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="Bed" type="Panel"]
-custom_minimum_size = Vector2(300, 160)
+custom_minimum_size = Vector2(316, 160)
 offset_right = 300.0
 offset_bottom = 160.0
 script = ExtResource("1_8cygb")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,120 +43,17 @@ grow_vertical = 2
 texture = ExtResource("2_rguvq")
 expand_mode = 1
 
-[node name="Panel" type="Panel" parent="TextureRect"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 26.0
-offset_right = 285.0
-offset_bottom = 60.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bw640")
-
-[node name="HungerIcon" type="TextureRect" parent="TextureRect/Panel"]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 21.0
-offset_bottom = 19.0
-texture = ExtResource("2_1hxa1")
-
-[node name="HungerIcon2" type="TextureRect" parent="TextureRect/Panel"]
-layout_mode = 0
-offset_left = 5.0
-offset_right = 37.0
-offset_bottom = 32.0
-texture = ExtResource("4_gri1q")
-expand_mode = 4
-
-[node name="HungerLabel" type="Label" parent="TextureRect/Panel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 40.0
-offset_top = 11.0
-offset_right = 69.0
-offset_bottom = 41.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "50"
-
-[node name="ThirstIcon" type="TextureRect" parent="TextureRect/Panel"]
-visible = false
-layout_mode = 0
-offset_left = 76.0
-offset_top = 32.0
-offset_right = 96.0
-offset_bottom = 52.0
-texture = ExtResource("3_83kj8")
-
-[node name="ThirstIcon2" type="TextureRect" parent="TextureRect/Panel"]
-layout_mode = 0
-offset_left = 76.0
-offset_right = 108.0
-offset_bottom = 32.0
-texture = ExtResource("6_w1twf")
-expand_mode = 1
-
-[node name="ThirstLabel" type="Label" parent="TextureRect/Panel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 106.0
-offset_top = 10.0
-offset_right = 166.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
-
-[node name="SleepIcon" type="TextureRect" parent="TextureRect/Panel"]
-layout_mode = 0
-offset_left = 137.0
-offset_top = 1.0
-offset_right = 169.0
-offset_bottom = 33.0
-texture = ExtResource("7_e0rmg")
-expand_mode = 1
-
-[node name="SleepLabel" type="Label" parent="TextureRect/Panel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 172.0
-offset_top = 10.0
-offset_right = 232.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
-
-[node name="HappynessIcon" type="TextureRect" parent="TextureRect/Panel"]
-layout_mode = 0
-offset_left = 206.0
-offset_top = 8.0
-offset_right = 226.0
-offset_bottom = 28.0
-texture = ExtResource("8_ovbsx")
-expand_mode = 1
-
-[node name="HappynessLabel" type="Label" parent="TextureRect/Panel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 239.0
-offset_top = 9.0
-offset_right = 299.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "40
-"
-
 [node name="PortraitPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -101.0
+offset_left = -92.0
 offset_top = 72.0
 offset_right = -16.0
 offset_bottom = 148.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qnddo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0brh7")
 
 [node name="Portrait" type="TextureRect" parent="PortraitPanel"]
 unique_name_in_owner = true
@@ -169,53 +63,133 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -31.0
-offset_right = 33.5
-offset_bottom = 31.0
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
+[node name="IconContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 25.0
+offset_right = 293.0
+offset_bottom = 65.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HungerIcon2" type="TextureRect" parent="IconContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_gri1q")
+expand_mode = 1
+
+[node name="HungerLabel" type="Label" parent="IconContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "50"
+vertical_alignment = 2
+
+[node name="ThirstIcon2" type="TextureRect" parent="IconContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_w1twf")
+expand_mode = 1
+
+[node name="ThirstLabel" type="Label" parent="IconContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+vertical_alignment = 2
+
+[node name="SleepIcon" type="TextureRect" parent="IconContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_e0rmg")
+expand_mode = 1
+
+[node name="SleepLabel" type="Label" parent="IconContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+vertical_alignment = 2
+
+[node name="HappynessIcon" type="TextureRect" parent="IconContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_83kj8")
+
+[node name="HappynessLabel" type="Label" parent="IconContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "40
+"
+vertical_alignment = 2
+
 [node name="NameLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 16.0
-offset_top = 74.0
-offset_right = 97.0
-offset_bottom = 115.0
+offset_left = 15.0
+offset_top = 70.0
+offset_right = 96.0
+offset_bottom = 111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Name"
 
 [node name="HPIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 162.0
-offset_top = 76.0
-offset_right = 198.0
-offset_bottom = 112.0
+offset_left = 161.0
+offset_top = 72.0
+offset_right = 197.0
+offset_bottom = 108.0
 texture = ExtResource("8_oh2us")
 expand_mode = 1
 
 [node name="HPLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 124.0
-offset_top = 77.0
-offset_right = 184.0
-offset_bottom = 118.0
+offset_left = 123.0
+offset_top = 73.0
+offset_right = 183.0
+offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "40
 "
 
+[node name="ActionsDropdown" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = 112.0
+offset_right = 196.0
+offset_bottom = 147.0
+theme = ExtResource("8_alyq7")
+item_count = 1
+selected = 0
+popup/item_0/text = "Test"
+popup/item_0/id = 0
+
 [node name="ActionPanel" type="Panel" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 13.0
+offset_left = 15.0
 offset_top = 112.0
-offset_right = 194.0
+offset_right = 196.0
 offset_bottom = 148.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fp64m")
 
@@ -230,54 +204,6 @@ text = "Current Action: Action-Name"
 
 [node name="ActionProgress" type="ProgressBar" parent="ActionPanel"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 7.0
-offset_top = 4.0
-offset_right = 175.0
-offset_bottom = 31.0
-max_value = 3.0
-step = 1.0
-value = 1.0
-show_percentage = false
-
-[node name="ActionProgress2" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 116.0
-offset_right = 188.0
-offset_bottom = 143.0
-max_value = 3.0
-step = 1.0
-value = 1.0
-show_percentage = false
-
-[node name="Platzhalter Aktionswahl" type="Label" parent="ActionProgress2"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 4.0
-offset_right = 178.0
-offset_bottom = 27.0
-text = "Platzhalter Aktionswahl"
-
-[node name="ActionPanel2" type="Panel" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 13.0
-offset_top = 112.0
-offset_right = 194.0
-offset_bottom = 148.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_fp64m")
-
-[node name="ActionLabel" type="Label" parent="ActionPanel2"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 185.0
-offset_bottom = 31.0
-text = "Current Action: Action-Name"
-
-[node name="ActionProgress" type="ProgressBar" parent="ActionPanel2"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 4.0
@@ -365,4 +291,5 @@ offset_bottom = 132.0
 text = "Build Bed (100 wood)"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="item_selected" from="ActionsDropdown" to="." method="_on_actions_dropdown_item_selected"]
 [connection signal="pressed" from="BuildPanel/BuildButton" to="." method="_on_build_button_pressed"]

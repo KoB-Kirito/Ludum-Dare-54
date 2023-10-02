@@ -39,7 +39,16 @@ func update_character() -> void:
 	%HungerLabel.text = str(character.hunger)
 	#%ThirstLabel.text = str(character.thirst)
 	
+	# set actions
+	%ActionsDropdown.clear()
+	actions.clear()
+	
+	for action: RestAction in character.actions:
+		%ActionsDropdown.add_item(action.name)
+		actions[action.name] = action
 
+
+var actions: Dictionary
 
 func set_action(action: RestAction) -> void:
 	%ActionPanel.show()
@@ -83,3 +92,12 @@ func _on_build_button_pressed() -> void:
 	
 	%BuildPanel.hide()
 	built = true
+
+
+func _on_actions_dropdown_item_selected(index: int) -> void:
+	var action_name = %ActionsDropdown.get_item_text(index)
+	
+	set_action(actions[action_name])
+	
+	# advance phase if all characters are occupied
+	Events.advance_phase.emit()
