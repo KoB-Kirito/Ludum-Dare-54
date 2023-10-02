@@ -1,18 +1,13 @@
-[gd_scene load_steps=56 format=3 uid="uid://cwnnrmv5j8qs4"]
+[gd_scene load_steps=39 format=3 uid="uid://cwnnrmv5j8qs4"]
 
 [ext_resource type="Script" path="res://game/main/managers/character_manager.gd" id="1_yuwwn"]
-[ext_resource type="Script" path="res://game/actions/rest.gd" id="2_27ood"]
-[ext_resource type="Script" path="res://game/actions/gather_food.gd" id="3_2ad2b"]
-[ext_resource type="Script" path="res://game/actions/gather_water.gd" id="4_elevw"]
 [ext_resource type="Texture2D" uid="uid://ca4xxb5c4l2nt" path="res://assets/characters/emily.png" id="5_1nwqe"]
 [ext_resource type="Texture2D" uid="uid://c1rkxq1i2vk34" path="res://assets/characters/emily_portrait.png" id="6_1pdd5"]
 [ext_resource type="Script" path="res://scripts/character.gd" id="7_6h5ot"]
-[ext_resource type="Script" path="res://game/actions/gather_wood.gd" id="8_oplfu"]
 [ext_resource type="Texture2D" uid="uid://cmcoaurheiyf8" path="res://assets/characters/lizz.png" id="9_5maia"]
 [ext_resource type="Texture2D" uid="uid://bd40rskyv06q1" path="res://assets/characters/lizz_portrait.png" id="10_qi376"]
 [ext_resource type="Texture2D" uid="uid://drqe5xhh5bres" path="res://assets/characters/robert.png" id="11_ltd6s"]
 [ext_resource type="Texture2D" uid="uid://ctajvewrass6y" path="res://assets/characters/robert_portrait.png" id="12_gx4ct"]
-[ext_resource type="Script" path="res://game/actions/gather_ammo.gd" id="13_tkbri"]
 [ext_resource type="Texture2D" uid="uid://1854tukaknm0" path="res://assets/characters/jonathan.png" id="14_25cfv"]
 [ext_resource type="Texture2D" uid="uid://cpmtpav4xg15l" path="res://assets/characters/jonathan_portrait.png" id="15_jwfxu"]
 [ext_resource type="Texture2D" uid="uid://e3iira20y38f" path="res://assets/characters/Pete.png" id="16_6ubg1"]
@@ -31,20 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://vcmbdsyoyq0e" path="res://assets/characters/eric_portrait.png" id="29_t5kup"]
 [ext_resource type="Texture2D" uid="uid://b676uimftm7gl" path="res://assets/characters/cloe.png" id="30_0yu5w"]
 [ext_resource type="Texture2D" uid="uid://cuh0xubwotupx" path="res://assets/characters/cloe_portrait.png" id="31_37uv4"]
-
-[sub_resource type="Resource" id="Resource_e5twr"]
-script = ExtResource("2_27ood")
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_htoye"]
-script = ExtResource("3_2ad2b")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_mjvpr"]
-script = ExtResource("4_elevw")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
 
 [sub_resource type="Resource" id="Resource_bncd3"]
 script = ExtResource("7_6h5ot")
@@ -76,26 +57,7 @@ Cooking = 3
 Crafting = 3
 Science = 2
 Medicine = 2
-actions = Array[ExtResource("2_27ood")]([SubResource("Resource_e5twr"), SubResource("Resource_htoye"), SubResource("Resource_mjvpr")])
-
-[sub_resource type="Resource" id="Resource_q8sb1"]
-script = ExtResource("2_27ood")
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_ygnup"]
-script = ExtResource("3_2ad2b")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_2mwpi"]
-script = ExtResource("4_elevw")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_5eup4"]
-script = ExtResource("8_oplfu")
-amount = null
-conditions = Array[Resource("res://game/events/condition.gd")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_wyucf"]
 script = ExtResource("7_6h5ot")
@@ -125,26 +87,7 @@ Cooking = 3
 Crafting = 2
 Science = 2
 Medicine = 2
-actions = Array[ExtResource("2_27ood")]([SubResource("Resource_q8sb1"), SubResource("Resource_ygnup"), SubResource("Resource_2mwpi"), SubResource("Resource_5eup4")])
-
-[sub_resource type="Resource" id="Resource_j4vmn"]
-script = ExtResource("2_27ood")
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_fxawy"]
-script = ExtResource("3_2ad2b")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_iryxt"]
-script = ExtResource("4_elevw")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-
-[sub_resource type="Resource" id="Resource_7rviv"]
-script = ExtResource("8_oplfu")
-amount = null
-conditions = Array[Resource("res://game/events/condition.gd")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_e2foc"]
 script = ExtResource("7_6h5ot")
@@ -175,12 +118,7 @@ Cooking = 7
 Crafting = 4
 Science = 3
 Medicine = 3
-actions = Array[ExtResource("2_27ood")]([SubResource("Resource_j4vmn"), SubResource("Resource_fxawy"), SubResource("Resource_iryxt"), SubResource("Resource_7rviv")])
-
-[sub_resource type="Resource" id="Resource_76rie"]
-script = ExtResource("13_tkbri")
-amount = 1
-conditions = Array[Resource("res://game/events/condition.gd")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_k4xq5"]
 script = ExtResource("7_6h5ot")
@@ -211,7 +149,7 @@ Cooking = 3
 Crafting = 4
 Science = 2
 Medicine = 2
-actions = Array[ExtResource("2_27ood")]([SubResource("Resource_76rie")])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_jv82g"]
 script = ExtResource("7_6h5ot")
@@ -242,7 +180,7 @@ Cooking = 5
 Crafting = 3
 Science = 3
 Medicine = 2
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_w1ttu"]
 script = ExtResource("7_6h5ot")
@@ -272,7 +210,7 @@ Cooking = 4
 Crafting = 4
 Science = 6
 Medicine = 8
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_a3ixs"]
 script = ExtResource("7_6h5ot")
@@ -303,7 +241,7 @@ Cooking = 2
 Crafting = 5
 Science = 8
 Medicine = 6
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_ptjgk"]
 script = ExtResource("7_6h5ot")
@@ -334,7 +272,7 @@ Cooking = 3
 Crafting = 5
 Science = 2
 Medicine = 2
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_3w1b4"]
 script = ExtResource("7_6h5ot")
@@ -365,7 +303,7 @@ Cooking = 1
 Crafting = 1
 Science = 3
 Medicine = 3
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_ghv48"]
 script = ExtResource("7_6h5ot")
@@ -396,7 +334,7 @@ Cooking = 1
 Crafting = 1
 Science = 3
 Medicine = 1
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_jhfwk"]
 script = ExtResource("7_6h5ot")
@@ -429,7 +367,7 @@ Cooking = 2
 Crafting = 2
 Science = 1
 Medicine = 1
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [sub_resource type="Resource" id="Resource_aasu7"]
 script = ExtResource("7_6h5ot")
@@ -460,7 +398,7 @@ Cooking = 3
 Crafting = 3
 Science = 3
 Medicine = 3
-actions = Array[ExtResource("2_27ood")]([])
+actions = Array[Resource("res://game/actions/rest.gd")]([])
 
 [node name="CharacterManager" type="Node"]
 script = ExtResource("1_yuwwn")
