@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://gbi8vlb130hx"]
+[gd_scene load_steps=11 format=3 uid="uid://gbi8vlb130hx"]
 
 [ext_resource type="Script" path="res://game/main/bed.gd" id="1_8cygb"]
 [ext_resource type="Texture2D" uid="uid://b04s5i7on0nst" path="res://assets/UI/Charakterwahl_leer.png" id="2_rguvq"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://djhdwsauf6601" path="res://assets/UI/Sleep.png" id="7_e0rmg"]
 [ext_resource type="Theme" uid="uid://dd2nye2yumpi1" path="res://assets/theme/our_theme.tres" id="8_alyq7"]
 [ext_resource type="Texture2D" uid="uid://b5n7w1pg0hhte" path="res://assets/UI/HP.png" id="8_oh2us"]
-[ext_resource type="Texture2D" uid="uid://bk0wt2putupt0" path="res://assets/UI/mood_high.png" id="8_ovbsx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0brh7"]
 corner_radius_top_left = 5
@@ -180,6 +179,7 @@ offset_bottom = 147.0
 theme = ExtResource("8_alyq7")
 item_count = 1
 selected = 0
+allow_reselect = true
 popup/item_0/text = "Test"
 popup/item_0/id = 0
 
