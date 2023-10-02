@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl7ycqmk74tns"
-path="res://.godot/imported/noon.png-068b06602c20d47f0f4b1f16afa93146.ctex"
+uid="uid://1y6mcl2n2qkx"
+path="res://.godot/imported/schmetterling.png-da0d108f157d94c93fa2cbd9a7660adc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/noon.png"
-dest_files=["res://.godot/imported/noon.png-068b06602c20d47f0f4b1f16afa93146.ctex"]
+source_file="res://assets/UI/schmetterling.png"
+dest_files=["res://.godot/imported/schmetterling.png-da0d108f157d94c93fa2cbd9a7660adc.ctex"]
 
 [params]
 
