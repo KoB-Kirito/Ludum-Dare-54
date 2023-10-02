@@ -23,6 +23,13 @@ func get_random_event() -> Event:
 	
 	for event: Event in events:
 		for condition: Condition in event.conditions:
+			if condition == null:
+				continue
+			
+			if not condition.has_method("is_met"):
+				print_debug("condition is missing is_met method: " + str(condition))
+				continue
+			
 			if not condition.is_met():
 				continue
 		return event
@@ -51,20 +58,25 @@ func trigger_event(event: Event) -> void:
 		Events.show_text.emit(event.text)
 	
 	# display choices
+	var choice_added: bool = false
 	for child in %ChoicesContainer.get_children():
 		child.queue_free()
 	for choice: Choice in event.choices:
+		if choice == null:
+			continue
+		
 		var choice_button := Button.new()
 		%ChoicesContainer.add_child(choice_button)
 		choice_button.text = choice.text
 		choice_button.pressed.connect(on_choice_selected.bind(choice.effects))
+		choice_added = true
 	
 	# catch empty choices
-	if %ChoicesContainer.get_child_count() == 0:
+	if not choice_added:
 		var choice_button := Button.new()
 		%ChoicesContainer.add_child(choice_button)
 		choice_button.text = "Exit"
-		choice_button.pressed.connect(on_choice_selected)
+		choice_button.pressed.connect(on_choice_selected.bind(null))
 
 
 func on_choice_selected(effects: Array[Effect]) -> void:
