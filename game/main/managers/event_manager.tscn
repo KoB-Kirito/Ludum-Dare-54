@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=49 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c2jiji77qv4h1" path="res://assets/UI/bread.png" id="7_1e5m6"]
 [ext_resource type="Texture2D" uid="uid://c4bx7rwvamfio" path="res://assets/UI/woodpile.png" id="8_0ytcp"]
 [ext_resource type="Texture2D" uid="uid://b3qgo3gm8lf71" path="res://assets/UI/geschenk.png" id="9_xrhp6"]
-[ext_resource type="Script" path="res://game/events/conditions/resource.gd" id="11_d5ty8"]
 
 [sub_resource type="Resource" id="Resource_7nnu4"]
 script = ExtResource("2_ouvbw")
@@ -236,48 +235,19 @@ conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Res
 text = "In the dark a gigantic man approaches your shelter. You are sure that he could easily kill you with his bare hands."
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_3j8pl"), SubResource("Resource_nhlno")])
 
-[sub_resource type="Resource" id="Resource_kgrwm"]
-script = ExtResource("11_d5ty8")
-resource = 0
-operator = 0
-amount = 3
-fail_text = "Not enough food for the trade"
-
-[sub_resource type="Resource" id="Resource_gpl6b"]
-script = ExtResource("5_17kgw")
-resource = 0
-amount = -3
-
-[sub_resource type="Resource" id="Resource_roc4c"]
-script = ExtResource("5_17kgw")
-resource = 0
-amount = 3
-
-[sub_resource type="Resource" id="Resource_swmpw"]
-script = ExtResource("2_ouvbw")
-conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_kgrwm")])
-text = "Trade"
-effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_gpl6b"), SubResource("Resource_roc4c")])
-
-[sub_resource type="Resource" id="Resource_bxpwh"]
-script = ExtResource("2_ouvbw")
-conditions = Array[Resource("res://game/events/condition.gd")]([])
-text = "Send her away"
-effects = Array[Resource("res://game/events/effect.gd")]([])
-
-[sub_resource type="Resource" id="Resource_n3e32"]
+[sub_resource type="Resource" id="Resource_y8f8p"]
 script = ExtResource("4_75cuk")
-phases = Array[int]([0, 2])
+phases = Array[int]([0])
 fail_text = ""
 
-[sub_resource type="Resource" id="Resource_gjk5i"]
+[sub_resource type="Resource" id="Resource_wx3o0"]
 script = ExtResource("3_61jya")
-name = "M2"
+name = "Immer morgens"
 weight = 100
-conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_n3e32")])
-text = "An old lady comes to your shelter. She certainly looks like a witch, but she offers medicine in trade for food."
-choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_swmpw"), SubResource("Resource_bxpwh")])
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_y8f8p")])
+text = "A new day dawns!"
+choices = Array[ExtResource("2_ouvbw")]([])
 
 [node name="EventManager" type="Node"]
 script = ExtResource("1_p3b38")
-events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i")])
+events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_3a1eh"), SubResource("Resource_wx3o0")])
