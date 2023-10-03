@@ -179,11 +179,13 @@ func advance_action() -> void:
 		
 		# default actions
 		if current_action is Eat:
+			Globals.food -= 1
 			character.hunger += 5
 			if character.hunger >= character.hunger_max:
 				character.hunger = character.hunger_max
 			
 		elif current_action is Drink:
+			Globals.water -= 1
 			character.thirst += 5
 			if character.thirst >= character.thirst_max:
 				character.thirst = character.thirst_max

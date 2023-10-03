@@ -299,13 +299,13 @@ text = "Morale: 100
 [node name="FoodLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Food: 100
+text = "Food: 7
 "
 
 [node name="WaterLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Water: 100
+text = "Water: 7
 "
 
 [node name="WoodLabel" type="Label" parent="UI/StatusBar/DepotMargin/ResourcesContainer"]
