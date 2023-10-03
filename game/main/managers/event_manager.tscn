@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=132 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -554,6 +554,17 @@ conditions = Array[Resource("res://game/events/condition.gd")]([])
 text = "We need that food..."
 effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_6chrs")])
 
+[sub_resource type="Resource" id="Resource_sfd6s"]
+script = ExtResource("5_17kgw")
+resource = 0
+amount = -8
+
+[sub_resource type="Resource" id="Resource_ywwd5"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Get rid of it..."
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_sfd6s")])
+
 [sub_resource type="Resource" id="Resource_51px2"]
 script = ExtResource("11_d5ty8")
 resource = 0
@@ -567,7 +578,7 @@ name = "W5"
 weight = 1
 conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_51px2")])
 text = "The food looks rotten. Should we throw it away or take the risk of food poisoning?"
-choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_jhnir"), null])
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_jhnir"), SubResource("Resource_ywwd5")])
 
 [sub_resource type="Resource" id="Resource_03xie"]
 script = ExtResource("16_gv1uf")

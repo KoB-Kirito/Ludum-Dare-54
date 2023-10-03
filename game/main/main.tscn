@@ -258,7 +258,7 @@ autowrap_mode = 2
 threaded = true
 
 [node name="AutoHideTimer" type="Timer" parent="UI/Notebook"]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="StatusBar" type="TextureRect" parent="UI"]
