@@ -11,7 +11,10 @@ extends Condition
 func is_met() -> bool:
 	match resource:
 		0: # Food
-			return check(Globals.food)
+			print("checking food")
+			var test = check(Globals.food)
+			print(test)
+			return test
 		
 		1: # Water
 			return check(Globals.water)
@@ -30,6 +33,7 @@ func is_met() -> bool:
 func check(v1: int) -> bool:
 	match operator:
 		0: # greater
+			print("checking greater")
 			return v1 > amount
 		
 		1: # equal
