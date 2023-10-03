@@ -15,11 +15,11 @@ var beds: Array[Bed]
 var character_manager: CharacterManager
 var main: Main
 
-var food: int = 100:
+var food: int = 7:
 	set(value):
 		food = value
 		Events.food_changed.emit(value)
-var water: int = 100:
+var water: int = 7:
 	set(value):
 		water = value
 		Events.water_changed.emit(value)

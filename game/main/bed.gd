@@ -99,7 +99,7 @@ func update_character() -> void:
 		var conditions_met: bool = true
 		var fail_text: String = ""
 		for condition: Condition in action.conditions:
-			if condition.is_met():
+			if not condition.is_met():
 				conditions_met = false
 				fail_text = condition.fail_text
 		
@@ -110,7 +110,7 @@ func update_character() -> void:
 		else:
 			if fail_text != null and not fail_text.is_empty():
 				%ActionsDropdown.add_item(action.name + " [" + fail_text + "]")
-				%ActionsDropdown.set_item_disabled(%ActionsDropdown.size() - 1, true)
+				%ActionsDropdown.set_item_disabled(%ActionsDropdown.item_count - 1, true)
 	
 	%ActionsDropdown.add_separator()
 	
@@ -139,6 +139,15 @@ func update_character() -> void:
 var actions: Dictionary
 
 func set_action(action: RestAction) -> void:
+	if action is Eat:
+		Globals.food -= 1
+		for bed: Bed in Globals.beds:
+			bed.update_character()
+	elif action is Drink:
+		Globals.water -= 1
+		for bed: Bed in Globals.beds:
+			bed.update_character()
+	
 	%ActionPanel.show()
 	%ActionLabel.text = action.name
 	%ActionProgress.max_value = action.duration
