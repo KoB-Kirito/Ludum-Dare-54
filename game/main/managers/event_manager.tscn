@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://cyt562j66ysng"]
+[gd_scene load_steps=143 format=3 uid="uid://cyt562j66ysng"]
 
 [ext_resource type="Script" path="res://game/main/event_manager.gd" id="1_p3b38"]
 [ext_resource type="Script" path="res://game/events/choice.gd" id="2_ouvbw"]
@@ -726,6 +726,69 @@ Thank you a lot!\""
 image = ExtResource("19_pf1ym")
 choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_85ek8")])
 
+[sub_resource type="Resource" id="Resource_m0h4f"]
+script = ExtResource("5_17kgw")
+resource = 0
+amount = 2
+
+[sub_resource type="Resource" id="Resource_nsmif"]
+script = ExtResource("5_17kgw")
+resource = 1
+amount = 2
+
+[sub_resource type="Resource" id="Resource_o72f8"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_m0h4f"), SubResource("Resource_nsmif")])
+
+[sub_resource type="Resource" id="Resource_biivm"]
+script = ExtResource("4_75cuk")
+phases = Array[int]([0])
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_ioptj"]
+script = ExtResource("12_36hyt")
+character_name = "pete"
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_r4ebf"]
+script = ExtResource("3_61jya")
+name = "Pete_1"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_biivm"), SubResource("Resource_ioptj")])
+text = "This sunrise Pete went to a river nearby. He went fishing and broght back both fish and water..."
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_o72f8")])
+
+[sub_resource type="Resource" id="Resource_5hsks"]
+script = ExtResource("5_17kgw")
+resource = 0
+amount = 5
+
+[sub_resource type="Resource" id="Resource_6dhy0"]
+script = ExtResource("2_ouvbw")
+conditions = Array[Resource("res://game/events/condition.gd")]([])
+text = "Ok"
+effects = Array[Resource("res://game/events/effect.gd")]([SubResource("Resource_5hsks")])
+
+[sub_resource type="Resource" id="Resource_8ccol"]
+script = ExtResource("4_75cuk")
+phases = Array[int]([2])
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_7sekd"]
+script = ExtResource("12_36hyt")
+character_name = "robert"
+fail_text = ""
+
+[sub_resource type="Resource" id="Resource_x50xw"]
+script = ExtResource("3_61jya")
+name = "Robert1"
+weight = 1
+conditions = Array[Resource("res://game/events/condition.gd")]([SubResource("Resource_8ccol"), SubResource("Resource_7sekd")])
+text = "The firepit is warm and cozy. It seems like Robert decided to cook dinner for everyone."
+choices = Array[ExtResource("2_ouvbw")]([SubResource("Resource_6dhy0")])
+
 [node name="EventManager" type="Node"]
 script = ExtResource("1_p3b38")
-events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_f5ogj"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i"), SubResource("Resource_ghli2"), ExtResource("12_43005"), SubResource("Resource_yl30o"), SubResource("Resource_yjstx"), SubResource("Resource_q2kqu"), SubResource("Resource_mpttj"), SubResource("Resource_txq3a"), SubResource("Resource_42qhx"), SubResource("Resource_64808"), SubResource("Resource_yy0kq"), SubResource("Resource_mfrpt"), SubResource("Resource_i3u08")])
+events = Array[ExtResource("3_61jya")]([SubResource("Resource_qqr2j"), SubResource("Resource_31agq"), SubResource("Resource_mtf5g"), SubResource("Resource_x5ggb"), SubResource("Resource_gnxd4"), SubResource("Resource_tm6xp"), SubResource("Resource_l5ja4"), SubResource("Resource_f5ogj"), SubResource("Resource_3a1eh"), SubResource("Resource_gjk5i"), SubResource("Resource_ghli2"), ExtResource("12_43005"), SubResource("Resource_yl30o"), SubResource("Resource_yjstx"), SubResource("Resource_q2kqu"), SubResource("Resource_mpttj"), SubResource("Resource_txq3a"), SubResource("Resource_42qhx"), SubResource("Resource_64808"), SubResource("Resource_yy0kq"), SubResource("Resource_mfrpt"), SubResource("Resource_i3u08"), SubResource("Resource_r4ebf"), SubResource("Resource_x50xw")])

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck7ehlrgovhus"]
+[gd_scene load_steps=6 format=3 uid="uid://ck7ehlrgovhus"]
 
 [ext_resource type="Script" path="res://game/menu/main_menu.gd" id="1_a3t2g"]
 [ext_resource type="Texture2D" uid="uid://dh54h3yx7ycfd" path="res://assets/UI/Start_Button.png" id="2_sm8xk"]
 [ext_resource type="Texture2D" uid="uid://d4glfgj0r0f5n" path="res://assets/UI/Options_Button.png" id="3_joek5"]
 [ext_resource type="Texture2D" uid="uid://db47v6impgpsr" path="res://assets/UI/Credits_Button.png" id="4_xjfh3"]
+[ext_resource type="Texture2D" uid="uid://ctegv1yjtbol6" path="res://assets/UI/Logo.png" id="5_ee0cv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,6 +16,12 @@ grow_vertical = 2
 script = ExtResource("1_a3t2g")
 main_scene = "res://game/main/main.tscn"
 credits_scene = "res://game/menu/credits.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.833329, 0.833323)
+texture = ExtResource("5_ee0cv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -37,6 +44,7 @@ layout_mode = 2
 texture_normal = ExtResource("2_sm8xk")
 
 [node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+modulate = Color(0.419608, 0.419608, 0.419608, 1)
 layout_mode = 2
 mouse_filter = 2
 texture_normal = ExtResource("3_joek5")
@@ -46,6 +54,7 @@ layout_mode = 2
 texture_normal = ExtResource("4_xjfh3")
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 5
