@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var background_5: Sprite2D = $Background5
-@onready var background_6: Sprite2D = $Background6
+#@onready var background_6: Sprite2D = $Background6
 @onready var snow: GPUParticles2D = $Snow
 
 

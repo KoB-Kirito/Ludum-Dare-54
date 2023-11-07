@@ -1,10 +1,14 @@
 extends AnimatedSprite2D
 
-@onready var _animated_sprite = $AnimatedSprite2D
+
+#@onready var _animated_sprite = $AnimatedSprite2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$".".play("Full")
-	pass # Replace with function body.
+	var node = get_node(".")
+	if node != null:
+		node.play("Full")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

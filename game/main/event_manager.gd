@@ -35,7 +35,7 @@ func trigger_random_event() -> void:
 
 
 func get_valid_events() -> Array[Event]:
-	var output: Array[Event]
+	var output: Array[Event] = []
 	for event: Event in events:
 		var all_conditions_met: bool = true
 		for condition: Condition in event.conditions:
@@ -56,7 +56,7 @@ func get_valid_events() -> Array[Event]:
 
 
 func get_weighted_events(v_events: Array[Event]) -> Array[Event]:
-	var output: Array[Event]
+	var output: Array[Event] = []
 	for event: Event in v_events:
 		for i in range(event.weight):
 			output.append(event)
@@ -139,7 +139,7 @@ func trigger_event(event: Event) -> void:
 			else:
 				# show unavailable
 				choice_button.text += " [" + fail_text + "]" 
-				choice_button.disabled
+				choice_button.disabled = true
 				choice_button.add_theme_color_override("font_color", Color.RED)
 	
 	# catch empty choices

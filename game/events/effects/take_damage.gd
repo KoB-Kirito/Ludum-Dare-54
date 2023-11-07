@@ -21,10 +21,10 @@ func process() -> void:
 		return
 		
 	elif bed > 0:
-		var char := Globals.beds[bed - 1].character
-		if char == null:
+		var c := Globals.beds[bed - 1].character
+		if c == null:
 			return
-		char.healthpoints -= amount
+		c.healthpoints -= amount
 		return
 		
 	else:

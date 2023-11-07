@@ -18,6 +18,7 @@ main_scene = "res://game/main/main.tscn"
 credits_scene = "res://game/menu/credits.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.833329, 0.833323)

@@ -6,47 +6,55 @@
 [sub_resource type="GDScript" id="GDScript_4s735"]
 script/source = "extends Label
 
-var timer = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
-	#if($\".\".get_theme_color_override(\"font_color\") == Color.WHITE): 
 
-		#tween.set_loops()
-	
-
-	pass # Replace with function body.
+func _ready() -> void:
+	var tween := create_tween().set_loops().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, \"modulate\", Color(1.0, 1.0, 1.0, 0.3), 1.0)
+	tween.tween_property(self, \"modulate\", Color.WHITE, 1.0)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	timer += 1
-
-	var tween = get_tree().create_tween()
-	var tempColor
-	var tempScale
-	if(timer < 180):
-		tempColor = Color(Color.BLACK,0.3)
-		tempScale = 36
-		
-	if(timer > 180):
-		tempColor = Color(Color.BLACK,1)
-		tempScale = 48
-		
-	tween.tween_property($\".\", \"modulate\", tempColor,1.5)
-	#tween.tween_property($\".\", \"theme_override_font_sizes/font_size\", tempScale, 8)
-	#tween.tween_property($\".\", , tempColor,4) adding scale animation? :(
-	
-	if(timer > 280):
-		timer = 0
-		
-	#tween.tween_property($Label, \"scale\", Vector2(), 1)
-	#tween.tween_callback($Label.queue_free)
-	#modulate = Color(white, 0.5f)
-	
-	
-	pass
+# hmmmmm
+#var timer = 0
+## Called when the node enters the scene tree for the first time.
+#func _ready():
+	#
+	##if($\".\".get_theme_color_override(\"font_color\") == Color.WHITE): 
+#
+		##tween.set_loops()
+	#
+#
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(_delta):
+	#
+	#timer += 1
+#
+	#var tween = get_tree().create_tween()
+	#var tempColor
+	#var tempScale
+	#if(timer < 180):
+		#tempColor = Color(Color.BLACK,0.3)
+		#tempScale = 36
+		#
+	#if(timer > 180):
+		#tempColor = Color(Color.BLACK,1)
+		#tempScale = 48
+		#
+	#tween.tween_property($\".\", \"modulate\", tempColor,1.5)
+	##tween.tween_property($\".\", \"theme_override_font_sizes/font_size\", tempScale, 8)
+	##tween.tween_property($\".\", , tempColor,4) adding scale animation? :(
+	#
+	#if(timer > 280):
+		#timer = 0
+		#
+	##tween.tween_property($Label, \"scale\", Vector2(), 1)
+	##tween.tween_callback($Label.queue_free)
+	##modulate = Color(white, 0.5f)
+	#
+	#
+	#pass
 "
 
 [node name="TitleScreen" type="Control"]

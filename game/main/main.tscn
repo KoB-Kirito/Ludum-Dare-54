@@ -223,7 +223,7 @@ layout_mode = 0
 offset_right = 481.0
 offset_bottom = 616.0
 size_flags_vertical = 3
-mouse_filter = 0
+mouse_filter = 2
 texture = ExtResource("27_hcrbx")
 script = ExtResource("28_qit2u")
 out_position = Vector2(-353, 0)
@@ -331,6 +331,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Fade" type="ColorRect" parent="UI/EventLayer"]
 layout_mode = 1
@@ -339,6 +340,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 0.501961)
 
 [node name="EventImage" type="TextureRect" parent="UI/EventLayer"]
@@ -387,6 +389,4 @@ layout_mode = 1
 
 [connection signal="timeout" from="Logic/AutoAdvanceTimer" to="Logic/PhaseManager" method="_on_auto_advance_timer_timeout"]
 [connection signal="timeout" from="Logic/HideCharacterTimer" to="." method="_on_hide_character_timer_timeout"]
-[connection signal="mouse_entered" from="UI/Notebook/TextboxMargin/Textbox" to="UI/Notebook" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Notebook/TextboxMargin/Textbox" to="UI/Notebook" method="_on_mouse_exited"]
 [connection signal="timeout" from="UI/Notebook/AutoHideTimer" to="UI/Notebook" method="_on_auto_hide_timer_timeout"]

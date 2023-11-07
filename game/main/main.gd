@@ -44,7 +44,7 @@ func add_character(character: Character) -> void:
 		Events.show_text.emit("You sent " + character.name + " away, because you had no bed available..", Color.RED)
 
 
-func character_selected(character: Character, bed: Bed) -> void:
+func character_selected(character: Character, _bed: Bed) -> void:
 	%TopRightBackground.show()
 	%CharacterImage.texture = character.image
 	%DescriptionLabel.text = character.description
