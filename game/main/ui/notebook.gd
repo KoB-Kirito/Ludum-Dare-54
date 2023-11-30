@@ -29,7 +29,7 @@ var mouse_is_entered: bool = false
 var turn_point := Vector2(400, 509)
 func _physics_process(delta: float) -> void:
 	var mouse_pos := get_global_mouse_position()
-	print(mouse_pos)
+	#print(mouse_pos)
 	if not mouse_is_entered and mouse_pos.x < turn_point.x and mouse_pos.y < turn_point.y:
 		mouse_is_entered = true
 		scroll_in()
